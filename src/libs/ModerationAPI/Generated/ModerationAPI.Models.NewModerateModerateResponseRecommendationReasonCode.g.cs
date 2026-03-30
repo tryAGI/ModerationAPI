@@ -24,6 +24,14 @@ namespace ModerationAPI
         /// 
         /// </summary>
         SeverityReview,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrustedAllow,
+        /// <summary>
+        /// 
+        /// </summary>
+        UntrustedSeverity,
     }
 
     /// <summary>
@@ -42,6 +50,8 @@ namespace ModerationAPI
                 NewModerateModerateResponseRecommendationReasonCode.DryRun => "dry_run",
                 NewModerateModerateResponseRecommendationReasonCode.SeverityReject => "severity_reject",
                 NewModerateModerateResponseRecommendationReasonCode.SeverityReview => "severity_review",
+                NewModerateModerateResponseRecommendationReasonCode.TrustedAllow => "trusted_allow",
+                NewModerateModerateResponseRecommendationReasonCode.UntrustedSeverity => "untrusted_severity",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +66,8 @@ namespace ModerationAPI
                 "dry_run" => NewModerateModerateResponseRecommendationReasonCode.DryRun,
                 "severity_reject" => NewModerateModerateResponseRecommendationReasonCode.SeverityReject,
                 "severity_review" => NewModerateModerateResponseRecommendationReasonCode.SeverityReview,
+                "trusted_allow" => NewModerateModerateResponseRecommendationReasonCode.TrustedAllow,
+                "untrusted_severity" => NewModerateModerateResponseRecommendationReasonCode.UntrustedSeverity,
                 _ => null,
             };
         }

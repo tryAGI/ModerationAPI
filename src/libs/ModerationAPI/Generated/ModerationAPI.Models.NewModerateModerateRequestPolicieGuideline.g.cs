@@ -18,6 +18,12 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <default>"guideline"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "guideline";
@@ -48,6 +54,7 @@ namespace ModerationAPI
         /// <param name="flag"></param>
         /// <param name="instructions"></param>
         /// <param name="guidelineKey"></param>
+        /// <param name="threshold"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,9 +63,11 @@ namespace ModerationAPI
             bool flag,
             string instructions,
             string guidelineKey,
+            double? threshold,
             string id = "guideline")
         {
             this.Flag = flag;
+            this.Threshold = threshold;
             this.Id = id;
             this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.GuidelineKey = guidelineKey ?? throw new global::System.ArgumentNullException(nameof(guidelineKey));
