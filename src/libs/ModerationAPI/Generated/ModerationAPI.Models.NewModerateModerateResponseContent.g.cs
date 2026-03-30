@@ -26,7 +26,7 @@ namespace ModerationAPI
         /// The modified content, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified")]
-        public global::ModerationAPI.AnyOf<string, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio>>>? Modified { get; set; }
+        public global::ModerationAPI.AnyOf<string, object, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>>>? Modified { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,7 @@ namespace ModerationAPI
         public NewModerateModerateResponseContent(
             string id,
             bool masked,
-            global::ModerationAPI.AnyOf<string, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio>>>? modified)
+            global::ModerationAPI.AnyOf<string, object, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>>>? modified)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Masked = masked;

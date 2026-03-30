@@ -19,8 +19,13 @@ namespace ModerationAPI
         /// A public URL of the image content
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string? Url { get; set; }
+
+        /// <summary>
+        /// Base64-encoded image data
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public string? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,16 +39,21 @@ namespace ModerationAPI
         /// <param name="url">
         /// A public URL of the image content
         /// </param>
+        /// <param name="data">
+        /// Base64-encoded image data
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NewModerateModerateRequestContentObjectDataImage(
-            string url,
+            string? url,
+            string? data,
             string type = "image")
         {
             this.Type = type;
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Url = url;
+            this.Data = data;
         }
 
         /// <summary>

@@ -268,179 +268,179 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentContentLeafText, global::ModerationAPI.NewModerateModerateRequestContentContentLeafImage, global::ModerationAPI.NewModerateModerateRequestContentContentLeafVideo, global::ModerationAPI.NewModerateModerateRequestContentContentLeafAudio>?, global::ModerationAPI.NewModerateModerateRequestContentObject>? Type60 { get; set; }
+        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentText, global::ModerationAPI.NewModerateModerateRequestContentImage, global::ModerationAPI.NewModerateModerateRequestContentVideo, global::ModerationAPI.NewModerateModerateRequestContentAudio, global::ModerationAPI.NewModerateModerateRequestContentObject>? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentContentLeafText, global::ModerationAPI.NewModerateModerateRequestContentContentLeafImage, global::ModerationAPI.NewModerateModerateRequestContentContentLeafVideo, global::ModerationAPI.NewModerateModerateRequestContentContentLeafAudio>? Type61 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentText? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentContentLeafText? Type62 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentImage? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentContentLeafImage? Type63 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentVideo? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentContentLeafVideo? Type64 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentAudio? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentContentLeafAudio? Type65 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentObject? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentObject? Type66 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentObjectDataText, global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage, global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo, global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio>>? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentObjectDataText, global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage, global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo, global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio>>? Type67 { get; set; }
+        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentObjectDataText, global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage, global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo, global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio>? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentObjectDataText, global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage, global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo, global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio>? Type68 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataText? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataText? Type69 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataImage? Type70 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataVideo? Type71 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestContentObjectDataAudio? Type72 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestMetaType? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestMetaType? Type73 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? Type74 { get; set; }
+        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>? Type75 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieToxicity? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieToxicity? Type76 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation? Type77 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere? Type78 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieHate? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieHate? Type79 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicit? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicit? Type80 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs? Type81 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol? Type82 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms? Type83 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco? Type84 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling? Type85 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieCannabis? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieSexual? Type86 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieAdult? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation? Type87 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieCrypto? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieProfanity? Type88 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieSexual? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieViolence? Type89 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm? Type90 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieProfanity? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieSpam? Type91 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieViolence? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion? Type92 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPoliciePolitical? Type93 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieSpam? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieReligion? Type94 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse? Type95 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPoliciePolitical? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking? Type96 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieReligion? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntities2>? Type97 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntities2? Type98 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntitiesId? Type99 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntities2>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking? Type100 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntities2? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntities2>? Type101 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntities2? Type102 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntities2>? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntitiesId? Type103 { get; set; }
+        public global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntities2? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1204,31 +1204,31 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.AnyOf<string, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio>>>? Type294 { get; set; }
+        public global::ModerationAPI.AnyOf<string, object, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>>>? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio>>? Type295 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>>? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio>? Type296 { get; set; }
+        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Text? Type297 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Image? Type298 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Video? Type299 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1Audio? Type300 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1389,7 +1389,7 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>

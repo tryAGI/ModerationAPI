@@ -18,6 +18,12 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <default>"illicit_drugs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "illicit_drugs";
@@ -32,15 +38,18 @@ namespace ModerationAPI
         /// Initializes a new instance of the <see cref="NewModerateModerateRequestPolicieIllicitDrugs" /> class.
         /// </summary>
         /// <param name="flag"></param>
+        /// <param name="threshold"></param>
         /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NewModerateModerateRequestPolicieIllicitDrugs(
             bool flag,
+            double? threshold,
             string id = "illicit_drugs")
         {
             this.Flag = flag;
+            this.Threshold = threshold;
             this.Id = id;
         }
 
