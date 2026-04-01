@@ -335,7 +335,6 @@ namespace ModerationAPI
             double? duration = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::ModerationAPI.ActionsExecuteRequest
             {
                 ActionKey = actionKey,

@@ -377,7 +377,6 @@ namespace ModerationAPI
             string? comment = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::ModerationAPI.QueueViewOpenUnresolveItemRequest
             {
                 Comment = comment,
