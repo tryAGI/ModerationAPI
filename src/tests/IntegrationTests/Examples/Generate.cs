@@ -14,8 +14,8 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Create a text moderation request.
-        OneOf<NewModerateModerateRequestContentContentLeafText, NewModerateModerateRequestContentContentLeafImage, NewModerateModerateRequestContentContentLeafVideo, NewModerateModerateRequestContentContentLeafAudio>?
-            textContent = new NewModerateModerateRequestContentContentLeafText("Hello, this is a friendly message.");
+        OneOf<NewModerateModerateRequestContentText, NewModerateModerateRequestContentImage, NewModerateModerateRequestContentVideo, NewModerateModerateRequestContentAudio, NewModerateModerateRequestContentObject> textContent =
+            new NewModerateModerateRequestContentText("Hello, this is a friendly message.");
 
         var response = await client.NewModerateModerateAsync(
             request: new NewModerateModerateRequest

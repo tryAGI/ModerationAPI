@@ -16,8 +16,8 @@ public static class ModerationAPIClientTools
             async ([Description("The text content to moderate for toxicity, profanity, PII, spam, violence, and other policy violations")] string text,
                    CancellationToken cancellationToken) =>
             {
-                OneOf<NewModerateModerateRequestContentContentLeafText, NewModerateModerateRequestContentContentLeafImage, NewModerateModerateRequestContentContentLeafVideo, NewModerateModerateRequestContentContentLeafAudio>?
-                    innerContent = new NewModerateModerateRequestContentContentLeafText(text);
+                OneOf<NewModerateModerateRequestContentText, NewModerateModerateRequestContentImage, NewModerateModerateRequestContentVideo, NewModerateModerateRequestContentAudio, NewModerateModerateRequestContentObject> innerContent =
+                    new NewModerateModerateRequestContentText(text);
 
                 var response = await client.NewModerateModerateAsync(
                     request: new NewModerateModerateRequest
@@ -50,8 +50,8 @@ public static class ModerationAPIClientTools
             async ([Description("The public URL of the image to moderate for NSFW, violence, and other policy violations")] string imageUrl,
                    CancellationToken cancellationToken) =>
             {
-                OneOf<NewModerateModerateRequestContentContentLeafText, NewModerateModerateRequestContentContentLeafImage, NewModerateModerateRequestContentContentLeafVideo, NewModerateModerateRequestContentContentLeafAudio>?
-                    innerContent = new NewModerateModerateRequestContentContentLeafImage(imageUrl);
+                OneOf<NewModerateModerateRequestContentText, NewModerateModerateRequestContentImage, NewModerateModerateRequestContentVideo, NewModerateModerateRequestContentAudio, NewModerateModerateRequestContentObject> innerContent =
+                    new NewModerateModerateRequestContentImage(url: imageUrl, data: null);
 
                 var response = await client.NewModerateModerateAsync(
                     request: new NewModerateModerateRequest
