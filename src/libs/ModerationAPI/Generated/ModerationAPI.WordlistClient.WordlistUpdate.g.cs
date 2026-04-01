@@ -343,6 +343,7 @@ namespace ModerationAPI
             bool? strict = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::ModerationAPI.WordlistUpdateRequest
             {
                 Name = name,

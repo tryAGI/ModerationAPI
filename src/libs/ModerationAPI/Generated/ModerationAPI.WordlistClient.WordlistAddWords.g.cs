@@ -327,6 +327,7 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<string> words,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::ModerationAPI.WordlistAddWordsRequest
             {
                 Words = words,
