@@ -1,4 +1,10 @@
-dotnet tool install --global autosdk.cli --prerelease
+# Pin AutoSDK until newer prereleases restore source-generated JSON context
+# output for this spec without regressing trim / NativeAOT compatibility.
+if dotnet tool list --global | grep -q '^autosdk\.cli '; then
+  dotnet tool update --global autosdk.cli --version 0.30.1-dev.178 --allow-downgrade
+else
+  dotnet tool install --global autosdk.cli --version 0.30.1-dev.178
+fi
 rm -rf Generated
 curl -o openapi.yaml https://docs.moderationapi.com/openapi.json
 autosdk generate openapi.yaml \
@@ -128,5 +134,46 @@ for old, new in replacements.items():
         raise SystemExit(f"Failed to apply JsonSerializerContext workaround for: {old[:80]}...")
     text = text.replace(old, new, 1)
 
+path.write_text(text, encoding="utf-8")
+PY
+
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("Generated/ModerationAPI.AllOf.2.g.cs")
+text = path.read_text(encoding="utf-8")
+
+replacements = {
+    "public readonly partial struct AllOf<T1, T2> : global::System.IEquatable<AllOf<T1, T2>>":
+    "public readonly partial struct AllOf<\n        [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n            global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n        T1,\n        [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n            global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n        T2> : global::System.IEquatable<AllOf<T1, T2>>",
+    "private static bool RequiresValue<TValue>() => RequirementCache<TValue>.Value;":
+    "private static bool RequiresValue<\n            [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n                global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n            TValue>() => RequirementCache<TValue>.Value;",
+    "private static bool DetermineRequiresValue(global::System.Type type)":
+    "private static bool DetermineRequiresValue(\n            [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n                global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n            global::System.Type type)",
+    "private static class RequirementCache<TValue>":
+    "private static class RequirementCache<\n            [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n                global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n            TValue>",
+}
+
+for old, new in replacements.items():
+    if old not in text:
+        raise SystemExit(f"Failed to apply AllOf trim workaround for: {old}")
+    text = text.replace(old, new, 1)
+
+path.write_text(text, encoding="utf-8")
+PY
+
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("Generated/ModerationAPI.JsonConverters.AllOf2.g.cs")
+text = path.read_text(encoding="utf-8")
+
+old = "public class AllOfJsonConverter<T1, T2> : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.AllOf<T1, T2>>"
+new = "public class AllOfJsonConverter<\n        [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n            global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n        T1,\n        [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(\n            global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)]\n        T2> : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.AllOf<T1, T2>>"
+
+if old not in text:
+    raise SystemExit("Failed to apply AllOfJsonConverter trim workaround.")
+
+text = text.replace(old, new, 1)
 path.write_text(text, encoding="utf-8")
 PY
