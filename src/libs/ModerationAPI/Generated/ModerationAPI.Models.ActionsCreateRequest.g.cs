@@ -85,13 +85,6 @@ namespace ModerationAPI
         public bool? FreeText { get; set; }
 
         /// <summary>
-        /// The action's webhooks.<br/>
-        /// Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
-        public global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestWebhook>? Webhooks { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -140,10 +133,6 @@ namespace ModerationAPI
         /// Whether the action allows any text to be entered as a value or if it must be one of the possible values.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="webhooks">
-        /// The action's webhooks.<br/>
-        /// Default Value: []
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -158,8 +147,7 @@ namespace ModerationAPI
             global::ModerationAPI.ActionsCreateRequestPosition? position,
             global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestPossibleValue>? possibleValues,
             bool? valueRequired,
-            bool? freeText,
-            global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestWebhook>? webhooks)
+            bool? freeText)
         {
             this.Key = key;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -172,7 +160,6 @@ namespace ModerationAPI
             this.PossibleValues = possibleValues;
             this.ValueRequired = valueRequired;
             this.FreeText = freeText;
-            this.Webhooks = webhooks;
         }
 
         /// <summary>

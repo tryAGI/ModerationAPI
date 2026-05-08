@@ -33,6 +33,12 @@ namespace ModerationAPI
         public string? Email { get; set; }
 
         /// <summary>
+        /// The author's company or organization
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("company")]
+        public string? Company { get; set; }
+
+        /// <summary>
         /// Additional metadata provided by your system. We recommend including any relevant information that may assist in the moderation process.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -87,6 +93,9 @@ namespace ModerationAPI
         /// <param name="email">
         /// Author email address
         /// </param>
+        /// <param name="company">
+        /// The author's company or organization
+        /// </param>
         /// <param name="metadata">
         /// Additional metadata provided by your system. We recommend including any relevant information that may assist in the moderation process.
         /// </param>
@@ -106,6 +115,7 @@ namespace ModerationAPI
             string? externalLink,
             string? name,
             string? email,
+            string? company,
             global::ModerationAPI.AuthorOpenCreateRequestMetadata? metadata,
             double? firstSeen,
             double? lastSeen,
@@ -115,6 +125,7 @@ namespace ModerationAPI
             this.ExternalLink = externalLink;
             this.Name = name;
             this.Email = email;
+            this.Company = company;
             this.Metadata = metadata;
             this.FirstSeen = firstSeen;
             this.LastSeen = lastSeen;

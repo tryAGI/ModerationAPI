@@ -1,0 +1,66 @@
+
+#nullable enable
+
+namespace ModerationAPI
+{
+    /// <summary>
+    /// Image
+    /// </summary>
+    public sealed partial class PublicQueueItemContentObjectDataImage
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <default>"image"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "image";
+
+        /// <summary>
+        /// A public URL of the image content. Either url or data must be provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
+        /// Base64-encoded image data. Either url or data must be provided. Note: base64 images are not stored and will not appear in the review queue.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public string? Data { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicQueueItemContentObjectDataImage" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// A public URL of the image content. Either url or data must be provided.
+        /// </param>
+        /// <param name="data">
+        /// Base64-encoded image data. Either url or data must be provided. Note: base64 images are not stored and will not appear in the review queue.
+        /// </param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PublicQueueItemContentObjectDataImage(
+            string? url,
+            string? data,
+            string type = "image")
+        {
+            this.Type = type;
+            this.Url = url;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicQueueItemContentObjectDataImage" /> class.
+        /// </summary>
+        public PublicQueueItemContentObjectDataImage()
+        {
+        }
+    }
+}

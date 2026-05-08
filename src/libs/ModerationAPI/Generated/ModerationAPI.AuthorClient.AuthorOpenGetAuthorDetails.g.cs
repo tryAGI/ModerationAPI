@@ -38,7 +38,7 @@ namespace ModerationAPI
         /// const author = await client.authors.retrieve('id');<br/>
         /// console.log(author.id);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenGetAuthorDetailsResponse> AuthorOpenGetAuthorDetailsAsync(
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenGetAuthorDetailsAsync(
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -308,7 +308,7 @@ namespace ModerationAPI
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::ModerationAPI.AuthorOpenGetAuthorDetailsResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::ModerationAPI.PublicAuthor.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -339,7 +339,7 @@ namespace ModerationAPI
                     ).ConfigureAwait(false);
 
                     return
-                        await global::ModerationAPI.AuthorOpenGetAuthorDetailsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::ModerationAPI.PublicAuthor.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

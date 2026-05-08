@@ -19,7 +19,7 @@ namespace ModerationAPI
         /// const author = await client.authors.create({ external_id: 'external_id' });<br/>
         /// console.log(author.id);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenCreateResponse> AuthorOpenCreateAsync(
+        global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenCreateAsync(
 
             global::ModerationAPI.AuthorOpenCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -39,6 +39,9 @@ namespace ModerationAPI
         /// <param name="email">
         /// Author email address
         /// </param>
+        /// <param name="company">
+        /// The author's company or organization
+        /// </param>
         /// <param name="metadata">
         /// Additional metadata provided by your system. We recommend including any relevant information that may assist in the moderation process.
         /// </param>
@@ -54,12 +57,13 @@ namespace ModerationAPI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenCreateResponse> AuthorOpenCreateAsync(
+        global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenCreateAsync(
             string externalId,
             string? profilePicture = default,
             string? externalLink = default,
             string? name = default,
             string? email = default,
+            string? company = default,
             global::ModerationAPI.AuthorOpenCreateRequestMetadata? metadata = default,
             double? firstSeen = default,
             double? lastSeen = default,

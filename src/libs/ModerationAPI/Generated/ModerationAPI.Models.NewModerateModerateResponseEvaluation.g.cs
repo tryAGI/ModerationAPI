@@ -36,6 +36,12 @@ namespace ModerationAPI
         public bool? UnicodeSpoofed { get; set; }
 
         /// <summary>
+        /// Whether the content would have been flagged by analyze-only policies (flag: false).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow_flagged")]
+        public bool? ShadowFlagged { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +62,9 @@ namespace ModerationAPI
         /// <param name="unicodeSpoofed">
         /// Whether the content was flagged for Unicode spoofing.
         /// </param>
+        /// <param name="shadowFlagged">
+        /// Whether the content would have been flagged by analyze-only policies (flag: false).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,12 +72,14 @@ namespace ModerationAPI
             bool flagged,
             double flagProbability,
             double severityScore,
-            bool? unicodeSpoofed)
+            bool? unicodeSpoofed,
+            bool? shadowFlagged)
         {
             this.Flagged = flagged;
             this.FlagProbability = flagProbability;
             this.SeverityScore = severityScore;
             this.UnicodeSpoofed = unicodeSpoofed;
+            this.ShadowFlagged = shadowFlagged;
         }
 
         /// <summary>
