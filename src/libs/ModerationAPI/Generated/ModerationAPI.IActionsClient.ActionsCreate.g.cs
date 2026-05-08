@@ -67,10 +67,6 @@ namespace ModerationAPI
         /// Whether the action allows any text to be entered as a value or if it must be one of the possible values.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="webhooks">
-        /// The action's webhooks.<br/>
-        /// Default Value: []
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsCreateResponse> ActionsCreateAsync(
@@ -85,7 +81,6 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestPossibleValue>? possibleValues = default,
             bool? valueRequired = default,
             bool? freeText = default,
-            global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestWebhook>? webhooks = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

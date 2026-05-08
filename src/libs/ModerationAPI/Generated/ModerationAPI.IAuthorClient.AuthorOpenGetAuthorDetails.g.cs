@@ -21,7 +21,7 @@ namespace ModerationAPI
         /// const author = await client.authors.retrieve('id');<br/>
         /// console.log(author.id);
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenGetAuthorDetailsResponse> AuthorOpenGetAuthorDetailsAsync(
+        global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenGetAuthorDetailsAsync(
             string id,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

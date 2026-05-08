@@ -107,14 +107,6 @@ namespace ModerationAPI
         public required bool FreeText { get; set; }
 
         /// <summary>
-        /// The action's webhooks.<br/>
-        /// Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItemWebhook> Webhooks { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -156,10 +148,6 @@ namespace ModerationAPI
         /// Whether the action allows any text to be entered as a value or if it must be one of the possible values.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="webhooks">
-        /// The action's webhooks.<br/>
-        /// Default Value: []
-        /// </param>
         /// <param name="key">
         /// User defined key of the action.
         /// </param>
@@ -186,7 +174,6 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItemPossibleValue> possibleValues,
             bool valueRequired,
             bool freeText,
-            global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItemWebhook> webhooks,
             string? key,
             string? description,
             global::ModerationAPI.ActionsListResponseItemType2? type,
@@ -205,7 +192,6 @@ namespace ModerationAPI
             this.PossibleValues = possibleValues ?? throw new global::System.ArgumentNullException(nameof(possibleValues));
             this.ValueRequired = valueRequired;
             this.FreeText = freeText;
-            this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
         }
 
         /// <summary>

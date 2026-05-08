@@ -16,13 +16,13 @@ namespace ModerationAPI
         public string Type { get; set; } = "image";
 
         /// <summary>
-        /// A public URL of the image content
+        /// A public URL of the image content. Either url or data must be provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
-        /// Base64-encoded image data
+        /// Base64-encoded image data. Either url or data must be provided. Note: base64 images are not stored and will not appear in the review queue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public string? Data { get; set; }
@@ -37,10 +37,10 @@ namespace ModerationAPI
         /// Initializes a new instance of the <see cref="NewModerateModerateRequestContentImage" /> class.
         /// </summary>
         /// <param name="url">
-        /// A public URL of the image content
+        /// A public URL of the image content. Either url or data must be provided.
         /// </param>
         /// <param name="data">
-        /// Base64-encoded image data
+        /// Base64-encoded image data. Either url or data must be provided. Note: base64 images are not stored and will not appear in the review queue.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

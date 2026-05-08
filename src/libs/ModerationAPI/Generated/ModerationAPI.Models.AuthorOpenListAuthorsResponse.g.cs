@@ -13,7 +13,7 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.AuthorOpenListAuthorsResponseAuthor> Authors { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> Authors { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuthorOpenListAuthorsResponse(
-            global::System.Collections.Generic.IList<global::ModerationAPI.AuthorOpenListAuthorsResponseAuthor> authors,
+            global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> authors,
             global::ModerationAPI.AuthorOpenListAuthorsResponsePagination pagination)
         {
             this.Authors = authors ?? throw new global::System.ArgumentNullException(nameof(authors));
