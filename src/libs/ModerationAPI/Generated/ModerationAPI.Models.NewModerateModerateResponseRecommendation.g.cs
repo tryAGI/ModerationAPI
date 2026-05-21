@@ -24,6 +24,12 @@ namespace ModerationAPI
         public required global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode> ReasonCodes { get; set; }
 
         /// <summary>
+        /// Rules that matched during evaluation, if rules engine is active.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("matched_rules")]
+        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>? MatchedRules { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +44,20 @@ namespace ModerationAPI
         /// <param name="reasonCodes">
         /// The reason code for the recommendation. Can be used to display a reason to the user.
         /// </param>
+        /// <param name="matchedRules">
+        /// Rules that matched during evaluation, if rules engine is active.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NewModerateModerateResponseRecommendation(
             global::ModerationAPI.NewModerateModerateResponseRecommendationAction action,
-            global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode> reasonCodes)
+            global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode> reasonCodes,
+            global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>? matchedRules)
         {
             this.Action = action;
             this.ReasonCodes = reasonCodes ?? throw new global::System.ArgumentNullException(nameof(reasonCodes));
+            this.MatchedRules = matchedRules;
         }
 
         /// <summary>

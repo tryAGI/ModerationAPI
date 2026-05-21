@@ -19,6 +19,18 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        RuleDefault,
+        /// <summary>
+        /// 
+        /// </summary>
+        RuleFallback,
+        /// <summary>
+        /// 
+        /// </summary>
+        RuleMatch,
+        /// <summary>
+        /// 
+        /// </summary>
         SeverityReject,
         /// <summary>
         /// 
@@ -48,6 +60,9 @@ namespace ModerationAPI
             {
                 NewModerateModerateResponseRecommendationReasonCode.AuthorBlock => "author_block",
                 NewModerateModerateResponseRecommendationReasonCode.DryRun => "dry_run",
+                NewModerateModerateResponseRecommendationReasonCode.RuleDefault => "rule_default",
+                NewModerateModerateResponseRecommendationReasonCode.RuleFallback => "rule_fallback",
+                NewModerateModerateResponseRecommendationReasonCode.RuleMatch => "rule_match",
                 NewModerateModerateResponseRecommendationReasonCode.SeverityReject => "severity_reject",
                 NewModerateModerateResponseRecommendationReasonCode.SeverityReview => "severity_review",
                 NewModerateModerateResponseRecommendationReasonCode.TrustedAllow => "trusted_allow",
@@ -64,6 +79,9 @@ namespace ModerationAPI
             {
                 "author_block" => NewModerateModerateResponseRecommendationReasonCode.AuthorBlock,
                 "dry_run" => NewModerateModerateResponseRecommendationReasonCode.DryRun,
+                "rule_default" => NewModerateModerateResponseRecommendationReasonCode.RuleDefault,
+                "rule_fallback" => NewModerateModerateResponseRecommendationReasonCode.RuleFallback,
+                "rule_match" => NewModerateModerateResponseRecommendationReasonCode.RuleMatch,
                 "severity_reject" => NewModerateModerateResponseRecommendationReasonCode.SeverityReject,
                 "severity_review" => NewModerateModerateResponseRecommendationReasonCode.SeverityReview,
                 "trusted_allow" => NewModerateModerateResponseRecommendationReasonCode.TrustedAllow,

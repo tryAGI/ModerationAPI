@@ -41,7 +41,7 @@ namespace ModerationAPI
         /// const author = await client.authors.update('id');<br/>
         /// console.log(author.id);
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenUpdateResponse> AuthorOpenUpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenUpdateAsync(
             string id,
 
             global::ModerationAPI.AuthorOpenUpdateRequest request,
@@ -323,7 +323,7 @@ namespace ModerationAPI
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::ModerationAPI.AuthorOpenUpdateResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::ModerationAPI.PublicAuthor.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -354,7 +354,7 @@ namespace ModerationAPI
                     ).ConfigureAwait(false);
 
                     return
-                        await global::ModerationAPI.AuthorOpenUpdateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::ModerationAPI.PublicAuthor.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -405,6 +405,9 @@ namespace ModerationAPI
         /// <param name="email">
         /// Author email address
         /// </param>
+        /// <param name="company">
+        /// The author's company or organization
+        /// </param>
         /// <param name="metadata">
         /// Additional metadata provided by your system. We recommend including any relevant information that may assist in the moderation process.
         /// </param>
@@ -417,12 +420,13 @@ namespace ModerationAPI
         /// <param name="manualTrustLevel"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenUpdateResponse> AuthorOpenUpdateAsync(
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenUpdateAsync(
             string id,
             string? profilePicture = default,
             string? externalLink = default,
             string? name = default,
             string? email = default,
+            string? company = default,
             global::ModerationAPI.AuthorOpenUpdateRequestMetadata? metadata = default,
             double? firstSeen = default,
             double? lastSeen = default,
@@ -435,6 +439,7 @@ namespace ModerationAPI
                 ExternalLink = externalLink,
                 Name = name,
                 Email = email,
+                Company = company,
                 Metadata = metadata,
                 FirstSeen = firstSeen,
                 LastSeen = lastSeen,
