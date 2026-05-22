@@ -9,6 +9,7 @@ namespace ModerationAPI
         /// Execute a moderation action on one or more content items.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,28 @@ namespace ModerationAPI
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsExecuteResponse> ActionsExecuteAsync(
 
             global::ModerationAPI.ActionsExecuteRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Execute moderation action<br/>
+        /// Execute a moderation action on one or more content items.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import ModerationAPI from '@moderation-api/sdk';<br/>
+        /// const client = new ModerationAPI({<br/>
+        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
+        /// });<br/>
+        /// const response = await client.actions.execute.execute({ actionKey: 'actionKey' });<br/>
+        /// console.log(response.success);
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsExecuteResponse>> ActionsExecuteAsResponseAsync(
+
+            global::ModerationAPI.ActionsExecuteRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute moderation action<br/>
@@ -45,6 +68,7 @@ namespace ModerationAPI
         /// <param name="duration">
         /// Optional duration in milliseconds for actions with timeouts
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsExecuteResponse> ActionsExecuteAsync(
@@ -54,6 +78,7 @@ namespace ModerationAPI
             string? value = default,
             string? queueId = default,
             double? duration = default,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

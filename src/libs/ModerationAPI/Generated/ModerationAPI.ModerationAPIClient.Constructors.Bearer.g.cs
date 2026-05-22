@@ -6,6 +6,7 @@ namespace ModerationAPI
     public sealed partial class ModerationAPIClient
     {
         /// <inheritdoc cref="ModerationAPIClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::ModerationAPI.EndPointAuthorization}?, bool)"/>
+
         public ModerationAPIClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
@@ -25,5 +26,6 @@ namespace ModerationAPI
             ref string apiKey);
         partial void Authorized(
             global::System.Net.Http.HttpClient client);
+
     }
 }

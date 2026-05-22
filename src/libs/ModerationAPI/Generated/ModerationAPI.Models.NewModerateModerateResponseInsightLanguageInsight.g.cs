@@ -69,5 +69,18 @@ namespace ModerationAPI
         public NewModerateModerateResponseInsightLanguageInsight()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateResponseInsightLanguageInsight"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateResponseInsightLanguageInsight FromProbability(double probability)
+        {
+            return new NewModerateModerateResponseInsightLanguageInsight
+            {
+                Probability = probability,
+            };
+        }
+
     }
 }

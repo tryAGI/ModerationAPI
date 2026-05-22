@@ -69,5 +69,6 @@ namespace ModerationAPI
         public QueueViewOpenGetQueueResponseQueueFilterFilterLabel()
         {
         }
+
     }
 }

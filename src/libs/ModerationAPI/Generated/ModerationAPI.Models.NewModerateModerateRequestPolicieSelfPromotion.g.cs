@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieSelfPromotion()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieSelfPromotion"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieSelfPromotion FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieSelfPromotion
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

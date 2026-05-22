@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieCannabis()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieCannabis"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieCannabis FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieCannabis
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

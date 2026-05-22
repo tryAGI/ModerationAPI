@@ -58,5 +58,6 @@ namespace ModerationAPI
         public PublicQueueItemEvent()
         {
         }
+
     }
 }

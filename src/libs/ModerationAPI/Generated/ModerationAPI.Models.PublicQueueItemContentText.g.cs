@@ -52,5 +52,18 @@ namespace ModerationAPI
         public PublicQueueItemContentText()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PublicQueueItemContentText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PublicQueueItemContentText FromText(string text)
+        {
+            return new PublicQueueItemContentText
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieSelfHarm()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieSelfHarm"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieSelfHarm FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieSelfHarm
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

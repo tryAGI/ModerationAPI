@@ -50,5 +50,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieUrlMasking()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieUrlMasking"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieUrlMasking FromEntities(global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMaskingEntities2> entities)
+        {
+            return new NewModerateModerateRequestPolicieUrlMasking
+            {
+                Entities = entities,
+            };
+        }
+
     }
 }

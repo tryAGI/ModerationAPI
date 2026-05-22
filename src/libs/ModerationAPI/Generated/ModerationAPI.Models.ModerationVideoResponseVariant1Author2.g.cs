@@ -87,5 +87,6 @@ namespace ModerationAPI
         public ModerationVideoResponseVariant1Author2()
         {
         }
+
     }
 }

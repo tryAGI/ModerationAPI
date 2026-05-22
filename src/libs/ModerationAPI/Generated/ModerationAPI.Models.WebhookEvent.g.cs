@@ -32,6 +32,26 @@ namespace ModerationAPI
         public bool IsAuthorBlocked => AuthorBlocked != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorBlocked(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorBlockedEvent? value)
+        {
+            value = AuthorBlocked;
+            return IsAuthorBlocked;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorBlockedEvent PickAuthorBlocked() => IsAuthorBlocked
+            ? AuthorBlocked!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorBlocked' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.unblocked","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_unblock_789","key":"auto_unblock","name":"Auto unblock","value":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","created_at":"2026-05-09T12:39:00.000Z","author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":0,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorUnblocked))]
 #endif
         public bool IsAuthorUnblocked => AuthorUnblocked != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorUnblocked(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorUnblockedEvent? value)
+        {
+            value = AuthorUnblocked;
+            return IsAuthorUnblocked;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorUnblockedEvent PickAuthorUnblocked() => IsAuthorUnblocked
+            ? AuthorUnblocked!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorUnblocked' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.suspended","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_suspend_456","key":"suspend_24h","name":"Suspend (24h)","value":"24h","created_at":"2026-05-08T12:39:00.000Z","author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"suspended","trust_level":{"level":0,"manual":false},"block":{"until":1746878400000,"reason":"Cooling-off period"},"risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
@@ -66,6 +106,26 @@ namespace ModerationAPI
         public bool IsAuthorSuspended => AuthorSuspended != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorSuspended(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorSuspendedEvent? value)
+        {
+            value = AuthorSuspended;
+            return IsAuthorSuspended;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorSuspendedEvent PickAuthorSuspended() => IsAuthorSuspended
+            ? AuthorSuspended!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorSuspended' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.updated","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorUpdated))]
 #endif
         public bool IsAuthorUpdated => AuthorUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorUpdatedEvent? value)
+        {
+            value = AuthorUpdated;
+            return IsAuthorUpdated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorUpdatedEvent PickAuthorUpdated() => IsAuthorUpdated
+            ? AuthorUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorUpdated' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.trust_level_changed","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":3,"manual":true},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}
@@ -100,6 +180,26 @@ namespace ModerationAPI
         public bool IsAuthorTrustLevelChanged => AuthorTrustLevelChanged != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorTrustLevelChanged(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorTrustLevelChangedEvent? value)
+        {
+            value = AuthorTrustLevelChanged;
+            return IsAuthorTrustLevelChanged;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorTrustLevelChangedEvent PickAuthorTrustLevelChanged() => IsAuthorTrustLevelChanged
+            ? AuthorTrustLevelChanged!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorTrustLevelChanged' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.action","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_warn_111","key":"send_warning","name":"Send warning email","value":"violation_notice","created_at":"2026-05-08T12:42:00.000Z","author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -115,6 +215,26 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorAction))]
 #endif
         public bool IsAuthorAction => AuthorAction != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthorAction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.AuthorActionEvent? value)
+        {
+            value = AuthorAction;
+            return IsAuthorAction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.AuthorActionEvent PickAuthorAction() => IsAuthorAction
+            ? AuthorAction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorAction' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"queue_item.resolved","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"item":{"id":"item_xyz789","flagged":true,"labels":[{"label":"spam/SPAM","score":0.94,"flagged":true,"manual":false}],"language":"en","content":{"type":"text","text":"Buy crypto now!"},"timestamp":"2026-05-08T12:34:56.789Z","metadata":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","conversation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","author_id":"user-555","channel_key":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","meta_type":"comment"},"author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"blocked","trust_level":{"level":-1,"manual":false},"block":{"until":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","reason":"Repeated spam violations"},"risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}},"queue":{"id":"que_abc123"}}}}
@@ -134,6 +254,26 @@ namespace ModerationAPI
         public bool IsQueueItemResolved => QueueItemResolved != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueueItemResolved(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.QueueItemCompletedEvent? value)
+        {
+            value = QueueItemResolved;
+            return IsQueueItemResolved;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.QueueItemCompletedEvent PickQueueItemResolved() => IsQueueItemResolved
+            ? QueueItemResolved!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemResolved' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"queue_item.action","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_99999","key":"shadow_ban","name":"Shadow ban","value":"24h","created_at":"2026-05-08T12:36:00.000Z","queue":{"id":"que_abc123"},"item":{"id":"item_xyz791","flagged":true,"labels":[{"label":"spam/SPAM","score":0.94,"flagged":true,"manual":false}],"language":"en","content":{"type":"text","text":"Buy crypto now!"},"timestamp":"2026-05-08T12:34:56.789Z","metadata":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","conversation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","author_id":"user-555","channel_key":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","meta_type":"comment"},"author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -149,6 +289,26 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemAction))]
 #endif
         public bool IsQueueItemAction => QueueItemAction != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueueItemAction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.QueueItemActionEvent? value)
+        {
+            value = QueueItemAction;
+            return IsQueueItemAction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.QueueItemActionEvent PickQueueItemAction() => IsQueueItemAction
+            ? QueueItemAction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemAction' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"queue_item.rejected","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_67890","key":"reject","name":"Reject","value":"spam","created_at":"2026-05-08T12:34:56.789Z","queue":{"id":"que_abc123"},"item":{"id":"item_xyz789","flagged":true,"labels":[{"label":"spam/SPAM","score":0.94,"flagged":true,"manual":false}],"language":"en","content":{"type":"text","text":"Buy crypto now!"},"timestamp":"2026-05-08T12:34:56.789Z","metadata":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","conversation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","author_id":"user-555","channel_key":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","meta_type":"comment"},"author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
@@ -168,6 +328,26 @@ namespace ModerationAPI
         public bool IsQueueItemRejected => QueueItemRejected != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueueItemRejected(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.QueueItemRejectedEvent? value)
+        {
+            value = QueueItemRejected;
+            return IsQueueItemRejected;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.QueueItemRejectedEvent PickQueueItemRejected() => IsQueueItemRejected
+            ? QueueItemRejected!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemRejected' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"queue_item.allowed","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"act_11111","key":"allow","name":"Allow","value":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","created_at":"2026-05-08T12:35:10.123Z","queue":{"id":"que_abc123"},"item":{"id":"item_xyz790","flagged":false,"labels":[],"language":"en","content":{"type":"text","text":"Buy crypto now!"},"timestamp":"2026-05-08T12:34:56.789Z","metadata":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","conversation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","author_id":"user-555","channel_key":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","meta_type":"comment"},"author":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -183,6 +363,26 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemAllowed))]
 #endif
         public bool IsQueueItemAllowed => QueueItemAllowed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueueItemAllowed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ModerationAPI.QueueItemAllowedEvent? value)
+        {
+            value = QueueItemAllowed;
+            return IsQueueItemAllowed;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ModerationAPI.QueueItemAllowedEvent PickQueueItemAllowed() => IsQueueItemAllowed
+            ? QueueItemAllowed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemAllowed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -200,6 +400,11 @@ namespace ModerationAPI
         {
             AuthorBlocked = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookEvent FromAuthorBlocked(global::ModerationAPI.AuthorBlockedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
         /// 
@@ -222,6 +427,11 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookEvent FromAuthorUnblocked(global::ModerationAPI.AuthorUnblockedEvent? value) => new WebhookEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorSuspendedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorSuspendedEvent?)value);
 
         /// <summary>
@@ -236,6 +446,11 @@ namespace ModerationAPI
         {
             AuthorSuspended = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookEvent FromAuthorSuspended(global::ModerationAPI.AuthorSuspendedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
         /// 
@@ -258,6 +473,11 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookEvent FromAuthorUpdated(global::ModerationAPI.AuthorUpdatedEvent? value) => new WebhookEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorTrustLevelChangedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorTrustLevelChangedEvent?)value);
 
         /// <summary>
@@ -272,6 +492,11 @@ namespace ModerationAPI
         {
             AuthorTrustLevelChanged = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookEvent FromAuthorTrustLevelChanged(global::ModerationAPI.AuthorTrustLevelChangedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
         /// 
@@ -294,6 +519,11 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookEvent FromAuthorAction(global::ModerationAPI.AuthorActionEvent? value) => new WebhookEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemCompletedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemCompletedEvent?)value);
 
         /// <summary>
@@ -308,6 +538,11 @@ namespace ModerationAPI
         {
             QueueItemResolved = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookEvent FromQueueItemResolved(global::ModerationAPI.QueueItemCompletedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
         /// 
@@ -330,6 +565,11 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookEvent FromQueueItemAction(global::ModerationAPI.QueueItemActionEvent? value) => new WebhookEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemRejectedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemRejectedEvent?)value);
 
         /// <summary>
@@ -348,6 +588,11 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookEvent FromQueueItemRejected(global::ModerationAPI.QueueItemRejectedEvent? value) => new WebhookEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemAllowedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemAllowedEvent?)value);
 
         /// <summary>
@@ -362,6 +607,11 @@ namespace ModerationAPI
         {
             QueueItemAllowed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookEvent FromQueueItemAllowed(global::ModerationAPI.QueueItemAllowedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
         /// 
@@ -438,16 +688,16 @@ namespace ModerationAPI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::ModerationAPI.AuthorBlockedEvent?, TResult>? authorBlocked = null,
-            global::System.Func<global::ModerationAPI.AuthorUnblockedEvent?, TResult>? authorUnblocked = null,
-            global::System.Func<global::ModerationAPI.AuthorSuspendedEvent?, TResult>? authorSuspended = null,
-            global::System.Func<global::ModerationAPI.AuthorUpdatedEvent?, TResult>? authorUpdated = null,
-            global::System.Func<global::ModerationAPI.AuthorTrustLevelChangedEvent?, TResult>? authorTrustLevelChanged = null,
-            global::System.Func<global::ModerationAPI.AuthorActionEvent?, TResult>? authorAction = null,
-            global::System.Func<global::ModerationAPI.QueueItemCompletedEvent?, TResult>? queueItemResolved = null,
-            global::System.Func<global::ModerationAPI.QueueItemActionEvent?, TResult>? queueItemAction = null,
-            global::System.Func<global::ModerationAPI.QueueItemRejectedEvent?, TResult>? queueItemRejected = null,
-            global::System.Func<global::ModerationAPI.QueueItemAllowedEvent?, TResult>? queueItemAllowed = null,
+            global::System.Func<global::ModerationAPI.AuthorBlockedEvent, TResult>? authorBlocked = null,
+            global::System.Func<global::ModerationAPI.AuthorUnblockedEvent, TResult>? authorUnblocked = null,
+            global::System.Func<global::ModerationAPI.AuthorSuspendedEvent, TResult>? authorSuspended = null,
+            global::System.Func<global::ModerationAPI.AuthorUpdatedEvent, TResult>? authorUpdated = null,
+            global::System.Func<global::ModerationAPI.AuthorTrustLevelChangedEvent, TResult>? authorTrustLevelChanged = null,
+            global::System.Func<global::ModerationAPI.AuthorActionEvent, TResult>? authorAction = null,
+            global::System.Func<global::ModerationAPI.QueueItemCompletedEvent, TResult>? queueItemResolved = null,
+            global::System.Func<global::ModerationAPI.QueueItemActionEvent, TResult>? queueItemAction = null,
+            global::System.Func<global::ModerationAPI.QueueItemRejectedEvent, TResult>? queueItemRejected = null,
+            global::System.Func<global::ModerationAPI.QueueItemAllowedEvent, TResult>? queueItemAllowed = null,
             bool validate = true)
         {
             if (validate)
@@ -503,16 +753,88 @@ namespace ModerationAPI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::ModerationAPI.AuthorBlockedEvent?>? authorBlocked = null,
-            global::System.Action<global::ModerationAPI.AuthorUnblockedEvent?>? authorUnblocked = null,
-            global::System.Action<global::ModerationAPI.AuthorSuspendedEvent?>? authorSuspended = null,
-            global::System.Action<global::ModerationAPI.AuthorUpdatedEvent?>? authorUpdated = null,
-            global::System.Action<global::ModerationAPI.AuthorTrustLevelChangedEvent?>? authorTrustLevelChanged = null,
-            global::System.Action<global::ModerationAPI.AuthorActionEvent?>? authorAction = null,
-            global::System.Action<global::ModerationAPI.QueueItemCompletedEvent?>? queueItemResolved = null,
-            global::System.Action<global::ModerationAPI.QueueItemActionEvent?>? queueItemAction = null,
-            global::System.Action<global::ModerationAPI.QueueItemRejectedEvent?>? queueItemRejected = null,
-            global::System.Action<global::ModerationAPI.QueueItemAllowedEvent?>? queueItemAllowed = null,
+            global::System.Action<global::ModerationAPI.AuthorBlockedEvent>? authorBlocked = null,
+
+            global::System.Action<global::ModerationAPI.AuthorUnblockedEvent>? authorUnblocked = null,
+
+            global::System.Action<global::ModerationAPI.AuthorSuspendedEvent>? authorSuspended = null,
+
+            global::System.Action<global::ModerationAPI.AuthorUpdatedEvent>? authorUpdated = null,
+
+            global::System.Action<global::ModerationAPI.AuthorTrustLevelChangedEvent>? authorTrustLevelChanged = null,
+
+            global::System.Action<global::ModerationAPI.AuthorActionEvent>? authorAction = null,
+
+            global::System.Action<global::ModerationAPI.QueueItemCompletedEvent>? queueItemResolved = null,
+
+            global::System.Action<global::ModerationAPI.QueueItemActionEvent>? queueItemAction = null,
+
+            global::System.Action<global::ModerationAPI.QueueItemRejectedEvent>? queueItemRejected = null,
+
+            global::System.Action<global::ModerationAPI.QueueItemAllowedEvent>? queueItemAllowed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuthorBlocked)
+            {
+                authorBlocked?.Invoke(AuthorBlocked!);
+            }
+            else if (IsAuthorUnblocked)
+            {
+                authorUnblocked?.Invoke(AuthorUnblocked!);
+            }
+            else if (IsAuthorSuspended)
+            {
+                authorSuspended?.Invoke(AuthorSuspended!);
+            }
+            else if (IsAuthorUpdated)
+            {
+                authorUpdated?.Invoke(AuthorUpdated!);
+            }
+            else if (IsAuthorTrustLevelChanged)
+            {
+                authorTrustLevelChanged?.Invoke(AuthorTrustLevelChanged!);
+            }
+            else if (IsAuthorAction)
+            {
+                authorAction?.Invoke(AuthorAction!);
+            }
+            else if (IsQueueItemResolved)
+            {
+                queueItemResolved?.Invoke(QueueItemResolved!);
+            }
+            else if (IsQueueItemAction)
+            {
+                queueItemAction?.Invoke(QueueItemAction!);
+            }
+            else if (IsQueueItemRejected)
+            {
+                queueItemRejected?.Invoke(QueueItemRejected!);
+            }
+            else if (IsQueueItemAllowed)
+            {
+                queueItemAllowed?.Invoke(QueueItemAllowed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::ModerationAPI.AuthorBlockedEvent>? authorBlocked = null,
+            global::System.Action<global::ModerationAPI.AuthorUnblockedEvent>? authorUnblocked = null,
+            global::System.Action<global::ModerationAPI.AuthorSuspendedEvent>? authorSuspended = null,
+            global::System.Action<global::ModerationAPI.AuthorUpdatedEvent>? authorUpdated = null,
+            global::System.Action<global::ModerationAPI.AuthorTrustLevelChangedEvent>? authorTrustLevelChanged = null,
+            global::System.Action<global::ModerationAPI.AuthorActionEvent>? authorAction = null,
+            global::System.Action<global::ModerationAPI.QueueItemCompletedEvent>? queueItemResolved = null,
+            global::System.Action<global::ModerationAPI.QueueItemActionEvent>? queueItemAction = null,
+            global::System.Action<global::ModerationAPI.QueueItemRejectedEvent>? queueItemRejected = null,
+            global::System.Action<global::ModerationAPI.QueueItemAllowedEvent>? queueItemAllowed = null,
             bool validate = true)
         {
             if (validate)

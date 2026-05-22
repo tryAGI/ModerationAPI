@@ -1,0 +1,268 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "POST /moderate",
+      "Slug": "newmoderate-moderate",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### POST /moderate\n# @name newModerate-moderate\nPOST {{host}}/moderate\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022content\u0022: {\n    \u0022type\u0022: \u0022string\u0022,\n    \u0022text\u0022: \u0022string\u0022\n  },\n  \u0022timestamp\u0022: 0,\n  \u0022channel\u0022: \u0022string\u0022,\n  \u0022contentId\u0022: \u0022string\u0022,\n  \u0022metaType\u0022: \u0022profile\u0022,\n  \u0022authorId\u0022: \u0022string\u0022,\n  \u0022conversationId\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {},\n  \u0022doNotStore\u0022: true,\n  \u0022policies\u0022: [\n    {\n      \u0022flag\u0022: true,\n      \u0022threshold\u0022: 0,\n      \u0022id\u0022: \u0022string\u0022\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "newModerate-moderate",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Get account details",
+      "Slug": "account-get",
+      "Description": "Get account details",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Account.AccountGetAsync();",
+      "Format": "sdk",
+      "OperationId": "account-get",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 3,
+      "Title": "Create an action",
+      "Slug": "actions-create",
+      "Description": "Create an action.",
+      "Language": "http",
+      "Code": "### Create an action\n# @name actions-create\nPOST {{host}}/actions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022key\u0022: \u0022string\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022type\u0022: \u0022AUTHOR_BLOCK\u0022,\n  \u0022builtIn\u0022: false,\n  \u0022queueBehaviour\u0022: \u0022NO_CHANGE\u0022,\n  \u0022filterInQueueIds\u0022: [],\n  \u0022position\u0022: \u0022ALL_QUEUES\u0022,\n  \u0022possibleValues\u0022: [],\n  \u0022valueRequired\u0022: false,\n  \u0022freeText\u0022: false\n}\n\n## Responses\n# 200\n# Description: Action created successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 409\n# Description: Action with this key already exists\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "actions-create",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Delete an action",
+      "Slug": "actions-delete",
+      "Description": "Delete an action and all of its webhooks.",
+      "Language": "http",
+      "Code": "### Delete an action\n# @name actions-delete\nDELETE {{host}}/actions/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Action deleted successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "actions-delete",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "Execute moderation action",
+      "Slug": "actions-execute",
+      "Description": "Execute a moderation action on one or more content items.",
+      "Language": "http",
+      "Code": "### Execute moderation action\n# @name actions-execute\nPOST {{host}}/actions/execute\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022actionKey\u0022: \u0022string\u0022,\n  \u0022contentIds\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022authorIds\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022value\u0022: \u0022string\u0022,\n  \u0022queueId\u0022: \u0022string\u0022,\n  \u0022duration\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Action executed successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "actions-execute",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Get an action",
+      "Slug": "actions-get",
+      "Description": "Get an action by ID.",
+      "Language": "http",
+      "Code": "### Get an action\n# @name actions-get\nGET {{host}}/actions/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Action retrieved successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "actions-get",
+      "Setup": null
+    },
+    {
+      "Order": 7,
+      "Title": "List moderation actions",
+      "Slug": "actions-list",
+      "Description": "List all available moderation actions for the authenticated organization.",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Actions.ActionsListAsync();",
+      "Format": "sdk",
+      "OperationId": "actions-list",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 8,
+      "Title": "Update an action",
+      "Slug": "actions-update",
+      "Description": "Update an action.",
+      "Language": "http",
+      "Code": "### Update an action\n# @name actions-update\nPUT {{host}}/actions/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022key\u0022: \u0022string\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022type\u0022: \u0022AUTHOR_BLOCK\u0022,\n  \u0022builtIn\u0022: false,\n  \u0022queueBehaviour\u0022: \u0022NO_CHANGE\u0022,\n  \u0022filterInQueueIds\u0022: [],\n  \u0022position\u0022: \u0022ALL_QUEUES\u0022,\n  \u0022possibleValues\u0022: [],\n  \u0022valueRequired\u0022: false,\n  \u0022freeText\u0022: false\n}\n\n## Responses\n# 200\n# Description: Action updated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 409\n# Description: Action with this key already exists\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "actions-update",
+      "Setup": null
+    },
+    {
+      "Order": 9,
+      "Title": "Delete an author",
+      "Slug": "author-delete",
+      "Description": "Delete a specific author",
+      "Language": "http",
+      "Code": "### Delete an author\n# @name author-delete\nDELETE {{host}}/authors/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "author-delete",
+      "Setup": null
+    },
+    {
+      "Order": 10,
+      "Title": "Create a new author",
+      "Slug": "author-opencreate",
+      "Description": "Create a new author. Typically not needed as authors are created automatically when content is moderated.",
+      "Language": "http",
+      "Code": "### Create a new author\n# @name author-openCreate\nPOST {{host}}/authors\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022profile_picture\u0022: \u0022https://example.com\u0022,\n  \u0022external_link\u0022: \u0022https://example.com\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022email\u0022: \u0022user@example.com\u0022,\n  \u0022company\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {\n    \u0022email_verified\u0022: true,\n    \u0022phone_verified\u0022: true,\n    \u0022identity_verified\u0022: true,\n    \u0022is_paying_customer\u0022: true\n  },\n  \u0022first_seen\u0022: 0,\n  \u0022last_seen\u0022: 0,\n  \u0022manual_trust_level\u0022: 0,\n  \u0022external_id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "author-openCreate",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "Get author details",
+      "Slug": "author-opengetauthordetails",
+      "Description": "Get detailed information about a specific author including historical data and analysis",
+      "Language": "http",
+      "Code": "### Get author details\n# @name author-openGetAuthorDetails\nGET {{host}}/authors/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "author-openGetAuthorDetails",
+      "Setup": null
+    },
+    {
+      "Order": 12,
+      "Title": "List authors",
+      "Slug": "author-openlistauthors",
+      "Description": "Get a paginated list of authors with their activity metrics and reputation",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Author.AuthorOpenListAuthorsAsync();",
+      "Format": "sdk",
+      "OperationId": "author-openListAuthors",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 13,
+      "Title": "Update author details",
+      "Slug": "author-openupdate",
+      "Description": "Update the details of a specific author",
+      "Language": "http",
+      "Code": "### Update author details\n# @name author-openUpdate\nPUT {{host}}/authors/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022profile_picture\u0022: \u0022https://example.com\u0022,\n  \u0022external_link\u0022: \u0022https://example.com\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022email\u0022: \u0022user@example.com\u0022,\n  \u0022company\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {\n    \u0022email_verified\u0022: true,\n    \u0022phone_verified\u0022: true,\n    \u0022identity_verified\u0022: true,\n    \u0022is_paying_customer\u0022: true\n  },\n  \u0022first_seen\u0022: 0,\n  \u0022last_seen\u0022: 0,\n  \u0022manual_trust_level\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "author-openUpdate",
+      "Setup": null
+    },
+    {
+      "Order": 14,
+      "Title": "Get queue items",
+      "Slug": "queueview-opengetitems",
+      "Description": "Get paginated list of items in a moderation queue with filtering options",
+      "Language": "http",
+      "Code": "### Get queue items\n# @name queueView-openGetItems\nGET {{host}}/queue/{{id}}/items?pageSize=20\u0026pageNumber=1\u0026sortField=createdAt\u0026sortDirection=desc\u0026conversationIds={{conversationIds}}\u0026labels={{labels}}\u0026afterDate={{afterDate}}\u0026beforeDate={{beforeDate}}\u0026includeResolved={{includeResolved}}\u0026authorId={{authorId}}\u0026filteredActionIds={{filteredActionIds}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "queueView-openGetItems",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "Get a queue",
+      "Slug": "queueview-opengetqueue",
+      "Description": "Get a queue",
+      "Language": "http",
+      "Code": "### Get a queue\n# @name queueView-openGetQueue\nGET {{host}}/queue/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "queueView-openGetQueue",
+      "Setup": null
+    },
+    {
+      "Order": 16,
+      "Title": "Get queue statistics",
+      "Slug": "queueview-opengetstats",
+      "Description": "Get detailed statistics about a moderation queue including review times, action counts, and trends",
+      "Language": "http",
+      "Code": "### Get queue statistics\n# @name queueView-openGetStats\nGET {{host}}/queue/{{id}}/stats?withinDays=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "queueView-openGetStats",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "Resolve a queue item",
+      "Slug": "queueview-openresolveitem",
+      "Description": "Mark a queue item as resolved with a specific moderation action",
+      "Language": "http",
+      "Code": "### Resolve a queue item\n# @name queueView-openResolveItem\nPOST {{host}}/queue/{{id}}/items/{{itemId}}/resolve\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022comment\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "queueView-openResolveItem",
+      "Setup": null
+    },
+    {
+      "Order": 18,
+      "Title": "Unresolve a queue item",
+      "Slug": "queueview-openunresolveitem",
+      "Description": "Mark a previously resolved queue item as unresolved/pending",
+      "Language": "http",
+      "Code": "### Unresolve a queue item\n# @name queueView-openUnresolveItem\nPOST {{host}}/queue/{{id}}/items/{{itemId}}/unresolve\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022comment\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "queueView-openUnresolveItem",
+      "Setup": null
+    },
+    {
+      "Order": 19,
+      "Title": "Add words to wordlist",
+      "Slug": "wordlist-addwords",
+      "Description": "Add words to an existing wordlist",
+      "Language": "http",
+      "Code": "### Add words to wordlist\n# @name wordlist-addWords\nPOST {{host}}/wordlist/{{id}}/words\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022words\u0022: [\n    \u0022string\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Words successfully added to wordlist\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "wordlist-addWords",
+      "Setup": null
+    },
+    {
+      "Order": 20,
+      "Title": "Get wordlist",
+      "Slug": "wordlist-getwordlistpublic",
+      "Description": "Get a specific wordlist by ID",
+      "Language": "http",
+      "Code": "### Get wordlist\n# @name wordlist-getWordlistPublic\nGET {{host}}/wordlist/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "wordlist-getWordlistPublic",
+      "Setup": null
+    },
+    {
+      "Order": 21,
+      "Title": "List wordlists",
+      "Slug": "wordlist-list",
+      "Description": "List all wordlists for the authenticated organization",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Wordlist.WordlistListAsync();",
+      "Format": "sdk",
+      "OperationId": "wordlist-list",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 22,
+      "Title": "Remove words from wordlist",
+      "Slug": "wordlist-removewords",
+      "Description": "Remove words from an existing wordlist",
+      "Language": "http",
+      "Code": "### Remove words from wordlist\n# @name wordlist-removeWords\nDELETE {{host}}/wordlist/{{id}}/words?words={{words}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Words successfully removed from wordlist\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "wordlist-removeWords",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Update wordlist",
+      "Slug": "wordlist-update",
+      "Description": "Update a wordlist",
+      "Language": "http",
+      "Code": "### Update wordlist\n# @name wordlist-update\nPUT {{host}}/wordlist/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022key\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022words\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022strict\u0022: true\n}\n\n## Responses\n# 200\n# Description: Wordlist updated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "wordlist-update",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "Get embedding status",
+      "Slug": "wordlist-wordlistembeddingstatus",
+      "Description": "Get the current embedding progress status for a wordlist",
+      "Language": "http",
+      "Code": "### Get embedding status\n# @name wordlist-wordlistEmbeddingStatus\nGET {{host}}/wordlist/{{id}}/embedding-status\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "wordlist-wordlistEmbeddingStatus",
+      "Setup": null
+    }
+  ]
+}

@@ -105,5 +105,6 @@ namespace ModerationAPI
         public ModerationTextResponseVariant1ToxicityLabelScores()
         {
         }
+
     }
 }

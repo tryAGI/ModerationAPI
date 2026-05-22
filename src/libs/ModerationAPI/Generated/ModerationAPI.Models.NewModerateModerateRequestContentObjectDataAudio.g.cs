@@ -52,5 +52,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestContentObjectDataAudio()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestContentObjectDataAudio"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestContentObjectDataAudio FromUrl(string url)
+        {
+            return new NewModerateModerateRequestContentObjectDataAudio
+            {
+                Url = url,
+            };
+        }
+
     }
 }

@@ -52,5 +52,18 @@ namespace ModerationAPI
         public NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo FromUrl(string url)
+        {
+            return new NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo
+            {
+                Url = url,
+            };
+        }
+
     }
 }

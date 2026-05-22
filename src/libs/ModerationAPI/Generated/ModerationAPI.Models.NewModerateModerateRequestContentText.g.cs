@@ -52,5 +52,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestContentText()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestContentText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestContentText FromText(string text)
+        {
+            return new NewModerateModerateRequestContentText
+            {
+                Text = text,
+            };
+        }
+
     }
 }

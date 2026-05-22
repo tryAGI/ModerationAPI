@@ -60,5 +60,6 @@ namespace ModerationAPI
         public NewModerateModerateResponsePolicieClassifierOutputLabel()
         {
         }
+
     }
 }

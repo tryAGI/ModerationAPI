@@ -50,5 +50,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPoliciePiiMasking()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPoliciePiiMasking"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPoliciePiiMasking FromEntities(global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMaskingEntities2> entities)
+        {
+            return new NewModerateModerateRequestPoliciePiiMasking
+            {
+                Entities = entities,
+            };
+        }
+
     }
 }

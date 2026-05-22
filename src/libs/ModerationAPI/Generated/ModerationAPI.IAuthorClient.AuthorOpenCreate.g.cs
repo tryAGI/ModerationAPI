@@ -9,6 +9,7 @@ namespace ModerationAPI
         /// Create a new author. Typically not needed as authors are created automatically when content is moderated.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,28 @@ namespace ModerationAPI
         global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenCreateAsync(
 
             global::ModerationAPI.AuthorOpenCreateRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new author<br/>
+        /// Create a new author. Typically not needed as authors are created automatically when content is moderated.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import ModerationAPI from '@moderation-api/sdk';<br/>
+        /// const client = new ModerationAPI({<br/>
+        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
+        /// });<br/>
+        /// const author = await client.authors.create({ external_id: 'external_id' });<br/>
+        /// console.log(author.id);
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.PublicAuthor>> AuthorOpenCreateAsResponseAsync(
+
+            global::ModerationAPI.AuthorOpenCreateRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new author<br/>
@@ -55,6 +78,7 @@ namespace ModerationAPI
         /// <param name="externalId">
         /// External ID of the user, typically the ID of the author in your database.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenCreateAsync(
@@ -68,6 +92,7 @@ namespace ModerationAPI
             double? firstSeen = default,
             double? lastSeen = default,
             double? manualTrustLevel = default,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

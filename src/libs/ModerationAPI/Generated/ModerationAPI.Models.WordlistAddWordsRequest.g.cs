@@ -42,5 +42,6 @@ namespace ModerationAPI
         public WordlistAddWordsRequest()
         {
         }
+
     }
 }

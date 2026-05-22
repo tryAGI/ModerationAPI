@@ -52,5 +52,18 @@ namespace ModerationAPI
         public PublicQueueItemContentObject()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PublicQueueItemContentObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PublicQueueItemContentObject FromData(global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.PublicQueueItemContentObjectDataText, global::ModerationAPI.PublicQueueItemContentObjectDataImage, global::ModerationAPI.PublicQueueItemContentObjectDataVideo, global::ModerationAPI.PublicQueueItemContentObjectDataAudio>> data)
+        {
+            return new PublicQueueItemContentObject
+            {
+                Data = data,
+            };
+        }
+
     }
 }

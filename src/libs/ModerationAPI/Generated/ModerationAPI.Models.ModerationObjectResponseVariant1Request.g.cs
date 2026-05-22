@@ -54,5 +54,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1Request()
         {
         }
+
     }
 }

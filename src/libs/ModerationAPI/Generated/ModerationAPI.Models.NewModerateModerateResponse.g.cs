@@ -124,5 +124,6 @@ namespace ModerationAPI
         public NewModerateModerateResponse()
         {
         }
+
     }
 }

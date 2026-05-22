@@ -88,5 +88,6 @@ namespace ModerationAPI
         public QueueViewOpenGetItemsResponseItemAction()
         {
         }
+
     }
 }

@@ -146,5 +146,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1Wordlist()
         {
         }
+
     }
 }

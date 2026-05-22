@@ -62,5 +62,6 @@ namespace ModerationAPI
         public PublicQueueItemContentImage()
         {
         }
+
     }
 }

@@ -61,5 +61,6 @@ namespace ModerationAPI
         public ModerationTextResponseVariant1NsfwLabelScores()
         {
         }
+
     }
 }

@@ -69,5 +69,18 @@ namespace ModerationAPI
         public NewModerateModerateResponseInsightSentimentInsight()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateResponseInsightSentimentInsight"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateResponseInsightSentimentInsight FromProbability(double probability)
+        {
+            return new NewModerateModerateResponseInsightSentimentInsight
+            {
+                Probability = probability,
+            };
+        }
+
     }
 }

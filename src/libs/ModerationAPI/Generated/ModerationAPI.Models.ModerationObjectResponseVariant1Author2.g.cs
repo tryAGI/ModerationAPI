@@ -87,5 +87,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1Author2()
         {
         }
+
     }
 }

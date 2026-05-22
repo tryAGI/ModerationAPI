@@ -78,5 +78,6 @@ namespace ModerationAPI
         public QueueViewOpenGetStatsResponseActionStat()
         {
         }
+
     }
 }

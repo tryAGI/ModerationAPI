@@ -82,5 +82,6 @@ namespace ModerationAPI
         public NewModerateModerateResponseMeta()
         {
         }
+
     }
 }

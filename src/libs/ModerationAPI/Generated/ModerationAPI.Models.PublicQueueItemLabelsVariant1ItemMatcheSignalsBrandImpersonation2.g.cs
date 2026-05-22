@@ -50,5 +50,6 @@ namespace ModerationAPI
         public PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation2()
         {
         }
+
     }
 }

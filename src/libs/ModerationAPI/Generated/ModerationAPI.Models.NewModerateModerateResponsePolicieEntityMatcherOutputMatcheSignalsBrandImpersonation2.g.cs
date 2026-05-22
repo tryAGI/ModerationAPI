@@ -51,5 +51,6 @@ namespace ModerationAPI
         public NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation2()
         {
         }
+
     }
 }

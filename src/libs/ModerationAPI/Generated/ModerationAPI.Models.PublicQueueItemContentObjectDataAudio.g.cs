@@ -52,5 +52,18 @@ namespace ModerationAPI
         public PublicQueueItemContentObjectDataAudio()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PublicQueueItemContentObjectDataAudio"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PublicQueueItemContentObjectDataAudio FromUrl(string url)
+        {
+            return new PublicQueueItemContentObjectDataAudio
+            {
+                Url = url,
+            };
+        }
+
     }
 }

@@ -92,5 +92,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieUrlRisk()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieUrlRisk"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieUrlRisk FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieUrlRisk
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

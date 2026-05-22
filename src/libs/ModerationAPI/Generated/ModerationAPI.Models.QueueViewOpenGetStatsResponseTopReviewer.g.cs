@@ -101,5 +101,6 @@ namespace ModerationAPI
         public QueueViewOpenGetStatsResponseTopReviewer()
         {
         }
+
     }
 }

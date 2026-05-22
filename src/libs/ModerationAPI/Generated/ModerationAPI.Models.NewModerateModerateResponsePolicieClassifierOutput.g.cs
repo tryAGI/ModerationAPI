@@ -92,5 +92,6 @@ namespace ModerationAPI
         public NewModerateModerateResponsePolicieClassifierOutput()
         {
         }
+
     }
 }

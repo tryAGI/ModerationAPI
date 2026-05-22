@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieIllicit()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieIllicit"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieIllicit FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieIllicit
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

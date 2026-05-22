@@ -170,5 +170,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1()
         {
         }
+
     }
 }

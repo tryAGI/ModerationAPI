@@ -65,5 +65,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1Entitie()
         {
         }
+
     }
 }

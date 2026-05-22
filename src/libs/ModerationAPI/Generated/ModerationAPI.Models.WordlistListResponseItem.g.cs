@@ -86,5 +86,6 @@ namespace ModerationAPI
         public WordlistListResponseItem()
         {
         }
+
     }
 }

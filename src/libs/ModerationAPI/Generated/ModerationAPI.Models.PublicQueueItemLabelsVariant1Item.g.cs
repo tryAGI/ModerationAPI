@@ -85,5 +85,6 @@ namespace ModerationAPI
         public PublicQueueItemLabelsVariant1Item()
         {
         }
+
     }
 }

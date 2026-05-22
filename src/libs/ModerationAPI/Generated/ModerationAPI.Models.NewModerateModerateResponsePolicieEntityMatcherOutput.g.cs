@@ -89,5 +89,6 @@ namespace ModerationAPI
         public NewModerateModerateResponsePolicieEntityMatcherOutput()
         {
         }
+
     }
 }

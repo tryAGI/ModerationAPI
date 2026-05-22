@@ -52,5 +52,18 @@ namespace ModerationAPI
         public NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText FromText(string text)
+        {
+            return new NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText
+            {
+                Text = text,
+            };
+        }
+
     }
 }

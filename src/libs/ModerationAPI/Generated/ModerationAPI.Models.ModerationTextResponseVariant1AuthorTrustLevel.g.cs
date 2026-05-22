@@ -54,5 +54,6 @@ namespace ModerationAPI
         public ModerationTextResponseVariant1AuthorTrustLevel()
         {
         }
+
     }
 }

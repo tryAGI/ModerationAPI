@@ -102,5 +102,6 @@ namespace ModerationAPI
         public PublicQueueItemLabelsVariant1ItemMatche()
         {
         }
+
     }
 }

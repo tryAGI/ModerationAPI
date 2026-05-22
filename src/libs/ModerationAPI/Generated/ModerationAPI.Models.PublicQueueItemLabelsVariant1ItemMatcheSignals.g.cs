@@ -114,5 +114,6 @@ namespace ModerationAPI
         public PublicQueueItemLabelsVariant1ItemMatcheSignals()
         {
         }
+
     }
 }

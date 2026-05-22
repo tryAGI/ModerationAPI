@@ -52,5 +52,6 @@ namespace ModerationAPI
         public NewModerateModerateResponseAuthorBlock2()
         {
         }
+
     }
 }

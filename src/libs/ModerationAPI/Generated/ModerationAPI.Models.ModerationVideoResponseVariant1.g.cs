@@ -99,5 +99,6 @@ namespace ModerationAPI
         public ModerationVideoResponseVariant1()
         {
         }
+
     }
 }

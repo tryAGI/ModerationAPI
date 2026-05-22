@@ -52,5 +52,6 @@ namespace ModerationAPI
         public ModerationObjectResponseVariant1AuthorBlock2()
         {
         }
+
     }
 }

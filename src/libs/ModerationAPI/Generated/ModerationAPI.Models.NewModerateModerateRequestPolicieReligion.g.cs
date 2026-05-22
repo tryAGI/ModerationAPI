@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieReligion()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieReligion"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieReligion FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieReligion
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

@@ -76,5 +76,6 @@ namespace ModerationAPI
         public NewModerateModerateResponseContent()
         {
         }
+
     }
 }

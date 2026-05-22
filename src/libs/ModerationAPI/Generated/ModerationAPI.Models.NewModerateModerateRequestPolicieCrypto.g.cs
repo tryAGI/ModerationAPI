@@ -59,5 +59,18 @@ namespace ModerationAPI
         public NewModerateModerateRequestPolicieCrypto()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="NewModerateModerateRequestPolicieCrypto"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static NewModerateModerateRequestPolicieCrypto FromFlag(bool flag)
+        {
+            return new NewModerateModerateRequestPolicieCrypto
+            {
+                Flag = flag,
+            };
+        }
+
     }
 }

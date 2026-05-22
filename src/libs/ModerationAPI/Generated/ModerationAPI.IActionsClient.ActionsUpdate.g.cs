@@ -12,6 +12,7 @@ namespace ModerationAPI
         /// The ID of the action to update.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
@@ -26,6 +27,32 @@ namespace ModerationAPI
             string id,
 
             global::ModerationAPI.ActionsUpdateRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an action<br/>
+        /// Update an action.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the action to update.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import ModerationAPI from '@moderation-api/sdk';<br/>
+        /// const client = new ModerationAPI({<br/>
+        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
+        /// });<br/>
+        /// const action = await client.actions.update('id');<br/>
+        /// console.log(action.id);
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsUpdateResponse>> ActionsUpdateAsResponseAsync(
+            string id,
+
+            global::ModerationAPI.ActionsUpdateRequest request,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an action<br/>
@@ -74,6 +101,7 @@ namespace ModerationAPI
         /// Whether the action allows any text to be entered as a value or if it must be one of the possible values.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsUpdateResponse> ActionsUpdateAsync(
@@ -89,6 +117,7 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.ActionsUpdateRequestPossibleValue>? possibleValues = default,
             bool? valueRequired = default,
             bool? freeText = default,
+            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

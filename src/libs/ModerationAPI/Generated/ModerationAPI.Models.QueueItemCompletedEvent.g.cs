@@ -95,5 +95,6 @@ namespace ModerationAPI
         public QueueItemCompletedEvent()
         {
         }
+
     }
 }
