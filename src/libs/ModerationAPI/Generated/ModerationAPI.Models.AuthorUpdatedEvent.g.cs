@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.updated","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"auth_555","external_id":"user-555","profile_picture":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","external_link":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","name":"Jane Doe","email":"jane@example.com","company":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","first_seen":1746792000000,"last_seen":1746792000000,"last_incident":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","status":"enabled","trust_level":{"level":1,"manual":false},"block":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","risk_evaluation":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}
+    /// Example: {"id":"evt_clx9f2k0a0001abcd1234","type":"author.updated","api_version":"v2","created":"2026-05-08T12:34:56.789Z","data":{"object":{"id":"auth_555","external_id":"user-555","profile_picture":null,"external_link":null,"name":"Jane Doe","email":"jane@example.com","company":null,"first_seen":1746792000000,"last_seen":1746792000000,"last_incident":null,"status":"enabled","trust_level":{"level":1,"manual":false},"block":null,"risk_evaluation":null,"metrics":{"total_content":42,"flagged_content":7,"average_sentiment":-0.1},"metadata":{}}}}
     /// </summary>
     public sealed partial class AuthorUpdatedEvent
     {
