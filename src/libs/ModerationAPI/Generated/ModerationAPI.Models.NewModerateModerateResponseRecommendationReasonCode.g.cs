@@ -15,6 +15,10 @@ namespace ModerationAPI
         /// <summary>
         /// 
         /// </summary>
+        ClientOverride,
+        /// <summary>
+        /// 
+        /// </summary>
         DryRun,
         /// <summary>
         /// 
@@ -59,6 +63,7 @@ namespace ModerationAPI
             return value switch
             {
                 NewModerateModerateResponseRecommendationReasonCode.AuthorBlock => "author_block",
+                NewModerateModerateResponseRecommendationReasonCode.ClientOverride => "client_override",
                 NewModerateModerateResponseRecommendationReasonCode.DryRun => "dry_run",
                 NewModerateModerateResponseRecommendationReasonCode.RuleDefault => "rule_default",
                 NewModerateModerateResponseRecommendationReasonCode.RuleFallback => "rule_fallback",
@@ -78,6 +83,7 @@ namespace ModerationAPI
             return value switch
             {
                 "author_block" => NewModerateModerateResponseRecommendationReasonCode.AuthorBlock,
+                "client_override" => NewModerateModerateResponseRecommendationReasonCode.ClientOverride,
                 "dry_run" => NewModerateModerateResponseRecommendationReasonCode.DryRun,
                 "rule_default" => NewModerateModerateResponseRecommendationReasonCode.RuleDefault,
                 "rule_fallback" => NewModerateModerateResponseRecommendationReasonCode.RuleFallback,

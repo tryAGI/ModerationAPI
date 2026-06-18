@@ -52,12 +52,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const queue = await client.queue.retrieve('id');<br/>
-        /// console.log(queue.queue);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// QueueRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var queue = await client.Queue.Retrieve(parameters);<br/>
+        /// Console.WriteLine(queue);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenGetQueueResponse> QueueViewOpenGetQueueAsync(
             string id,
@@ -83,12 +84,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const queue = await client.queue.retrieve('id');<br/>
-        /// console.log(queue.queue);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// QueueRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var queue = await client.Queue.Retrieve(parameters);<br/>
+        /// Console.WriteLine(queue);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenGetQueueResponse>> QueueViewOpenGetQueueAsResponseAsync(
             string id,

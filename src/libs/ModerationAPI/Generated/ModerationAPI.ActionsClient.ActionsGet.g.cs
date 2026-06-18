@@ -52,12 +52,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.retrieve('id');<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var action = await client.Actions.Retrieve(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsGetResponse> ActionsGetAsync(
             string id,
@@ -83,12 +84,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.retrieve('id');<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var action = await client.Actions.Retrieve(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsGetResponse>> ActionsGetAsResponseAsync(
             string id,

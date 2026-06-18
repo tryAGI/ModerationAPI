@@ -13,12 +13,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.create({ name: 'name' });<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionCreateParams parameters = new() { Name = "name" };<br/>
+        /// var action = await client.Actions.Create(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsCreateResponse> ActionsCreateAsync(
 
@@ -34,12 +35,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.create({ name: 'name' });<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionCreateParams parameters = new() { Name = "name" };<br/>
+        /// var action = await client.Actions.Create(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsCreateResponse>> ActionsCreateAsResponseAsync(
 

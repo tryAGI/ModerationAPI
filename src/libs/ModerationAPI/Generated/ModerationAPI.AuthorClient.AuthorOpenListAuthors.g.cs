@@ -77,12 +77,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const authors = await client.authors.list();<br/>
-        /// console.log(authors.authors);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorListParams parameters = new();<br/>
+        /// var authors = await client.Authors.List(parameters);<br/>
+        /// Console.WriteLine(authors);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenListAuthorsResponse> AuthorOpenListAuthorsAsync(
             double? pageSize = default,
@@ -133,12 +134,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const authors = await client.authors.list();<br/>
-        /// console.log(authors.authors);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorListParams parameters = new();<br/>
+        /// var authors = await client.Authors.List(parameters);<br/>
+        /// Console.WriteLine(authors);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.AuthorOpenListAuthorsResponse>> AuthorOpenListAuthorsAsResponseAsync(
             double? pageSize = default,

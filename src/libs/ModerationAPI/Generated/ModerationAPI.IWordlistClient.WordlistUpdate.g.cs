@@ -16,12 +16,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlist = await client.wordlist.update('id');<br/>
-        /// console.log(wordlist.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var wordlist = await client.Wordlist.Update(parameters);<br/>
+        /// Console.WriteLine(wordlist);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WordlistUpdateResponse> WordlistUpdateAsync(
             string id,
@@ -41,12 +42,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlist = await client.wordlist.update('id');<br/>
-        /// console.log(wordlist.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var wordlist = await client.Wordlist.Update(parameters);<br/>
+        /// Console.WriteLine(wordlist);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WordlistUpdateResponse>> WordlistUpdateAsResponseAsync(
             string id,

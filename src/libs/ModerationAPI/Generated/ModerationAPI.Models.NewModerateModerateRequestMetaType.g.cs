@@ -40,6 +40,10 @@ namespace ModerationAPI
         /// 
         /// </summary>
         Review,
+        /// <summary>
+        /// 
+        /// </summary>
+        Voice,
     }
 
     /// <summary>
@@ -62,6 +66,7 @@ namespace ModerationAPI
                 NewModerateModerateRequestMetaType.Product => "product",
                 NewModerateModerateRequestMetaType.Profile => "profile",
                 NewModerateModerateRequestMetaType.Review => "review",
+                NewModerateModerateRequestMetaType.Voice => "voice",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +85,7 @@ namespace ModerationAPI
                 "product" => NewModerateModerateRequestMetaType.Product,
                 "profile" => NewModerateModerateRequestMetaType.Profile,
                 "review" => NewModerateModerateRequestMetaType.Review,
+                "voice" => NewModerateModerateRequestMetaType.Voice,
                 _ => null,
             };
         }

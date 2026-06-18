@@ -60,12 +60,17 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.queue.items.resolve('itemId', { id: 'id' });<br/>
-        /// console.log(response.resolvedAt);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue.Items;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ItemResolveParams parameters = new()<br/>
+        /// {<br/>
+        ///     ID = "id",<br/>
+        ///     ItemID = "itemId",<br/>
+        /// };<br/>
+        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenResolveItemResponse> QueueViewOpenResolveItemAsync(
             string id,
@@ -101,12 +106,17 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.queue.items.resolve('itemId', { id: 'id' });<br/>
-        /// console.log(response.resolvedAt);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue.Items;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ItemResolveParams parameters = new()<br/>
+        /// {<br/>
+        ///     ID = "id",<br/>
+        ///     ItemID = "itemId",<br/>
+        /// };<br/>
+        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenResolveItemResponse>> QueueViewOpenResolveItemAsResponseAsync(
             string id,

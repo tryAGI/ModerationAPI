@@ -58,12 +58,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.queue.getStats('id');<br/>
-        /// console.log(response.actionStats);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// QueueGetStatsParams parameters = new() { ID = "id" };<br/>
+        /// var response = await client.Queue.GetStats(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenGetStatsResponse> QueueViewOpenGetStatsAsync(
             string id,
@@ -95,12 +96,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.queue.getStats('id');<br/>
-        /// console.log(response.actionStats);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Queue;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// QueueGetStatsParams parameters = new() { ID = "id" };<br/>
+        /// var response = await client.Queue.GetStats(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenGetStatsResponse>> QueueViewOpenGetStatsAsResponseAsync(
             string id,

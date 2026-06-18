@@ -16,12 +16,20 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.wordlist.words.add('id', { words: ['string'] });<br/>
-        /// console.log(response.addedCount);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist.Words;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordAddParams parameters = new()<br/>
+        /// {<br/>
+        ///     ID = "id",<br/>
+        ///     Words =<br/>
+        ///     [<br/>
+        ///         "string"<br/>
+        ///     ],<br/>
+        /// };<br/>
+        /// var response = await client.Wordlist.Words.Add(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WordlistAddWordsResponse> WordlistAddWordsAsync(
             string id,
@@ -41,12 +49,20 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const response = await client.wordlist.words.add('id', { words: ['string'] });<br/>
-        /// console.log(response.addedCount);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist.Words;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordAddParams parameters = new()<br/>
+        /// {<br/>
+        ///     ID = "id",<br/>
+        ///     Words =<br/>
+        ///     [<br/>
+        ///         "string"<br/>
+        ///     ],<br/>
+        /// };<br/>
+        /// var response = await client.Wordlist.Words.Add(parameters);<br/>
+        /// Console.WriteLine(response);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WordlistAddWordsResponse>> WordlistAddWordsAsResponseAsync(
             string id,

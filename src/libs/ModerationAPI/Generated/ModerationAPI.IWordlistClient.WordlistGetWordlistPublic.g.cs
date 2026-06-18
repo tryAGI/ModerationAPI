@@ -15,12 +15,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlist = await client.wordlist.retrieve('id');<br/>
-        /// console.log(wordlist.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var wordlist = await client.Wordlist.Retrieve(parameters);<br/>
+        /// Console.WriteLine(wordlist);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WordlistGetWordlistPublicResponse> WordlistGetWordlistPublicAsync(
             string id,
@@ -37,12 +38,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlist = await client.wordlist.retrieve('id');<br/>
-        /// console.log(wordlist.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistRetrieveParams parameters = new() { ID = "id" };<br/>
+        /// var wordlist = await client.Wordlist.Retrieve(parameters);<br/>
+        /// Console.WriteLine(wordlist);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WordlistGetWordlistPublicResponse>> WordlistGetWordlistPublicAsResponseAsync(
             string id,
