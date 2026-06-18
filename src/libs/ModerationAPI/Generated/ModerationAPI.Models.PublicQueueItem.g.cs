@@ -28,6 +28,13 @@ namespace ModerationAPI
         public global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>? Labels { get; set; }
 
         /// <summary>
+        /// For object content, the field keys (e.g. "bio") that triggered a flag. Empty when no fields were flagged or the content is not an object.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("flagged_fields")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> FlaggedFields { get; set; }
+
+        /// <summary>
         /// Detected ISO language code, if available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
@@ -53,6 +60,12 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// The recommendation you submitted via the moderation API `clientAction` input, if any.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_action")]
+        public global::ModerationAPI.PublicQueueItemClientAction2? ClientAction { get; set; }
 
         /// <summary>
         /// Conversation grouping ID, if any
@@ -90,6 +103,9 @@ namespace ModerationAPI
         /// <param name="id">
         /// Content ID from your system
         /// </param>
+        /// <param name="flaggedFields">
+        /// For object content, the field keys (e.g. "bio") that triggered a flag. Empty when no fields were flagged or the content is not an object.
+        /// </param>
         /// <param name="content">
         /// The original content payload
         /// </param>
@@ -108,6 +124,9 @@ namespace ModerationAPI
         /// <param name="metadata">
         /// Customer-supplied metadata attached to the content (same shape as the moderation API `metadata` input).
         /// </param>
+        /// <param name="clientAction">
+        /// The recommendation you submitted via the moderation API `clientAction` input, if any.
+        /// </param>
         /// <param name="conversationId">
         /// Conversation grouping ID, if any
         /// </param>
@@ -125,12 +144,14 @@ namespace ModerationAPI
 #endif
         public PublicQueueItem(
             string id,
+            global::System.Collections.Generic.IList<string> flaggedFields,
             global::ModerationAPI.OneOf<global::ModerationAPI.PublicQueueItemContentText, global::ModerationAPI.PublicQueueItemContentImage, global::ModerationAPI.PublicQueueItemContentVideo, global::ModerationAPI.PublicQueueItemContentAudio, global::ModerationAPI.PublicQueueItemContentObject> content,
             global::System.DateTime timestamp,
             bool? flagged,
             global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>? labels,
             string? language,
             object? metadata,
+            global::ModerationAPI.PublicQueueItemClientAction2? clientAction,
             string? conversationId,
             string? authorId,
             string? channelKey,
@@ -139,10 +160,12 @@ namespace ModerationAPI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Flagged = flagged;
             this.Labels = labels;
+            this.FlaggedFields = flaggedFields ?? throw new global::System.ArgumentNullException(nameof(flaggedFields));
             this.Language = language;
             this.Content = content;
             this.Timestamp = timestamp;
             this.Metadata = metadata;
+            this.ClientAction = clientAction;
             this.ConversationId = conversationId;
             this.AuthorId = authorId;
             this.ChannelKey = channelKey;

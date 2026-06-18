@@ -16,12 +16,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.update('id');<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var action = await client.Actions.Update(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsUpdateResponse> ActionsUpdateAsync(
             string id,
@@ -41,12 +42,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const action = await client.actions.update('id');<br/>
-        /// console.log(action.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var action = await client.Actions.Update(parameters);<br/>
+        /// Console.WriteLine(action);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsUpdateResponse>> ActionsUpdateAsResponseAsync(
             string id,

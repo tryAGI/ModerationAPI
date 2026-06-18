@@ -49,6 +49,12 @@ namespace ModerationAPI
         public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>? Labels { get; set; }
 
         /// <summary>
+        /// Optional structured data produced by the policy. For face detection: { count, faces: [{ confidence, gender, age }] }.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public object? Data { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace ModerationAPI
         /// The keys of the flagged fields if submitting an object.
         /// </param>
         /// <param name="labels"></param>
+        /// <param name="data">
+        /// Optional structured data produced by the policy. For face detection: { count, faces: [{ confidence, gender, age }] }.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,6 +85,7 @@ namespace ModerationAPI
             bool flagged,
             global::System.Collections.Generic.IList<string>? flaggedFields,
             global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>? labels,
+            object? data,
             string type = "classifier")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -84,6 +94,7 @@ namespace ModerationAPI
             this.Flagged = flagged;
             this.FlaggedFields = flaggedFields;
             this.Labels = labels;
+            this.Data = data;
         }
 
         /// <summary>

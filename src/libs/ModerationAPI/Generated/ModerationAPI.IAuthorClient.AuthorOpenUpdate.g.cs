@@ -16,12 +16,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const author = await client.authors.update('id');<br/>
-        /// console.log(author.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var author = await client.Authors.Update(parameters);<br/>
+        /// Console.WriteLine(author);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenUpdateAsync(
             string id,
@@ -41,12 +42,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const author = await client.authors.update('id');<br/>
-        /// console.log(author.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorUpdateParams parameters = new() { ID = "id" };<br/>
+        /// var author = await client.Authors.Update(parameters);<br/>
+        /// Console.WriteLine(author);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.PublicAuthor>> AuthorOpenUpdateAsResponseAsync(
             string id,

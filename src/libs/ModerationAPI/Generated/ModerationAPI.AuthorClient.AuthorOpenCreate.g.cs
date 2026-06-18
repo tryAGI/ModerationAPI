@@ -50,12 +50,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const author = await client.authors.create({ external_id: 'external_id' });<br/>
-        /// console.log(author.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorCreateParams parameters = new() { ExternalID = "external_id" };<br/>
+        /// var author = await client.Authors.Create(parameters);<br/>
+        /// Console.WriteLine(author);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenCreateAsync(
 
@@ -81,12 +82,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const author = await client.authors.create({ external_id: 'external_id' });<br/>
-        /// console.log(author.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Authors;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AuthorCreateParams parameters = new() { ExternalID = "external_id" };<br/>
+        /// var author = await client.Authors.Create(parameters);<br/>
+        /// Console.WriteLine(author);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.PublicAuthor>> AuthorOpenCreateAsResponseAsync(
 

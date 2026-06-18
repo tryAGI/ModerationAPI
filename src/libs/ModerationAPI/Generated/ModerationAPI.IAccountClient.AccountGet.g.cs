@@ -12,12 +12,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const accounts = await client.account.list();<br/>
-        /// console.log(accounts.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Account;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AccountListParams parameters = new();<br/>
+        /// var accounts = await client.Account.List(parameters);<br/>
+        /// Console.WriteLine(accounts);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AccountGetResponse> AccountGetAsync(
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
@@ -30,12 +31,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const accounts = await client.account.list();<br/>
-        /// console.log(accounts.id);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Account;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// AccountListParams parameters = new();<br/>
+        /// var accounts = await client.Account.List(parameters);<br/>
+        /// Console.WriteLine(accounts);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.AccountGetResponse>> AccountGetAsResponseAsync(
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,

@@ -13,12 +13,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const actions = await client.actions.list();<br/>
-        /// console.log(actions);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionListParams parameters = new();<br/>
+        /// var actions = await client.Actions.List(parameters);<br/>
+        /// Console.WriteLine(actions);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItem>> ActionsListAsync(
             string? queueId = default,
@@ -33,12 +34,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const actions = await client.actions.list();<br/>
-        /// console.log(actions);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Actions;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// ActionListParams parameters = new();<br/>
+        /// var actions = await client.Actions.List(parameters);<br/>
+        /// Console.WriteLine(actions);
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItem>>> ActionsListAsResponseAsync(
             string? queueId = default,

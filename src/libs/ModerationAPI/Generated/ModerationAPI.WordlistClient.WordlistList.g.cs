@@ -47,12 +47,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlists = await client.wordlist.list();<br/>
-        /// console.log(wordlists);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistListParams parameters = new();<br/>
+        /// var wordlists = await client.Wordlist.List(parameters);<br/>
+        /// Console.WriteLine(wordlists);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::ModerationAPI.WordlistListResponseItem>> WordlistListAsync(
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
@@ -73,12 +74,13 @@ namespace ModerationAPI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// import ModerationAPI from '@moderation-api/sdk';<br/>
-        /// const client = new ModerationAPI({<br/>
-        ///   secretKey: process.env['MODAPI_SECRET_KEY'], // This is the default and can be omitted<br/>
-        /// });<br/>
-        /// const wordlists = await client.wordlist.list();<br/>
-        /// console.log(wordlists);
+        /// using System;<br/>
+        /// using ModerationApi;<br/>
+        /// using ModerationApi.Models.Wordlist;<br/>
+        /// ModerationApiClient client = new();<br/>
+        /// WordlistListParams parameters = new();<br/>
+        /// var wordlists = await client.Wordlist.List(parameters);<br/>
+        /// Console.WriteLine(wordlists);
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.WordlistListResponseItem>>> WordlistListAsResponseAsync(
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,

@@ -40,6 +40,10 @@ namespace ModerationAPI
         /// 
         /// </summary>
         Review,
+        /// <summary>
+        /// 
+        /// </summary>
+        Voice,
     }
 
     /// <summary>
@@ -62,6 +66,7 @@ namespace ModerationAPI
                 PublicQueueItemMetaType2.Product => "product",
                 PublicQueueItemMetaType2.Profile => "profile",
                 PublicQueueItemMetaType2.Review => "review",
+                PublicQueueItemMetaType2.Voice => "voice",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +85,7 @@ namespace ModerationAPI
                 "product" => PublicQueueItemMetaType2.Product,
                 "profile" => PublicQueueItemMetaType2.Profile,
                 "review" => PublicQueueItemMetaType2.Review,
+                "voice" => PublicQueueItemMetaType2.Voice,
                 _ => null,
             };
         }
