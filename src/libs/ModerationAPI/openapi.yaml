@@ -10018,7 +10018,6 @@ components:
         and tracks.
       required:
         - event
-        - streamSid
         - mediaFormat
         - tracks
       properties:
@@ -10031,9 +10030,6 @@ components:
           description: >-
             Your external conversation id. Omit to have one generated and
             returned in `session.started`.
-        streamSid:
-          type: string
-          description: Your identifier for this stream.
         channel:
           type: string
           description: Optional. Selects which channel's policy configuration applies.
