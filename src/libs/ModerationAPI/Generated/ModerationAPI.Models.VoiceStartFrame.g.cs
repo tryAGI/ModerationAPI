@@ -22,13 +22,6 @@ namespace ModerationAPI
         public string? ConversationId { get; set; }
 
         /// <summary>
-        /// Your identifier for this stream.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("streamSid")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string StreamSid { get; set; }
-
-        /// <summary>
         /// Optional. Selects which channel's policy configuration applies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
@@ -70,9 +63,6 @@ namespace ModerationAPI
         /// <summary>
         /// Initializes a new instance of the <see cref="VoiceStartFrame" /> class.
         /// </summary>
-        /// <param name="streamSid">
-        /// Your identifier for this stream.
-        /// </param>
         /// <param name="mediaFormat"></param>
         /// <param name="tracks">
         /// One or both tracks. Stream only the track(s) you have.
@@ -95,7 +85,6 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VoiceStartFrame(
-            string streamSid,
             global::ModerationAPI.VoiceStartFrameMediaFormat mediaFormat,
             global::System.Collections.Generic.IList<global::ModerationAPI.VoiceStartFrameTrack> tracks,
             global::ModerationAPI.VoiceStartFrameEvent @event,
@@ -106,7 +95,6 @@ namespace ModerationAPI
         {
             this.Event = @event;
             this.ConversationId = conversationId;
-            this.StreamSid = streamSid ?? throw new global::System.ArgumentNullException(nameof(streamSid));
             this.Channel = channel;
             this.MediaFormat = mediaFormat ?? throw new global::System.ArgumentNullException(nameof(mediaFormat));
             this.Tracks = tracks ?? throw new global::System.ArgumentNullException(nameof(tracks));
