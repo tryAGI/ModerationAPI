@@ -6,6 +6,14 @@ namespace ModerationAPI
     public partial class VoiceClient
     {
 
+        private static readonly global::ModerationAPI.AutoSDKServer[] s_GetStreamServers = new global::ModerationAPI.AutoSDKServer[]
+        {            new global::ModerationAPI.AutoSDKServer(
+                id: "wss-voice-moderationapi-com-v1",
+                name: "Voice streaming gateway",
+                url: "wss://voice.moderationapi.com/v1",
+                description: "Voice streaming gateway"),
+        };
+
 
         private static readonly global::ModerationAPI.EndPointSecurityRequirement s_GetStreamSecurityRequirement0 =
             new global::ModerationAPI.EndPointSecurityRequirement
@@ -122,7 +130,9 @@ namespace ModerationAPI
 
                             var __pathBuilder = new global::ModerationAPI.PathBuilder(
                                 path: "/stream",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("wss://voice.moderationapi.com/v1", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetStreamServers,
+                                defaultBaseUrl: "wss://voice.moderationapi.com/v1"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ModerationAPI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
