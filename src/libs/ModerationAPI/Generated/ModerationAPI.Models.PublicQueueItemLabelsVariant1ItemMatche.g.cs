@@ -27,7 +27,7 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<double> Span { get; set; }
+        public required byte[] Span { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace ModerationAPI
         public PublicQueueItemLabelsVariant1ItemMatche(
             string match,
             double probability,
-            global::System.Collections.Generic.IList<double> span,
+            byte[] span,
             string? mask,
             global::System.Collections.Generic.IList<string>? reasons,
             global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignals? signals,
