@@ -9,19 +9,19 @@ namespace ModerationAPI
     public enum ModerationObjectRequestValueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Event,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Object,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Product,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Profile,
     }

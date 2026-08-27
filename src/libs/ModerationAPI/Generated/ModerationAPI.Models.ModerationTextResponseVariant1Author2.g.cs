@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ModerationTextResponseVariant1Author2
     {
@@ -36,7 +36,7 @@ namespace ModerationAPI
         public required global::ModerationAPI.ModerationTextResponseVariant1AuthorStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trust_level")]
         [global::System.Text.Json.Serialization.JsonRequired]

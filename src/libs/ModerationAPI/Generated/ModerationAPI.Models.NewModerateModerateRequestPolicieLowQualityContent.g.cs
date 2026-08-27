@@ -4,25 +4,25 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPolicieLowQualityContent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flag")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Flag { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"low_quality"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]

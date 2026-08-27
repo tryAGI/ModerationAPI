@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class QueueViewOpenGetItemsResponseItem
     {
@@ -29,7 +29,7 @@ namespace ModerationAPI
         public string? Language { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]

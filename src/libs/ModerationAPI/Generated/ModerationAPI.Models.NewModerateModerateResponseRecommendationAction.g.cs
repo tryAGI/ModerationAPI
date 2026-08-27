@@ -9,15 +9,15 @@ namespace ModerationAPI
     public enum NewModerateModerateResponseRecommendationAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Review,
     }

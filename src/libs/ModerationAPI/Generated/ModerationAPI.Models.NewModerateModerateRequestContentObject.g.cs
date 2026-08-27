@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateRequestContentObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"object"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

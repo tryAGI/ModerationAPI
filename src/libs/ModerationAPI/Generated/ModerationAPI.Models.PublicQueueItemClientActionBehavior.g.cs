@@ -9,11 +9,11 @@ namespace ModerationAPI
     public enum PublicQueueItemClientActionBehavior
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Escalate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Override,
     }

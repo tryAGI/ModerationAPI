@@ -4,40 +4,40 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AuthorOpenListAuthorsSortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AverageSentiment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FlaggedContentRatio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastActive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemberSince,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReportCount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrustLevel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ViolationCount,
     }

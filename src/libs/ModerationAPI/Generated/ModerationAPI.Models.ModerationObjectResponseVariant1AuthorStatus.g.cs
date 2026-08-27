@@ -9,15 +9,15 @@ namespace ModerationAPI
     public enum ModerationObjectResponseVariant1AuthorStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Suspended,
     }

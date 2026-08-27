@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuthorOpenCreateRequest
     {
@@ -57,7 +57,7 @@ namespace ModerationAPI
         public double? LastSeen { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manual_trust_level")]
         public double? ManualTrustLevel { get; set; }

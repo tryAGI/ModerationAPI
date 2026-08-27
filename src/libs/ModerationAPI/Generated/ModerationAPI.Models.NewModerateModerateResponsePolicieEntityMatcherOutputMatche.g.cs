@@ -4,26 +4,26 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateResponsePolicieEntityMatcherOutputMatche
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("probability")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Probability { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Match { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span")]
         [global::System.Text.Json.Serialization.JsonRequired]

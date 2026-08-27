@@ -9,11 +9,11 @@ namespace ModerationAPI
     public enum QueueViewOpenGetItemsResponseItemStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Resolved,
     }

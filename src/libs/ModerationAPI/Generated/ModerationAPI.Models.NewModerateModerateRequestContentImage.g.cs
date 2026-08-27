@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateRequestContentImage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

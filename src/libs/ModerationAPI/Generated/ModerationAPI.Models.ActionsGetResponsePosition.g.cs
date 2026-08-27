@@ -10,15 +10,15 @@ namespace ModerationAPI
     public enum ActionsGetResponsePosition
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllQueues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hidden,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SomeQueues,
     }

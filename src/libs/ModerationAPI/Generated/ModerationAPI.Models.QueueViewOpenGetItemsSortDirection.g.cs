@@ -10,11 +10,11 @@ namespace ModerationAPI
     public enum QueueViewOpenGetItemsSortDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

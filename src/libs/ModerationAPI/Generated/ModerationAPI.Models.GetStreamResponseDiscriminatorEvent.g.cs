@@ -4,20 +4,20 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetStreamResponseDiscriminatorEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionEnded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UtteranceFinal,
     }

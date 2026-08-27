@@ -4,19 +4,19 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPoliciePiiMasking
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"pii"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "pii";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entities")]
         [global::System.Text.Json.Serialization.JsonRequired]

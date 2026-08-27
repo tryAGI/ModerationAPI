@@ -9,47 +9,47 @@ namespace ModerationAPI
     public enum ModerationImageResponseLabelLabel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alcohol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Drugs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nudity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Smoking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Suggestive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Toxic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Violence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weapon,
     }

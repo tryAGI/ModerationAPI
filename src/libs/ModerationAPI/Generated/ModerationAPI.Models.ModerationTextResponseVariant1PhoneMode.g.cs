@@ -9,15 +9,15 @@ namespace ModerationAPI
     public enum ModerationTextResponseVariant1PhoneMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Normal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Paranoid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Suspicious,
     }

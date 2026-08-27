@@ -4,40 +4,40 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuthorOpenListAuthorsResponsePagination
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Total { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageSize")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double PageSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageNumber")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double PageNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hasNextPage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasNextPage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hasPreviousPage")]
         [global::System.Text.Json.Serialization.JsonRequired]

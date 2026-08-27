@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicAuthor
     {
@@ -80,7 +80,7 @@ namespace ModerationAPI
         public required global::ModerationAPI.PublicAuthorStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trust_level")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -99,7 +99,7 @@ namespace ModerationAPI
         public global::ModerationAPI.PublicAuthorRiskEvaluation2? RiskEvaluation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,20 +4,20 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueueViewOpenGetQueueResponseQueueFilterFilterLabelType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flagged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotFlagged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thresholds,
     }

@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class PublicActionPerformedQueue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

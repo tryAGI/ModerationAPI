@@ -10,15 +10,15 @@ namespace ModerationAPI
     public enum ActionsListResponseItemQueueBehaviour
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Add,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoChange,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Remove,
     }

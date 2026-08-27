@@ -4,12 +4,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceSessionStartedEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionStarted,
     }

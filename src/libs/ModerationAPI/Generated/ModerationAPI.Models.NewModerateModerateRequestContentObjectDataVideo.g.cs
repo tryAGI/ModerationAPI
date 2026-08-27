@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateRequestContentObjectDataVideo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"video"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

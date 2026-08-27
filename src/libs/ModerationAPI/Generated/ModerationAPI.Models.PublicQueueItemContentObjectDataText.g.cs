@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class PublicQueueItemContentObjectDataText
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

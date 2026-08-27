@@ -61,28 +61,28 @@ namespace ModerationAPI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AccountClient Account { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActionsClient Actions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthorClient Author { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReviewQueuesClient ReviewQueues { get; }
 
@@ -92,7 +92,7 @@ namespace ModerationAPI
         public VoiceClient Voice { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WordlistClient Wordlist { get; }
 

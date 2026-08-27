@@ -4,12 +4,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateQueueItemResolvedWebhookVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2,
     }

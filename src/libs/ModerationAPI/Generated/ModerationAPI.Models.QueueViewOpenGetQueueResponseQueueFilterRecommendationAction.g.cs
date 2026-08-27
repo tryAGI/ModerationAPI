@@ -4,20 +4,20 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueueViewOpenGetQueueResponseQueueFilterRecommendationAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Review,
     }

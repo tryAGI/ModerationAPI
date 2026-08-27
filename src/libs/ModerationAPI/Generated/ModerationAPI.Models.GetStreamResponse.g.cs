@@ -5,12 +5,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GetStreamResponse : global::System.IEquatable<GetStreamResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.GetStreamResponseDiscriminatorEvent? Event { get; }
 
@@ -24,7 +24,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStarted))]
@@ -32,7 +32,7 @@ namespace ModerationAPI
         public bool IsSessionStarted => SessionStarted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionStarted(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceSessionStarted PickSessionStarted() => IsSessionStarted
             ? SessionStarted!
@@ -61,7 +61,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UtteranceFinal))]
@@ -69,7 +69,7 @@ namespace ModerationAPI
         public bool IsUtteranceFinal => UtteranceFinal != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUtteranceFinal(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceUtteranceFinal PickUtteranceFinal() => IsUtteranceFinal
             ? UtteranceFinal!
@@ -98,7 +98,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionEnded))]
@@ -106,7 +106,7 @@ namespace ModerationAPI
         public bool IsSessionEnded => SessionEnded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionEnded(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceSessionEnded PickSessionEnded() => IsSessionEnded
             ? SessionEnded!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionEnded' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamResponse(global::ModerationAPI.VoiceSessionStarted value) => new GetStreamResponse((global::ModerationAPI.VoiceSessionStarted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceSessionStarted?(GetStreamResponse @this) => @this.SessionStarted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamResponse(global::ModerationAPI.VoiceSessionStarted? value)
         {
@@ -143,22 +143,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamResponse FromSessionStarted(global::ModerationAPI.VoiceSessionStarted? value) => new GetStreamResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamResponse(global::ModerationAPI.VoiceUtteranceFinal value) => new GetStreamResponse((global::ModerationAPI.VoiceUtteranceFinal?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceUtteranceFinal?(GetStreamResponse @this) => @this.UtteranceFinal;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamResponse(global::ModerationAPI.VoiceUtteranceFinal? value)
         {
@@ -166,22 +166,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamResponse FromUtteranceFinal(global::ModerationAPI.VoiceUtteranceFinal? value) => new GetStreamResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamResponse(global::ModerationAPI.VoiceSessionEnded value) => new GetStreamResponse((global::ModerationAPI.VoiceSessionEnded?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceSessionEnded?(GetStreamResponse @this) => @this.SessionEnded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamResponse(global::ModerationAPI.VoiceSessionEnded? value)
         {
@@ -189,12 +189,12 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamResponse FromSessionEnded(global::ModerationAPI.VoiceSessionEnded? value) => new GetStreamResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamResponse(
             global::ModerationAPI.GetStreamResponseDiscriminatorEvent? @event,
@@ -211,25 +211,25 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SessionEnded as object ??
             UtteranceFinal as object ??
-            SessionStarted as object 
+            SessionStarted as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SessionStarted?.ToString() ??
             UtteranceFinal?.ToString() ??
-            SessionEnded?.ToString() 
+            SessionEnded?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ModerationAPI.VoiceSessionStarted, TResult>? sessionStarted = null,
@@ -267,7 +267,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ModerationAPI.VoiceSessionStarted>? sessionStarted = null,
@@ -297,7 +297,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ModerationAPI.VoiceSessionStarted>? sessionStarted = null,
@@ -325,7 +325,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GetStreamResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceSessionStarted?>.Default.Equals(SessionStarted, other.SessionStarted) &&
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceUtteranceFinal?>.Default.Equals(UtteranceFinal, other.UtteranceFinal) &&
-                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceSessionEnded?>.Default.Equals(SessionEnded, other.SessionEnded) 
+                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceSessionEnded?>.Default.Equals(SessionEnded, other.SessionEnded)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GetStreamResponse obj1, GetStreamResponse obj2)
         {
@@ -368,7 +368,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GetStreamResponse obj1, GetStreamResponse obj2)
         {
@@ -376,7 +376,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

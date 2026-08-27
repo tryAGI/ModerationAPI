@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicQueueItemLabelsVariant1ItemMatche
     {
@@ -30,25 +30,25 @@ namespace ModerationAPI
         public required byte[] Span { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         public string? Mask { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasons")]
         public global::System.Collections.Generic.IList<string>? Reasons { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signals")]
         public global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignals? Signals { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entity_type")]
         public string? EntityType { get; set; }

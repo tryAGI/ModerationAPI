@@ -9,41 +9,41 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateResponsePolicieEntityMatcherOutput
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"entity_matcher"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "entity_matcher";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("probability")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Probability { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flagged")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Flagged { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flagged_fields")]
         public global::System.Collections.Generic.IList<string>? FlaggedFields { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
         [global::System.Text.Json.Serialization.JsonRequired]

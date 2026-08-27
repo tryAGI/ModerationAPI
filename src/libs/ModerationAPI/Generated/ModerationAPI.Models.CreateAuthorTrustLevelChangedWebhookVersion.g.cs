@@ -4,12 +4,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateAuthorTrustLevelChangedWebhookVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2,
     }

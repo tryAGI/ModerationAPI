@@ -16,21 +16,21 @@ namespace ModerationAPI
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"classifier"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "classifier";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("probability")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Probability { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flagged")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,7 +43,7 @@ namespace ModerationAPI
         public global::System.Collections.Generic.IList<string>? FlaggedFields { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>? Labels { get; set; }

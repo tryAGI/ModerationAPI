@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class VoiceStartFrame
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceStartFrameEventJsonConverter))]
@@ -28,7 +28,7 @@ namespace ModerationAPI
         public string? Channel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mediaFormat")]
         [global::System.Text.Json.Serialization.JsonRequired]

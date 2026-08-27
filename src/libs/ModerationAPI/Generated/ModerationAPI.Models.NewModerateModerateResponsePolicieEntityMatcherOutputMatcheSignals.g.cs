@@ -9,57 +9,57 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignals
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("brand_impersonation")]
         public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation2? BrandImpersonation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_suspicious_characters")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasSuspiciousCharacters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_link_shortener")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsLinkShortener { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain_age_days")]
         public int? DomainAgeDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_email_setup")]
         public bool? HasEmailSetup { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redirect_count")]
         public int? RedirectCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("final_url")]
         public string? FinalUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bot_protection")]
         public bool? BotProtection { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_reported")]
         [global::System.Text.Json.Serialization.JsonRequired]

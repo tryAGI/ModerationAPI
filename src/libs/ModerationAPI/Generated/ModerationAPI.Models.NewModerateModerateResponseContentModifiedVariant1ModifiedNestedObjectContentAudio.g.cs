@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"audio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

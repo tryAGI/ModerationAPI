@@ -4,39 +4,39 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPolicieGuideline
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flag")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Flag { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"guideline"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "guideline";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Instructions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guidelineKey")]
         [global::System.Text.Json.Serialization.JsonRequired]

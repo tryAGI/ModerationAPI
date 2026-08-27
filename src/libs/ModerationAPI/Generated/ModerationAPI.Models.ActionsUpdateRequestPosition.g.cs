@@ -10,15 +10,15 @@ namespace ModerationAPI
     public enum ActionsUpdateRequestPosition
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllQueues,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hidden,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SomeQueues,
     }

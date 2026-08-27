@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AccountGetResponse
     {
@@ -37,7 +37,7 @@ namespace ModerationAPI
         public required double RemainingQuota { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_project")]
         public global::ModerationAPI.AccountGetResponseCurrentProject? CurrentProject { get; set; }

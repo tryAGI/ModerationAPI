@@ -45,7 +45,7 @@ namespace ModerationAPI
         public double? Threat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("NEUTRAL")]
         public double? Neutral { get; set; }

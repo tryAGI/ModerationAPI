@@ -4,16 +4,16 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NewModerateModerateResponseMetaStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PartialSuccess,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

@@ -9,28 +9,28 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateResponseInsightSentimentInsight
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"sentiment"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "sentiment";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"insight"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "insight";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("probability")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Probability { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2? Value { get; set; }

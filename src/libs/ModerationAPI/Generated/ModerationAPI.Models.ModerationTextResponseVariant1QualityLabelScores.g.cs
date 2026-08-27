@@ -27,7 +27,7 @@ namespace ModerationAPI
         public double? Spam { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("NEUTRAL")]
         public double? Neutral { get; set; }
