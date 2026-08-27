@@ -4,20 +4,20 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum QueueViewOpenGetItemsSortField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReviewedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Severity,
     }

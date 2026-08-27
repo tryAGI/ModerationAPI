@@ -4,12 +4,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ErrorConflictIssue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]

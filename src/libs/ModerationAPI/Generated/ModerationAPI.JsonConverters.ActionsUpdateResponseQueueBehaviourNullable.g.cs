@@ -20,7 +20,7 @@ namespace ModerationAPI.JsonConverters
                     {
                         return global::ModerationAPI.ActionsUpdateResponseQueueBehaviourExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

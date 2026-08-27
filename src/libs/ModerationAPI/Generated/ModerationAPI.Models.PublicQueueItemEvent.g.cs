@@ -4,25 +4,25 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicQueueItemEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::ModerationAPI.PublicQueueItem Item { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         public global::ModerationAPI.PublicAuthor? Author { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue")]
         public global::ModerationAPI.PublicQueueItemEventQueue? Queue { get; set; }

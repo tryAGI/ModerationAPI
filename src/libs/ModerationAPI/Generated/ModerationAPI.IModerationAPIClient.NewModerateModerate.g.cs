@@ -5,7 +5,7 @@ namespace ModerationAPI
     public partial interface IModerationAPIClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -26,7 +26,7 @@ namespace ModerationAPI
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -47,7 +47,7 @@ namespace ModerationAPI
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="content">
         /// The content sent for moderation

@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class PublicQueueItemContentImage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

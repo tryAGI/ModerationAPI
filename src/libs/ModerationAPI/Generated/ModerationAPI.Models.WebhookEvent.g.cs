@@ -10,7 +10,7 @@ namespace ModerationAPI
     public readonly partial struct WebhookEvent : global::System.IEquatable<WebhookEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.WebhookEventDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorBlocked))]
@@ -32,7 +32,7 @@ namespace ModerationAPI
         public bool IsAuthorBlocked => AuthorBlocked != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorBlocked(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorBlockedEvent PickAuthorBlocked() => IsAuthorBlocked
             ? AuthorBlocked!
@@ -61,7 +61,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorUnblocked))]
@@ -69,7 +69,7 @@ namespace ModerationAPI
         public bool IsAuthorUnblocked => AuthorUnblocked != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorUnblocked(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorUnblockedEvent PickAuthorUnblocked() => IsAuthorUnblocked
             ? AuthorUnblocked!
@@ -98,7 +98,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorSuspended))]
@@ -106,7 +106,7 @@ namespace ModerationAPI
         public bool IsAuthorSuspended => AuthorSuspended != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorSuspended(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorSuspendedEvent PickAuthorSuspended() => IsAuthorSuspended
             ? AuthorSuspended!
@@ -135,7 +135,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorUpdated))]
@@ -143,7 +143,7 @@ namespace ModerationAPI
         public bool IsAuthorUpdated => AuthorUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorUpdated(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorUpdatedEvent PickAuthorUpdated() => IsAuthorUpdated
             ? AuthorUpdated!
@@ -172,7 +172,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorTrustLevelChanged))]
@@ -180,7 +180,7 @@ namespace ModerationAPI
         public bool IsAuthorTrustLevelChanged => AuthorTrustLevelChanged != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorTrustLevelChanged(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorTrustLevelChangedEvent PickAuthorTrustLevelChanged() => IsAuthorTrustLevelChanged
             ? AuthorTrustLevelChanged!
@@ -209,7 +209,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthorAction))]
@@ -217,7 +217,7 @@ namespace ModerationAPI
         public bool IsAuthorAction => AuthorAction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAuthorAction(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.AuthorActionEvent PickAuthorAction() => IsAuthorAction
             ? AuthorAction!
@@ -246,7 +246,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemResolved))]
@@ -254,7 +254,7 @@ namespace ModerationAPI
         public bool IsQueueItemResolved => QueueItemResolved != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQueueItemResolved(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.QueueItemCompletedEvent PickQueueItemResolved() => IsQueueItemResolved
             ? QueueItemResolved!
@@ -283,7 +283,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemAction))]
@@ -291,7 +291,7 @@ namespace ModerationAPI
         public bool IsQueueItemAction => QueueItemAction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQueueItemAction(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.QueueItemActionEvent PickQueueItemAction() => IsQueueItemAction
             ? QueueItemAction!
@@ -320,7 +320,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemRejected))]
@@ -328,7 +328,7 @@ namespace ModerationAPI
         public bool IsQueueItemRejected => QueueItemRejected != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQueueItemRejected(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.QueueItemRejectedEvent PickQueueItemRejected() => IsQueueItemRejected
             ? QueueItemRejected!
@@ -357,7 +357,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueueItemAllowed))]
@@ -365,7 +365,7 @@ namespace ModerationAPI
         public bool IsQueueItemAllowed => QueueItemAllowed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQueueItemAllowed(
 #if NET6_0_OR_GREATER
@@ -378,23 +378,23 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.QueueItemAllowedEvent PickQueueItemAllowed() => IsQueueItemAllowed
             ? QueueItemAllowed!
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemAllowed' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorBlockedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorBlockedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorBlockedEvent?(WebhookEvent @this) => @this.AuthorBlocked;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorBlockedEvent? value)
         {
@@ -402,22 +402,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorBlocked(global::ModerationAPI.AuthorBlockedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorUnblockedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorUnblockedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorUnblockedEvent?(WebhookEvent @this) => @this.AuthorUnblocked;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorUnblockedEvent? value)
         {
@@ -425,22 +425,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorUnblocked(global::ModerationAPI.AuthorUnblockedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorSuspendedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorSuspendedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorSuspendedEvent?(WebhookEvent @this) => @this.AuthorSuspended;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorSuspendedEvent? value)
         {
@@ -448,22 +448,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorSuspended(global::ModerationAPI.AuthorSuspendedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorUpdatedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorUpdatedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorUpdatedEvent?(WebhookEvent @this) => @this.AuthorUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorUpdatedEvent? value)
         {
@@ -471,22 +471,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorUpdated(global::ModerationAPI.AuthorUpdatedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorTrustLevelChangedEvent value) => new WebhookEvent((global::ModerationAPI.AuthorTrustLevelChangedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorTrustLevelChangedEvent?(WebhookEvent @this) => @this.AuthorTrustLevelChanged;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorTrustLevelChangedEvent? value)
         {
@@ -494,22 +494,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorTrustLevelChanged(global::ModerationAPI.AuthorTrustLevelChangedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.AuthorActionEvent value) => new WebhookEvent((global::ModerationAPI.AuthorActionEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.AuthorActionEvent?(WebhookEvent @this) => @this.AuthorAction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.AuthorActionEvent? value)
         {
@@ -517,22 +517,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromAuthorAction(global::ModerationAPI.AuthorActionEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemCompletedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.QueueItemCompletedEvent?(WebhookEvent @this) => @this.QueueItemResolved;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.QueueItemCompletedEvent? value)
         {
@@ -540,22 +540,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromQueueItemResolved(global::ModerationAPI.QueueItemCompletedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemActionEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemActionEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.QueueItemActionEvent?(WebhookEvent @this) => @this.QueueItemAction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.QueueItemActionEvent? value)
         {
@@ -563,22 +563,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromQueueItemAction(global::ModerationAPI.QueueItemActionEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemRejectedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemRejectedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.QueueItemRejectedEvent?(WebhookEvent @this) => @this.QueueItemRejected;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.QueueItemRejectedEvent? value)
         {
@@ -586,22 +586,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromQueueItemRejected(global::ModerationAPI.QueueItemRejectedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookEvent(global::ModerationAPI.QueueItemAllowedEvent value) => new WebhookEvent((global::ModerationAPI.QueueItemAllowedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.QueueItemAllowedEvent?(WebhookEvent @this) => @this.QueueItemAllowed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(global::ModerationAPI.QueueItemAllowedEvent? value)
         {
@@ -609,12 +609,12 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookEvent FromQueueItemAllowed(global::ModerationAPI.QueueItemAllowedEvent? value) => new WebhookEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookEvent(
             global::ModerationAPI.WebhookEventDiscriminatorType? type,
@@ -645,7 +645,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             QueueItemAllowed as object ??
@@ -657,11 +657,11 @@ namespace ModerationAPI
             AuthorUpdated as object ??
             AuthorSuspended as object ??
             AuthorUnblocked as object ??
-            AuthorBlocked as object 
+            AuthorBlocked as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AuthorBlocked?.ToString() ??
@@ -673,11 +673,11 @@ namespace ModerationAPI
             QueueItemResolved?.ToString() ??
             QueueItemAction?.ToString() ??
             QueueItemRejected?.ToString() ??
-            QueueItemAllowed?.ToString() 
+            QueueItemAllowed?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -685,7 +685,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ModerationAPI.AuthorBlockedEvent, TResult>? authorBlocked = null,
@@ -750,7 +750,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ModerationAPI.AuthorBlockedEvent>? authorBlocked = null,
@@ -822,7 +822,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ModerationAPI.AuthorBlockedEvent>? authorBlocked = null,
@@ -885,7 +885,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -922,7 +922,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WebhookEvent other)
         {
@@ -936,12 +936,12 @@ namespace ModerationAPI
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.QueueItemCompletedEvent?>.Default.Equals(QueueItemResolved, other.QueueItemResolved) &&
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.QueueItemActionEvent?>.Default.Equals(QueueItemAction, other.QueueItemAction) &&
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.QueueItemRejectedEvent?>.Default.Equals(QueueItemRejected, other.QueueItemRejected) &&
-                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.QueueItemAllowedEvent?>.Default.Equals(QueueItemAllowed, other.QueueItemAllowed) 
+                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.QueueItemAllowedEvent?>.Default.Equals(QueueItemAllowed, other.QueueItemAllowed)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WebhookEvent obj1, WebhookEvent obj2)
         {
@@ -949,7 +949,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WebhookEvent obj1, WebhookEvent obj2)
         {
@@ -957,7 +957,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

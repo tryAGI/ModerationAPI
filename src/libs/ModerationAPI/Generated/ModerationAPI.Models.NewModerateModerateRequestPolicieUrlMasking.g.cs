@@ -4,19 +4,19 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPolicieUrlMasking
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = "url";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entities")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,11 +9,11 @@ namespace ModerationAPI
     public enum NewModerateModerateRequestPolicieFaceDetectionComparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AtLeast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FewerThan,
     }

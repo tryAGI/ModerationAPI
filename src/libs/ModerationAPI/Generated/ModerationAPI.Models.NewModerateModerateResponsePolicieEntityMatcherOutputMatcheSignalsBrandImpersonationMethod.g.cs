@@ -4,16 +4,16 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RegisteredDomainToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubdomainToken,
     }

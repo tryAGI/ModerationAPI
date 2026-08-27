@@ -9,34 +9,34 @@ namespace ModerationAPI
     public sealed partial class VoiceUtteranceFinal
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("v")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int V { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceUtteranceFinalEventJsonConverter))]
         public global::ModerationAPI.VoiceUtteranceFinalEvent Event { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversationId")]
         public string? ConversationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contentId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ContentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("track")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceUtteranceFinalTrackJsonConverter))]
@@ -44,51 +44,51 @@ namespace ModerationAPI
         public required global::ModerationAPI.VoiceUtteranceFinalTrack Track { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authorId")]
         public string? AuthorId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startMs")]
         public int? StartMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endMs")]
         public int? EndMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sttConfidence")]
         public double? SttConfidence { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation")]
         public object? Evaluation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recommendation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::ModerationAPI.VoiceUtteranceFinalRecommendation Recommendation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("policies")]
         public global::System.Collections.Generic.IList<object>? Policies { get; set; }

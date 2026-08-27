@@ -10,7 +10,7 @@ namespace ModerationAPI
     public sealed partial class AccountClient : global::ModerationAPI.IAccountClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.moderationapi.com/v1";
 
@@ -40,7 +40,7 @@ namespace ModerationAPI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ModerationAPI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

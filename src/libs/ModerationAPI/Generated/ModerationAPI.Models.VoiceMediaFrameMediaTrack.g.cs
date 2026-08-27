@@ -4,16 +4,16 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceMediaFrameMediaTrack
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inbound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outbound,
     }

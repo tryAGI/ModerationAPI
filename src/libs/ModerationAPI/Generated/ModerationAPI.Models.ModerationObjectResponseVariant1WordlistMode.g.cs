@@ -9,15 +9,15 @@ namespace ModerationAPI
     public enum ModerationObjectResponseVariant1WordlistMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BlockList,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PassList,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequireList,
     }

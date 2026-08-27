@@ -9,14 +9,14 @@ namespace ModerationAPI
     public sealed partial class VoiceMediaFrame
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceMediaFrameEventJsonConverter))]
         public global::ModerationAPI.VoiceMediaFrameEvent Event { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media")]
         [global::System.Text.Json.Serialization.JsonRequired]

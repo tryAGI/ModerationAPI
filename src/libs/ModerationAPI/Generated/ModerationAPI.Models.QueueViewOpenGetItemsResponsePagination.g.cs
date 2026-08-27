@@ -4,40 +4,40 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class QueueViewOpenGetItemsResponsePagination
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalItems")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double TotalItems { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalPages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double TotalPages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("currentPage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double CurrentPage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hasNextPage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasNextPage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hasPreviousPage")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class PublicQueueItemContentObjectDataVideo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"video"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

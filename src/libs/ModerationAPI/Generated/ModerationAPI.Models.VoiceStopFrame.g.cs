@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class VoiceStopFrame
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceStopFrameEventJsonConverter))]

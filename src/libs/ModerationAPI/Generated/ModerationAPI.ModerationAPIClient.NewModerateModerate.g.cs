@@ -50,7 +50,7 @@ namespace ModerationAPI
             ref string content);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -81,7 +81,7 @@ namespace ModerationAPI
             return __response.Body;
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -165,7 +165,7 @@ namespace ModerationAPI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -608,7 +608,7 @@ namespace ModerationAPI
             }
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="content">
         /// The content sent for moderation

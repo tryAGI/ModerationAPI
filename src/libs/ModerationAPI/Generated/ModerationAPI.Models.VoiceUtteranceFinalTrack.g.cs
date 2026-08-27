@@ -4,16 +4,16 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceUtteranceFinalTrack
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inbound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outbound,
     }

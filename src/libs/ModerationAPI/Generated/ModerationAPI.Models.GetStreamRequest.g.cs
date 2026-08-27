@@ -5,12 +5,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct GetStreamRequest : global::System.IEquatable<GetStreamRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.GetStreamRequestDiscriminatorEvent? Event { get; }
 
@@ -24,7 +24,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Start))]
@@ -32,7 +32,7 @@ namespace ModerationAPI
         public bool IsStart => Start != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStart(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceStartFrame PickStart() => IsStart
             ? Start!
@@ -61,7 +61,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Media))]
@@ -69,7 +69,7 @@ namespace ModerationAPI
         public bool IsMedia => Media != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMedia(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceMediaFrame PickMedia() => IsMedia
             ? Media!
@@ -98,7 +98,7 @@ namespace ModerationAPI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stop))]
@@ -106,7 +106,7 @@ namespace ModerationAPI
         public bool IsStop => Stop != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStop(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ModerationAPI.VoiceStopFrame PickStop() => IsStop
             ? Stop!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamRequest(global::ModerationAPI.VoiceStartFrame value) => new GetStreamRequest((global::ModerationAPI.VoiceStartFrame?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceStartFrame?(GetStreamRequest @this) => @this.Start;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamRequest(global::ModerationAPI.VoiceStartFrame? value)
         {
@@ -143,22 +143,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamRequest FromStart(global::ModerationAPI.VoiceStartFrame? value) => new GetStreamRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamRequest(global::ModerationAPI.VoiceMediaFrame value) => new GetStreamRequest((global::ModerationAPI.VoiceMediaFrame?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceMediaFrame?(GetStreamRequest @this) => @this.Media;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamRequest(global::ModerationAPI.VoiceMediaFrame? value)
         {
@@ -166,22 +166,22 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamRequest FromMedia(global::ModerationAPI.VoiceMediaFrame? value) => new GetStreamRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetStreamRequest(global::ModerationAPI.VoiceStopFrame value) => new GetStreamRequest((global::ModerationAPI.VoiceStopFrame?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ModerationAPI.VoiceStopFrame?(GetStreamRequest @this) => @this.Stop;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamRequest(global::ModerationAPI.VoiceStopFrame? value)
         {
@@ -189,12 +189,12 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetStreamRequest FromStop(global::ModerationAPI.VoiceStopFrame? value) => new GetStreamRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetStreamRequest(
             global::ModerationAPI.GetStreamRequestDiscriminatorEvent? @event,
@@ -211,25 +211,25 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Stop as object ??
             Media as object ??
-            Start as object 
+            Start as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Start?.ToString() ??
             Media?.ToString() ??
-            Stop?.ToString() 
+            Stop?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ModerationAPI.VoiceStartFrame, TResult>? start = null,
@@ -267,7 +267,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ModerationAPI.VoiceStartFrame>? start = null,
@@ -297,7 +297,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ModerationAPI.VoiceStartFrame>? start = null,
@@ -325,7 +325,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GetStreamRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceStartFrame?>.Default.Equals(Start, other.Start) &&
                 global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceMediaFrame?>.Default.Equals(Media, other.Media) &&
-                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceStopFrame?>.Default.Equals(Stop, other.Stop) 
+                global::System.Collections.Generic.EqualityComparer<global::ModerationAPI.VoiceStopFrame?>.Default.Equals(Stop, other.Stop)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GetStreamRequest obj1, GetStreamRequest obj2)
         {
@@ -368,7 +368,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GetStreamRequest obj1, GetStreamRequest obj2)
         {
@@ -376,7 +376,7 @@ namespace ModerationAPI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

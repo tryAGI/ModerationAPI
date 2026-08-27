@@ -20,7 +20,7 @@ namespace ModerationAPI.JsonConverters
                     {
                         return global::ModerationAPI.CreateQueueItemResolvedWebhookVersionExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

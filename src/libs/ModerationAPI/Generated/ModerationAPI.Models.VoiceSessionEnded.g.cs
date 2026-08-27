@@ -9,33 +9,33 @@ namespace ModerationAPI
     public sealed partial class VoiceSessionEnded
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("v")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int V { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.VoiceSessionEndedEventJsonConverter))]
         public global::ModerationAPI.VoiceSessionEndedEvent Event { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversationId")]
         public string? ConversationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sessionId")]
         public string? SessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stats")]
         [global::System.Text.Json.Serialization.JsonRequired]

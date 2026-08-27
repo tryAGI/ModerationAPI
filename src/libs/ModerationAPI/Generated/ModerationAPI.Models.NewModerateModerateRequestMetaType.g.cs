@@ -9,39 +9,39 @@ namespace ModerationAPI
     public enum NewModerateModerateRequestMetaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Comment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Event,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Post,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Product,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Profile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Review,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voice,
     }

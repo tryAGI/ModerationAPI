@@ -4,19 +4,19 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class QueueViewOpenGetStatsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewStats")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::ModerationAPI.QueueViewOpenGetStatsResponseReviewStats ReviewStats { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actionStats")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,7 +30,7 @@ namespace ModerationAPI
         public required global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetStatsResponseTopReviewer> TopReviewers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trends")]
         [global::System.Text.Json.Serialization.JsonRequired]

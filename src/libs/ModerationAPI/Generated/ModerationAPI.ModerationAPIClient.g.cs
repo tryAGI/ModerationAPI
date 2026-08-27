@@ -11,7 +11,7 @@ namespace ModerationAPI
     public sealed partial class ModerationAPIClient : global::ModerationAPI.IModerationAPIClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.moderationapi.com/v1";
 
@@ -41,7 +41,7 @@ namespace ModerationAPI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ModerationAPI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -51,7 +51,7 @@ namespace ModerationAPI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -61,7 +61,7 @@ namespace ModerationAPI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActionsClient Actions => new ActionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -71,7 +71,7 @@ namespace ModerationAPI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthorClient Author => new AuthorClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -81,7 +81,7 @@ namespace ModerationAPI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReviewQueuesClient ReviewQueues => new ReviewQueuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace ModerationAPI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WordlistClient Wordlist => new WordlistClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

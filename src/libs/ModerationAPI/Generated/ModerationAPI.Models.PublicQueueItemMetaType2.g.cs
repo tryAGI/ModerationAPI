@@ -4,44 +4,44 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicQueueItemMetaType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Comment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Event,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Post,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Product,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Profile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Review,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voice,
     }

@@ -4,48 +4,48 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NewModerateModerateResponseRecommendationReasonCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorBlock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientOverride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DryRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RuleDefault,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RuleFallback,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RuleMatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeverityReject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SeverityReview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrustedAllow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UntrustedSeverity,
     }

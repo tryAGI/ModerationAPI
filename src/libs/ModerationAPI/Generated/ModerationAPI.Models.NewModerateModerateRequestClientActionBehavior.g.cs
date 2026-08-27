@@ -9,11 +9,11 @@ namespace ModerationAPI
     public enum NewModerateModerateRequestClientActionBehavior
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Escalate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Override,
     }

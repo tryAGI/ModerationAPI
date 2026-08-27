@@ -4,25 +4,25 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPolicieSelfHarm
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flag")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Flag { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"self_harm"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]

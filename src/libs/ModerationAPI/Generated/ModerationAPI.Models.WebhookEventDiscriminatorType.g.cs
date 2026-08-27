@@ -4,48 +4,48 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebhookEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorAction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorBlocked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorSuspended,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorTrustLevelChanged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorUnblocked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueueItemAction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueueItemAllowed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueueItemRejected,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueueItemResolved,
     }

@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class NewModerateModerateResponseMeta
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseMetaStatusJsonConverter))]
@@ -17,7 +17,7 @@ namespace ModerationAPI
         public required global::ModerationAPI.NewModerateModerateResponseMetaStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,14 +31,14 @@ namespace ModerationAPI
         public required string ChannelKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Usage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing_time")]
         public string? ProcessingTime { get; set; }

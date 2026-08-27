@@ -4,12 +4,12 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceUtteranceFinalEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UtteranceFinal,
     }

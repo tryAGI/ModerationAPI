@@ -4,20 +4,20 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum NewModerateModerateResponseInsightSentimentInsightValue2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Negative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neutral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Positive,
     }

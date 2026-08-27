@@ -10,11 +10,11 @@ namespace ModerationAPI
     public enum AuthorOpenListAuthorsSortDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -4,48 +4,48 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ActionsCreateRequestType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorBlock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorBlockTemp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorCustom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorDelete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorReport,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorUnblock,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorWarn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemAllow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemCustom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemReject,
     }

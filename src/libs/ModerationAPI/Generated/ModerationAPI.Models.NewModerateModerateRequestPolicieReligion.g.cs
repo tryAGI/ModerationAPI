@@ -4,25 +4,25 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NewModerateModerateRequestPolicieReligion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flag")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Flag { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"religion"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
