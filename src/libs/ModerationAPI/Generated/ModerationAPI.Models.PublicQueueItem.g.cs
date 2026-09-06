@@ -65,7 +65,7 @@ namespace ModerationAPI
         /// The recommendation you submitted via the moderation API `clientAction` input, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_action")]
-        public global::ModerationAPI.PublicQueueItemClientAction2? ClientAction { get; set; }
+        public global::ModerationAPI.PublicQueueItemClientAction? ClientAction { get; set; }
 
         /// <summary>
         /// Conversation grouping ID, if any
@@ -89,7 +89,7 @@ namespace ModerationAPI
         /// High-level content type (e.g. message, post, comment). Defaults to the channel's configured content type but can be overridden per request via the moderation API `type` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta_type")]
-        public global::ModerationAPI.PublicQueueItemMetaType2? MetaType { get; set; }
+        public global::ModerationAPI.PublicQueueItemMetaType? MetaType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -151,11 +151,11 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>? labels,
             string? language,
             object? metadata,
-            global::ModerationAPI.PublicQueueItemClientAction2? clientAction,
+            global::ModerationAPI.PublicQueueItemClientAction? clientAction,
             string? conversationId,
             string? authorId,
             string? channelKey,
-            global::ModerationAPI.PublicQueueItemMetaType2? metaType)
+            global::ModerationAPI.PublicQueueItemMetaType? metaType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Flagged = flagged;

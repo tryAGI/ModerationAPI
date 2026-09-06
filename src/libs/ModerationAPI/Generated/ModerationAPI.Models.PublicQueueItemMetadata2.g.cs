@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// Arbitrary key/value metadata. Top-level keys are strings.
+    ///
     /// </summary>
     public sealed partial class PublicQueueItemMetadata2
     {

@@ -45,7 +45,7 @@ namespace ModerationAPI
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::ModerationAPI.ModerationImageResponseAuthor2? Author { get; set; }
+        public global::ModerationAPI.ModerationImageResponseAuthor? Author { get; set; }
 
         /// <summary>
         /// The scores of each label
@@ -103,7 +103,7 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.ModerationImageResponseLabel> labels,
             object? error,
             string? contentId,
-            global::ModerationAPI.ModerationImageResponseAuthor2? author,
+            global::ModerationAPI.ModerationImageResponseAuthor? author,
             global::System.Collections.Generic.IList<string>? texts)
         {
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));

@@ -45,7 +45,7 @@ namespace ModerationAPI
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::ModerationAPI.ModerationTextResponseVariant1Author2? Author { get; set; }
+        public global::ModerationAPI.ModerationTextResponseVariant1Author? Author { get; set; }
 
         /// <summary>
         /// Whether the content was moderated or not. Same as `content` !== `original`
@@ -273,7 +273,7 @@ namespace ModerationAPI
             string content,
             object? error,
             string? contentId,
-            global::ModerationAPI.ModerationTextResponseVariant1Author2? author,
+            global::ModerationAPI.ModerationTextResponseVariant1Author? author,
             global::ModerationAPI.ModerationTextResponseVariant1Nsfw? nsfw,
             global::ModerationAPI.ModerationTextResponseVariant1Toxicity? toxicity,
             global::ModerationAPI.ModerationTextResponseVariant1Quality? quality,

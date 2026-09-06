@@ -25,9 +25,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.PublicQueueItemClientActionBehaviorNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.PublicQueueItemMetaType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.PublicQueueItemMetaTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.PublicQueueItemMetaType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.PublicQueueItemMetaTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.WebhookEventDiscriminatorTypeJsonConverter),
 
@@ -73,9 +73,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.VoiceSessionEndedEventNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestQueueBehaviourJsonConverter),
 
@@ -85,9 +85,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.ActionsCreateRequestPositionNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateRequestType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateRequestTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateRequestType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateRequestTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsUpdateRequestQueueBehaviourJsonConverter),
 
@@ -157,9 +157,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.QueueViewOpenGetItemsResponseItemStatusNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemQueueBehaviourJsonConverter),
 
@@ -169,9 +169,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.ActionsListResponseItemPositionNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponseType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponseTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponseType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponseTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponseQueueBehaviourJsonConverter),
 
@@ -181,9 +181,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.ActionsCreateResponsePositionNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsGetResponseType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsGetResponseTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsGetResponseType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsGetResponseTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsGetResponseQueueBehaviourJsonConverter),
 
@@ -193,9 +193,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.ActionsGetResponsePositionNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateResponseType2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateResponseTypeJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateResponseType2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.ActionsUpdateResponseTypeNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.ActionsUpdateResponseQueueBehaviourJsonConverter),
 
@@ -289,9 +289,9 @@ namespace ModerationAPI
 
             typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethodNullableJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseInsightSentimentInsightValue2JsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseInsightSentimentInsightValueJsonConverter),
 
-            typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseInsightSentimentInsightValue2NullableJsonConverter),
+            typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseInsightSentimentInsightValueNullableJsonConverter),
 
             typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseMetaStatusJsonConverter),
 
@@ -382,8 +382,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorStatus), TypeInfoPropertyName = "PublicAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorBlock2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorRiskEvaluation2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorBlock))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorRiskEvaluation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetrics))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorBadRequest))]
@@ -429,9 +429,9 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignals))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.OneOf<global::ModerationAPI.PublicQueueItemContentText, global::ModerationAPI.PublicQueueItemContentImage, global::ModerationAPI.PublicQueueItemContentVideo, global::ModerationAPI.PublicQueueItemContentAudio, global::ModerationAPI.PublicQueueItemContentObject>), TypeInfoPropertyName = "PublicQueueItemContentObject_a5b10a16560a2a90")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentText))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentImage))]
@@ -444,10 +444,10 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentObjectDataImage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentObjectDataVideo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentObjectDataAudio))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientAction2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionAction), TypeInfoPropertyName = "PublicQueueItemClientActionAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionBehavior), TypeInfoPropertyName = "PublicQueueItemClientActionBehavior2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemMetaType2), TypeInfoPropertyName = "PublicQueueItemMetaType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemMetaType), TypeInfoPropertyName = "PublicQueueItemMetaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemActionEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemActionEventData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicActionPerformed))]
@@ -491,13 +491,13 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenResolveItemRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenUnresolveItemRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestType2), TypeInfoPropertyName = "ActionsCreateRequestType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestType), TypeInfoPropertyName = "ActionsCreateRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestQueueBehaviour), TypeInfoPropertyName = "ActionsCreateRequestQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestPosition), TypeInfoPropertyName = "ActionsCreateRequestPosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateRequestPossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestPossibleValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateRequestType2), TypeInfoPropertyName = "ActionsUpdateRequestType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateRequestType), TypeInfoPropertyName = "ActionsUpdateRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateRequestQueueBehaviour), TypeInfoPropertyName = "ActionsUpdateRequestQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateRequestPosition), TypeInfoPropertyName = "ActionsUpdateRequestPosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsUpdateRequestPossibleValue>))]
@@ -584,6 +584,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterFilterLabelType2")]
@@ -615,25 +616,25 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenUnresolveItemResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItemType2), TypeInfoPropertyName = "ActionsListResponseItemType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItemType), TypeInfoPropertyName = "ActionsListResponseItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItemQueueBehaviour), TypeInfoPropertyName = "ActionsListResponseItemQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItemPosition), TypeInfoPropertyName = "ActionsListResponseItemPosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsListResponseItemPossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsListResponseItemPossibleValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponseType2), TypeInfoPropertyName = "ActionsCreateResponseType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponseType), TypeInfoPropertyName = "ActionsCreateResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponseQueueBehaviour), TypeInfoPropertyName = "ActionsCreateResponseQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponsePosition), TypeInfoPropertyName = "ActionsCreateResponsePosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsCreateResponsePossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateResponsePossibleValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponseType2), TypeInfoPropertyName = "ActionsGetResponseType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponseType), TypeInfoPropertyName = "ActionsGetResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponseQueueBehaviour), TypeInfoPropertyName = "ActionsGetResponseQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponsePosition), TypeInfoPropertyName = "ActionsGetResponsePosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsGetResponsePossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsGetResponsePossibleValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateResponseType2), TypeInfoPropertyName = "ActionsUpdateResponseType22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateResponseType), TypeInfoPropertyName = "ActionsUpdateResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateResponseQueueBehaviour), TypeInfoPropertyName = "ActionsUpdateResponseQueueBehaviour2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsUpdateResponsePosition), TypeInfoPropertyName = "ActionsUpdateResponsePosition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ActionsUpdateResponsePossibleValue>))]
@@ -644,8 +645,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AllOf<global::ModerationAPI.ModerationTextResponseVariant1, object>), TypeInfoPropertyName = "AllOfModerationTextResponseVariant1Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1Request))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1Author2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1AuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1Author))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1AuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1AuthorStatus), TypeInfoPropertyName = "ModerationTextResponseVariant1AuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1AuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationTextResponseVariant1Nsfw))]
@@ -682,8 +683,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AllOf<global::ModerationAPI.ModerationObjectResponseVariant1, object>), TypeInfoPropertyName = "AllOfModerationObjectResponseVariant1Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1Request))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1Author2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1AuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1Author))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1AuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1AuthorStatus), TypeInfoPropertyName = "ModerationObjectResponseVariant1AuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1AuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ModerationObjectResponseVariant1Label>))]
@@ -697,8 +698,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationObjectResponseVariant1Field))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthor2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthor))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthorStatus), TypeInfoPropertyName = "ModerationImageResponseAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationImageResponseAuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ModerationImageResponseLabel>))]
@@ -707,14 +708,14 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AllOf<global::ModerationAPI.ModerationVideoResponseVariant1, object>), TypeInfoPropertyName = "AllOfModerationVideoResponseVariant1Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1Request))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1Author2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1AuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1Author))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1AuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1AuthorStatus), TypeInfoPropertyName = "ModerationVideoResponseVariant1AuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationVideoResponseVariant1AuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthor2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthor))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthorStatus), TypeInfoPropertyName = "ModerationAudioResponseAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ModerationAudioResponseAuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AccountGetResponse))]
@@ -737,8 +738,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthor2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthorBlock2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthor))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthorBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthorStatus), TypeInfoPropertyName = "NewModerateModerateResponseAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseAuthorTrustLevel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseEvaluation))]
@@ -758,12 +759,12 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignals))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod), TypeInfoPropertyName = "NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>), TypeInfoPropertyName = "OneOfNewModerateModerateResponseInsightSentimentInsightNewModerateModerateResponseInsightLanguageInsight2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2), TypeInfoPropertyName = "NewModerateModerateResponseInsightSentimentInsightValue22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue), TypeInfoPropertyName = "NewModerateModerateResponseInsightSentimentInsightValue2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseMetaStatus), TypeInfoPropertyName = "NewModerateModerateResponseMetaStatus2")]
@@ -796,12 +797,13 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorConflictIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.VoiceStartFrameTrack>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ActionsCreateRequestPossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ActionsUpdateRequestPossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieLowQualityContent, global::ModerationAPI.NewModerateModerateRequestPolicieFaceDetection, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlRisk, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>), TypeInfoPropertyName = "NewModerateModerateRequestPolicieGuideline_04f5af6f80588c35")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicAuthor>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetStatsResponseActionStat>))]
