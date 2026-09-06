@@ -12,7 +12,7 @@ namespace ModerationAPI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversationIds")]
-        public global::System.Collections.Generic.IList<string>? ConversationIds { get; set; }
+        public global::System.Collections.Generic.IList<string?>? ConversationIds { get; set; }
 
         /// <summary>
         ///
@@ -91,7 +91,7 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenGetQueueResponseQueueFilter(
-            global::System.Collections.Generic.IList<string>? conversationIds,
+            global::System.Collections.Generic.IList<string?>? conversationIds,
             global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel>? filterLabels,
             global::System.Collections.Generic.IList<string>? labels,
             string? afterDate,

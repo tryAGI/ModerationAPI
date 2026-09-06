@@ -33,7 +33,7 @@ namespace ModerationAPI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2? Value { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +53,7 @@ namespace ModerationAPI
 #endif
         public NewModerateModerateResponseInsightSentimentInsight(
             double probability,
-            global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2? value,
+            global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? value,
             string id = "sentiment",
             string type = "insight")
         {

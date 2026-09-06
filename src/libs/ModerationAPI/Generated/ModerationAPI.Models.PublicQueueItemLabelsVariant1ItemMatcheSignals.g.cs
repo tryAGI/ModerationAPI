@@ -12,7 +12,7 @@ namespace ModerationAPI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("brand_impersonation")]
-        public global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation2? BrandImpersonation { get; set; }
+        public global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation? BrandImpersonation { get; set; }
 
         /// <summary>
         ///
@@ -90,7 +90,7 @@ namespace ModerationAPI
             bool hasSuspiciousCharacters,
             bool isLinkShortener,
             bool isReported,
-            global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation2? brandImpersonation,
+            global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation? brandImpersonation,
             double? domainAgeDays,
             bool? hasEmailSetup,
             double? redirectCount,

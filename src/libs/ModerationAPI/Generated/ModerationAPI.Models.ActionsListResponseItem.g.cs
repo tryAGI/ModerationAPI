@@ -45,7 +45,7 @@ namespace ModerationAPI
         /// The type of the action.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::ModerationAPI.ActionsListResponseItemType2? Type { get; set; }
+        public global::ModerationAPI.ActionsListResponseItemType? Type { get; set; }
 
         /// <summary>
         /// Whether the action is a built-in action or a custom one.<br/>
@@ -176,7 +176,7 @@ namespace ModerationAPI
             bool freeText,
             string? key,
             string? description,
-            global::ModerationAPI.ActionsListResponseItemType2? type,
+            global::ModerationAPI.ActionsListResponseItemType? type,
             bool? builtIn)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

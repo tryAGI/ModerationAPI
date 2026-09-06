@@ -90,13 +90,13 @@ namespace ModerationAPI
         /// Block or suspension details, if applicable. Null if the author is enabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("block")]
-        public global::ModerationAPI.PublicAuthorBlock2? Block { get; set; }
+        public global::ModerationAPI.PublicAuthorBlock? Block { get; set; }
 
         /// <summary>
         /// Risk assessment details, if available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("risk_evaluation")]
-        public global::ModerationAPI.PublicAuthorRiskEvaluation2? RiskEvaluation { get; set; }
+        public global::ModerationAPI.PublicAuthorRiskEvaluation? RiskEvaluation { get; set; }
 
         /// <summary>
         ///
@@ -183,8 +183,8 @@ namespace ModerationAPI
             string? email,
             string? company,
             double? lastIncident,
-            global::ModerationAPI.PublicAuthorBlock2? block,
-            global::ModerationAPI.PublicAuthorRiskEvaluation2? riskEvaluation)
+            global::ModerationAPI.PublicAuthorBlock? block,
+            global::ModerationAPI.PublicAuthorRiskEvaluation? riskEvaluation)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ExternalId = externalId;

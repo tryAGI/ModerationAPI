@@ -3,10 +3,10 @@
 namespace ModerationAPI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class NewModerateModerateResponseInsightSentimentInsightValue2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2?>
+    public sealed class NewModerateModerateResponseInsightSentimentInsightValueNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue?>
     {
         /// <inheritdoc />
-        public override global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2? Read(
+        public override global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace ModerationAPI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2Extensions.ToEnum(stringValue);
+                        return global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValueExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace ModerationAPI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2)numValue;
+                    return (global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2?);
+                    return default(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace ModerationAPI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2? value,
+            global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace ModerationAPI.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue2Extensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValueExtensions.ToValueString(value.Value));
             }
         }
     }

@@ -30,7 +30,7 @@ namespace ModerationAPI
         /// The type of the action.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::ModerationAPI.ActionsUpdateRequestType2? Type { get; set; }
+        public global::ModerationAPI.ActionsUpdateRequestType? Type { get; set; }
 
         /// <summary>
         /// Whether the action is a built-in action or a custom one.<br/>
@@ -139,7 +139,7 @@ namespace ModerationAPI
             string? key,
             string? name,
             string? description,
-            global::ModerationAPI.ActionsUpdateRequestType2? type,
+            global::ModerationAPI.ActionsUpdateRequestType? type,
             bool? builtIn,
             global::ModerationAPI.ActionsUpdateRequestQueueBehaviour? queueBehaviour,
             global::System.Collections.Generic.IList<string>? filterInQueueIds,

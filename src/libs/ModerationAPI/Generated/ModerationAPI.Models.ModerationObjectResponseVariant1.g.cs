@@ -45,7 +45,7 @@ namespace ModerationAPI
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::ModerationAPI.ModerationObjectResponseVariant1Author2? Author { get; set; }
+        public global::ModerationAPI.ModerationObjectResponseVariant1Author? Author { get; set; }
 
         /// <summary>
         /// Whether the content is using look-alike characters. Often used by spammers.
@@ -147,7 +147,7 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.ModerationObjectResponseVariant1Field> fields,
             object? error,
             string? contentId,
-            global::ModerationAPI.ModerationObjectResponseVariant1Author2? author,
+            global::ModerationAPI.ModerationObjectResponseVariant1Author? author,
             global::System.Collections.Generic.IList<global::ModerationAPI.ModerationObjectResponseVariant1Wordlist>? wordlists)
         {
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));

@@ -19,7 +19,7 @@ namespace ModerationAPI
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::ModerationAPI.NewModerateModerateResponseAuthor2? Author { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseAuthor? Author { get; set; }
 
         /// <summary>
         /// The evaluation of the content after running the channel policies.
@@ -105,7 +105,7 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>> policies,
             global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>> insights,
             global::ModerationAPI.NewModerateModerateResponseMeta meta,
-            global::ModerationAPI.NewModerateModerateResponseAuthor2? author,
+            global::ModerationAPI.NewModerateModerateResponseAuthor? author,
             global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseError>? errors)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

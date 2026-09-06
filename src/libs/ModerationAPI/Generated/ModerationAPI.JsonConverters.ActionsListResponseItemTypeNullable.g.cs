@@ -3,10 +3,10 @@
 namespace ModerationAPI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ActionsCreateRequestType2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.ActionsCreateRequestType2>
+    public sealed class ActionsListResponseItemTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ModerationAPI.ActionsListResponseItemType?>
     {
         /// <inheritdoc />
-        public override global::ModerationAPI.ActionsCreateRequestType2 Read(
+        public override global::ModerationAPI.ActionsListResponseItemType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace ModerationAPI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::ModerationAPI.ActionsCreateRequestType2Extensions.ToEnum(stringValue) ?? default;
+                        return global::ModerationAPI.ActionsListResponseItemTypeExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace ModerationAPI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::ModerationAPI.ActionsCreateRequestType2)numValue;
+                    return (global::ModerationAPI.ActionsListResponseItemType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::ModerationAPI.ActionsCreateRequestType2);
+                    return default(global::ModerationAPI.ActionsListResponseItemType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace ModerationAPI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::ModerationAPI.ActionsCreateRequestType2 value,
+            global::ModerationAPI.ActionsListResponseItemType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::ModerationAPI.ActionsCreateRequestType2Extensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::ModerationAPI.ActionsListResponseItemTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

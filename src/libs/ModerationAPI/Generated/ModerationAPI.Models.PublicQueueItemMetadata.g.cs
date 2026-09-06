@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// Customer-supplied metadata attached to the content (same shape as the moderation API `metadata` input).
+    /// Arbitrary key/value metadata. Top-level keys are strings.
     /// </summary>
     public sealed partial class PublicQueueItemMetadata
     {

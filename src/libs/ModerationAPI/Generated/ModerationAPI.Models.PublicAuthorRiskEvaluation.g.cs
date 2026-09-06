@@ -4,16 +4,43 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// Risk assessment details, if available.
+    ///
     /// </summary>
     public sealed partial class PublicAuthorRiskEvaluation
     {
+        /// <summary>
+        /// Calculated risk level based on more than 10 behavioral signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("risk_level")]
+        public double? RiskLevel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicAuthorRiskEvaluation" /> class.
+        /// </summary>
+        /// <param name="riskLevel">
+        /// Calculated risk level based on more than 10 behavioral signals.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public PublicAuthorRiskEvaluation(
+            double? riskLevel)
+        {
+            this.RiskLevel = riskLevel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicAuthorRiskEvaluation" /> class.
+        /// </summary>
+        public PublicAuthorRiskEvaluation()
+        {
+        }
 
     }
 }

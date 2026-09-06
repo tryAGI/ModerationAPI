@@ -99,7 +99,7 @@ namespace ModerationAPI
             string name,
             string? key = default,
             string? description = default,
-            global::ModerationAPI.ActionsCreateRequestType2? type = default,
+            global::ModerationAPI.ActionsCreateRequestType? type = default,
             bool? builtIn = default,
             global::ModerationAPI.ActionsCreateRequestQueueBehaviour? queueBehaviour = default,
             global::System.Collections.Generic.IList<string>? filterInQueueIds = default,

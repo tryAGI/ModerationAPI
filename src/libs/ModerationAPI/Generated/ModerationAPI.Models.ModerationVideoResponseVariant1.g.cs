@@ -45,7 +45,7 @@ namespace ModerationAPI
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::ModerationAPI.ModerationVideoResponseVariant1Author2? Author { get; set; }
+        public global::ModerationAPI.ModerationVideoResponseVariant1Author? Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,7 +83,7 @@ namespace ModerationAPI
             bool flagged,
             object? error,
             string? contentId,
-            global::ModerationAPI.ModerationVideoResponseVariant1Author2? author)
+            global::ModerationAPI.ModerationVideoResponseVariant1Author? author)
         {
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Error = error;

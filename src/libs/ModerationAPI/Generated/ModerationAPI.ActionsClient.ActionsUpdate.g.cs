@@ -667,7 +667,7 @@ namespace ModerationAPI
             string? key = default,
             string? name = default,
             string? description = default,
-            global::ModerationAPI.ActionsUpdateRequestType2? type = default,
+            global::ModerationAPI.ActionsUpdateRequestType? type = default,
             bool? builtIn = default,
             global::ModerationAPI.ActionsUpdateRequestQueueBehaviour? queueBehaviour = default,
             global::System.Collections.Generic.IList<string>? filterInQueueIds = default,
