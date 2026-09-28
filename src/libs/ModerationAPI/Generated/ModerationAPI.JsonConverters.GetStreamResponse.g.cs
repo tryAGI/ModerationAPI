@@ -68,19 +68,19 @@ namespace ModerationAPI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceSessionStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceSessionStarted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceSessionStarted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStarted(), typeInfo);
             }
             else if (value.IsUtteranceFinal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceUtteranceFinal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceUtteranceFinal?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceUtteranceFinal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UtteranceFinal!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUtteranceFinal(), typeInfo);
             }
             else if (value.IsSessionEnded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceSessionEnded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceSessionEnded?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceSessionEnded).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionEnded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionEnded(), typeInfo);
             }
         }
     }

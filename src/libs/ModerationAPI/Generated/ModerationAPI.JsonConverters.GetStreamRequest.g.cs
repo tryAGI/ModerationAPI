@@ -68,19 +68,19 @@ namespace ModerationAPI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceStartFrame), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceStartFrame?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceStartFrame).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Start!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStart(), typeInfo);
             }
             else if (value.IsMedia)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceMediaFrame), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceMediaFrame?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceMediaFrame).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Media!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMedia(), typeInfo);
             }
             else if (value.IsStop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.VoiceStopFrame), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.VoiceStopFrame?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.VoiceStopFrame).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stop!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStop(), typeInfo);
             }
         }
     }

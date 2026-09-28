@@ -131,61 +131,61 @@ namespace ModerationAPI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorBlockedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorBlockedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorBlockedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorBlocked!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorBlocked(), typeInfo);
             }
             else if (value.IsAuthorUnblocked)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorUnblockedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorUnblockedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorUnblockedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorUnblocked!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorUnblocked(), typeInfo);
             }
             else if (value.IsAuthorSuspended)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorSuspendedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorSuspendedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorSuspendedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorSuspended!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorSuspended(), typeInfo);
             }
             else if (value.IsAuthorUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorUpdatedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorUpdatedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorUpdatedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorUpdated(), typeInfo);
             }
             else if (value.IsAuthorTrustLevelChanged)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorTrustLevelChangedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorTrustLevelChangedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorTrustLevelChangedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorTrustLevelChanged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorTrustLevelChanged(), typeInfo);
             }
             else if (value.IsAuthorAction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.AuthorActionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.AuthorActionEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.AuthorActionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthorAction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthorAction(), typeInfo);
             }
             else if (value.IsQueueItemResolved)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.QueueItemCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.QueueItemCompletedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.QueueItemCompletedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueueItemResolved!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueueItemResolved(), typeInfo);
             }
             else if (value.IsQueueItemAction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.QueueItemActionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.QueueItemActionEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.QueueItemActionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueueItemAction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueueItemAction(), typeInfo);
             }
             else if (value.IsQueueItemRejected)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.QueueItemRejectedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.QueueItemRejectedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.QueueItemRejectedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueueItemRejected!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueueItemRejected(), typeInfo);
             }
             else if (value.IsQueueItemAllowed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ModerationAPI.QueueItemAllowedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ModerationAPI.QueueItemAllowedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ModerationAPI.QueueItemAllowedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueueItemAllowed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueueItemAllowed(), typeInfo);
             }
         }
     }
