@@ -47,8 +47,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceStartFrame PickStart() => IsStart
-            ? Start!
+        public global::ModerationAPI.VoiceStartFrame PickStart() => Start is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Start' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceMediaFrame PickMedia() => IsMedia
-            ? Media!
+        public global::ModerationAPI.VoiceMediaFrame PickMedia() => Media is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceStopFrame PickStop() => IsStop
-            ? Stop!
+        public global::ModerationAPI.VoiceStopFrame PickStop() => Stop is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsStart && start != null)
+            if (Start is { } __value0 && start != null)
             {
-                return start(Start!);
+                return start(__value0);
             }
-            else if (IsMedia && media != null)
+            else if (Media is { } __value1 && media != null)
             {
-                return media(Media!);
+                return media(__value1);
             }
-            else if (IsStop && stop != null)
+            else if (Stop is { } __value2 && stop != null)
             {
-                return stop(Stop!);
+                return stop(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsStart)
+            if (Start is { } __value0)
             {
-                start?.Invoke(Start!);
+                start?.Invoke(__value0);
             }
-            else if (IsMedia)
+            else if (Media is { } __value1)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value1);
             }
-            else if (IsStop)
+            else if (Stop is { } __value2)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsStart)
+            if (Start is { } __value0)
             {
-                start?.Invoke(Start!);
+                start?.Invoke(__value0);
             }
-            else if (IsMedia)
+            else if (Media is { } __value1)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value1);
             }
-            else if (IsStop)
+            else if (Stop is { } __value2)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value2);
             }
         }
 

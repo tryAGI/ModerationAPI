@@ -47,8 +47,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorBlockedEvent PickAuthorBlocked() => IsAuthorBlocked
-            ? AuthorBlocked!
+        public global::ModerationAPI.AuthorBlockedEvent PickAuthorBlocked() => AuthorBlocked is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorBlocked' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorUnblockedEvent PickAuthorUnblocked() => IsAuthorUnblocked
-            ? AuthorUnblocked!
+        public global::ModerationAPI.AuthorUnblockedEvent PickAuthorUnblocked() => AuthorUnblocked is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorUnblocked' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorSuspendedEvent PickAuthorSuspended() => IsAuthorSuspended
-            ? AuthorSuspended!
+        public global::ModerationAPI.AuthorSuspendedEvent PickAuthorSuspended() => AuthorSuspended is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorSuspended' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorUpdatedEvent PickAuthorUpdated() => IsAuthorUpdated
-            ? AuthorUpdated!
+        public global::ModerationAPI.AuthorUpdatedEvent PickAuthorUpdated() => AuthorUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorTrustLevelChangedEvent PickAuthorTrustLevelChanged() => IsAuthorTrustLevelChanged
-            ? AuthorTrustLevelChanged!
+        public global::ModerationAPI.AuthorTrustLevelChangedEvent PickAuthorTrustLevelChanged() => AuthorTrustLevelChanged is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorTrustLevelChanged' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorActionEvent PickAuthorAction() => IsAuthorAction
-            ? AuthorAction!
+        public global::ModerationAPI.AuthorActionEvent PickAuthorAction() => AuthorAction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthorAction' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemCompletedEvent PickQueueItemResolved() => IsQueueItemResolved
-            ? QueueItemResolved!
+        public global::ModerationAPI.QueueItemCompletedEvent PickQueueItemResolved() => QueueItemResolved is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemResolved' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemActionEvent PickQueueItemAction() => IsQueueItemAction
-            ? QueueItemAction!
+        public global::ModerationAPI.QueueItemActionEvent PickQueueItemAction() => QueueItemAction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemAction' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemRejectedEvent PickQueueItemRejected() => IsQueueItemRejected
-            ? QueueItemRejected!
+        public global::ModerationAPI.QueueItemRejectedEvent PickQueueItemRejected() => QueueItemRejected is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemRejected' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemAllowedEvent PickQueueItemAllowed() => IsQueueItemAllowed
-            ? QueueItemAllowed!
+        public global::ModerationAPI.QueueItemAllowedEvent PickQueueItemAllowed() => QueueItemAllowed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueueItemAllowed' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -705,45 +705,45 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsAuthorBlocked && authorBlocked != null)
+            if (AuthorBlocked is { } __value0 && authorBlocked != null)
             {
-                return authorBlocked(AuthorBlocked!);
+                return authorBlocked(__value0);
             }
-            else if (IsAuthorUnblocked && authorUnblocked != null)
+            else if (AuthorUnblocked is { } __value1 && authorUnblocked != null)
             {
-                return authorUnblocked(AuthorUnblocked!);
+                return authorUnblocked(__value1);
             }
-            else if (IsAuthorSuspended && authorSuspended != null)
+            else if (AuthorSuspended is { } __value2 && authorSuspended != null)
             {
-                return authorSuspended(AuthorSuspended!);
+                return authorSuspended(__value2);
             }
-            else if (IsAuthorUpdated && authorUpdated != null)
+            else if (AuthorUpdated is { } __value3 && authorUpdated != null)
             {
-                return authorUpdated(AuthorUpdated!);
+                return authorUpdated(__value3);
             }
-            else if (IsAuthorTrustLevelChanged && authorTrustLevelChanged != null)
+            else if (AuthorTrustLevelChanged is { } __value4 && authorTrustLevelChanged != null)
             {
-                return authorTrustLevelChanged(AuthorTrustLevelChanged!);
+                return authorTrustLevelChanged(__value4);
             }
-            else if (IsAuthorAction && authorAction != null)
+            else if (AuthorAction is { } __value5 && authorAction != null)
             {
-                return authorAction(AuthorAction!);
+                return authorAction(__value5);
             }
-            else if (IsQueueItemResolved && queueItemResolved != null)
+            else if (QueueItemResolved is { } __value6 && queueItemResolved != null)
             {
-                return queueItemResolved(QueueItemResolved!);
+                return queueItemResolved(__value6);
             }
-            else if (IsQueueItemAction && queueItemAction != null)
+            else if (QueueItemAction is { } __value7 && queueItemAction != null)
             {
-                return queueItemAction(QueueItemAction!);
+                return queueItemAction(__value7);
             }
-            else if (IsQueueItemRejected && queueItemRejected != null)
+            else if (QueueItemRejected is { } __value8 && queueItemRejected != null)
             {
-                return queueItemRejected(QueueItemRejected!);
+                return queueItemRejected(__value8);
             }
-            else if (IsQueueItemAllowed && queueItemAllowed != null)
+            else if (QueueItemAllowed is { } __value9 && queueItemAllowed != null)
             {
-                return queueItemAllowed(QueueItemAllowed!);
+                return queueItemAllowed(__value9);
             }
 
             return default(TResult);
@@ -779,45 +779,45 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsAuthorBlocked)
+            if (AuthorBlocked is { } __value0)
             {
-                authorBlocked?.Invoke(AuthorBlocked!);
+                authorBlocked?.Invoke(__value0);
             }
-            else if (IsAuthorUnblocked)
+            else if (AuthorUnblocked is { } __value1)
             {
-                authorUnblocked?.Invoke(AuthorUnblocked!);
+                authorUnblocked?.Invoke(__value1);
             }
-            else if (IsAuthorSuspended)
+            else if (AuthorSuspended is { } __value2)
             {
-                authorSuspended?.Invoke(AuthorSuspended!);
+                authorSuspended?.Invoke(__value2);
             }
-            else if (IsAuthorUpdated)
+            else if (AuthorUpdated is { } __value3)
             {
-                authorUpdated?.Invoke(AuthorUpdated!);
+                authorUpdated?.Invoke(__value3);
             }
-            else if (IsAuthorTrustLevelChanged)
+            else if (AuthorTrustLevelChanged is { } __value4)
             {
-                authorTrustLevelChanged?.Invoke(AuthorTrustLevelChanged!);
+                authorTrustLevelChanged?.Invoke(__value4);
             }
-            else if (IsAuthorAction)
+            else if (AuthorAction is { } __value5)
             {
-                authorAction?.Invoke(AuthorAction!);
+                authorAction?.Invoke(__value5);
             }
-            else if (IsQueueItemResolved)
+            else if (QueueItemResolved is { } __value6)
             {
-                queueItemResolved?.Invoke(QueueItemResolved!);
+                queueItemResolved?.Invoke(__value6);
             }
-            else if (IsQueueItemAction)
+            else if (QueueItemAction is { } __value7)
             {
-                queueItemAction?.Invoke(QueueItemAction!);
+                queueItemAction?.Invoke(__value7);
             }
-            else if (IsQueueItemRejected)
+            else if (QueueItemRejected is { } __value8)
             {
-                queueItemRejected?.Invoke(QueueItemRejected!);
+                queueItemRejected?.Invoke(__value8);
             }
-            else if (IsQueueItemAllowed)
+            else if (QueueItemAllowed is { } __value9)
             {
-                queueItemAllowed?.Invoke(QueueItemAllowed!);
+                queueItemAllowed?.Invoke(__value9);
             }
         }
 
@@ -842,45 +842,45 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsAuthorBlocked)
+            if (AuthorBlocked is { } __value0)
             {
-                authorBlocked?.Invoke(AuthorBlocked!);
+                authorBlocked?.Invoke(__value0);
             }
-            else if (IsAuthorUnblocked)
+            else if (AuthorUnblocked is { } __value1)
             {
-                authorUnblocked?.Invoke(AuthorUnblocked!);
+                authorUnblocked?.Invoke(__value1);
             }
-            else if (IsAuthorSuspended)
+            else if (AuthorSuspended is { } __value2)
             {
-                authorSuspended?.Invoke(AuthorSuspended!);
+                authorSuspended?.Invoke(__value2);
             }
-            else if (IsAuthorUpdated)
+            else if (AuthorUpdated is { } __value3)
             {
-                authorUpdated?.Invoke(AuthorUpdated!);
+                authorUpdated?.Invoke(__value3);
             }
-            else if (IsAuthorTrustLevelChanged)
+            else if (AuthorTrustLevelChanged is { } __value4)
             {
-                authorTrustLevelChanged?.Invoke(AuthorTrustLevelChanged!);
+                authorTrustLevelChanged?.Invoke(__value4);
             }
-            else if (IsAuthorAction)
+            else if (AuthorAction is { } __value5)
             {
-                authorAction?.Invoke(AuthorAction!);
+                authorAction?.Invoke(__value5);
             }
-            else if (IsQueueItemResolved)
+            else if (QueueItemResolved is { } __value6)
             {
-                queueItemResolved?.Invoke(QueueItemResolved!);
+                queueItemResolved?.Invoke(__value6);
             }
-            else if (IsQueueItemAction)
+            else if (QueueItemAction is { } __value7)
             {
-                queueItemAction?.Invoke(QueueItemAction!);
+                queueItemAction?.Invoke(__value7);
             }
-            else if (IsQueueItemRejected)
+            else if (QueueItemRejected is { } __value8)
             {
-                queueItemRejected?.Invoke(QueueItemRejected!);
+                queueItemRejected?.Invoke(__value8);
             }
-            else if (IsQueueItemAllowed)
+            else if (QueueItemAllowed is { } __value9)
             {
-                queueItemAllowed?.Invoke(QueueItemAllowed!);
+                queueItemAllowed?.Invoke(__value9);
             }
         }
 

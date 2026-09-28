@@ -47,8 +47,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceSessionStarted PickSessionStarted() => IsSessionStarted
-            ? SessionStarted!
+        public global::ModerationAPI.VoiceSessionStarted PickSessionStarted() => SessionStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceUtteranceFinal PickUtteranceFinal() => IsUtteranceFinal
-            ? UtteranceFinal!
+        public global::ModerationAPI.VoiceUtteranceFinal PickUtteranceFinal() => UtteranceFinal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UtteranceFinal' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.VoiceSessionEnded PickSessionEnded() => IsSessionEnded
-            ? SessionEnded!
+        public global::ModerationAPI.VoiceSessionEnded PickSessionEnded() => SessionEnded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionEnded' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsSessionStarted && sessionStarted != null)
+            if (SessionStarted is { } __value0 && sessionStarted != null)
             {
-                return sessionStarted(SessionStarted!);
+                return sessionStarted(__value0);
             }
-            else if (IsUtteranceFinal && utteranceFinal != null)
+            else if (UtteranceFinal is { } __value1 && utteranceFinal != null)
             {
-                return utteranceFinal(UtteranceFinal!);
+                return utteranceFinal(__value1);
             }
-            else if (IsSessionEnded && sessionEnded != null)
+            else if (SessionEnded is { } __value2 && sessionEnded != null)
             {
-                return sessionEnded(SessionEnded!);
+                return sessionEnded(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsUtteranceFinal)
+            else if (UtteranceFinal is { } __value1)
             {
-                utteranceFinal?.Invoke(UtteranceFinal!);
+                utteranceFinal?.Invoke(__value1);
             }
-            else if (IsSessionEnded)
+            else if (SessionEnded is { } __value2)
             {
-                sessionEnded?.Invoke(SessionEnded!);
+                sessionEnded?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace ModerationAPI
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsUtteranceFinal)
+            else if (UtteranceFinal is { } __value1)
             {
-                utteranceFinal?.Invoke(UtteranceFinal!);
+                utteranceFinal?.Invoke(__value1);
             }
-            else if (IsSessionEnded)
+            else if (SessionEnded is { } __value2)
             {
-                sessionEnded?.Invoke(SessionEnded!);
+                sessionEnded?.Invoke(__value2);
             }
         }
 
