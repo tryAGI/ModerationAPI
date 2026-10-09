@@ -30,6 +30,12 @@ namespace ModerationAPI
         public required bool Flagged { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadowFlagged")]
+        public bool? ShadowFlagged { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +47,20 @@ namespace ModerationAPI
         /// <param name="id"></param>
         /// <param name="probability"></param>
         /// <param name="flagged"></param>
+        /// <param name="shadowFlagged"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NewModerateModerateResponsePolicieClassifierOutputLabel(
             string id,
             double probability,
-            bool flagged)
+            bool flagged,
+            bool? shadowFlagged)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Probability = probability;
             this.Flagged = flagged;
+            this.ShadowFlagged = shadowFlagged;
         }
 
         /// <summary>

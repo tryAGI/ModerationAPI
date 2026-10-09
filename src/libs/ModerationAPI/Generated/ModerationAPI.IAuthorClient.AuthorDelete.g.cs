@@ -6,9 +6,11 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Delete an author<br/>
-        /// Delete a specific author
+        /// Delete a specific author. This resets the author: status, blocks, trust level, metrics and action history are removed. The author is created again with a clean record the next time content is moderated for the same ID.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// Either external ID or the ID assigned by moderation API.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
@@ -27,9 +29,11 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete an author<br/>
-        /// Delete a specific author
+        /// Delete a specific author. This resets the author: status, blocks, trust level, metrics and action history are removed. The author is created again with a clean record the next time content is moderated for the same ID.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// Either external ID or the ID assigned by moderation API.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>

@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    ///
+    /// Input parameters for image moderation
     /// </summary>
     public sealed partial class ModerationImageRequest
     {

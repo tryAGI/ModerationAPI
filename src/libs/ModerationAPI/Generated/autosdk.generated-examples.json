@@ -92,7 +92,7 @@
       "Order": 9,
       "Title": "Delete an author",
       "Slug": "author-delete",
-      "Description": "Delete a specific author",
+      "Description": "Delete a specific author. This resets the author: status, blocks, trust level, metrics and action history are removed. The author is created again with a clean record the next time content is moderated for the same ID.",
       "Language": "csharp",
       "Code": "using System;\nusing ModerationApi;\nusing ModerationApi.Models.Authors;\n\nModerationApiClient client = new();\n\nAuthorDeleteParams parameters = new() { ID = \u0022id\u0022 };\n\nvar author = await client.Authors.Delete(parameters);\n\nConsole.WriteLine(author);",
       "Format": "sdk",
@@ -145,6 +145,138 @@
     },
     {
       "Order": 14,
+      "Title": "Create a channel",
+      "Slug": "management-channels-create",
+      "Description": "Create a channel in a project, with the default rules. The project\u0027s first channel becomes its default. Needs the \u0060channels:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Create a channel\n# @name management-channels-create\nPOST {{host}}/projects/{{projectId}}/channels\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022key\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022contentType\u0022: \u0022profile\u0022\n}\n\n## Responses\n# 200\n# Description: Channel created successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-create",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "Delete a channel",
+      "Slug": "management-channels-delete",
+      "Description": "Delete a channel. Its key is freed for a new channel. When it was the default, the oldest remaining channel becomes the default. A channel that still moderates a Slack workspace must be disconnected first. Needs the \u0060channels:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Delete a channel\n# @name management-channels-delete\nDELETE {{host}}/channels/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Channel deleted successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-delete",
+      "Setup": null
+    },
+    {
+      "Order": 16,
+      "Title": "Duplicate a channel",
+      "Slug": "management-channels-duplicate",
+      "Description": "Copy a channel in its project, with every setting, policy, rule and wordlist. Integrations (Discord, Slack, WordPress) are not copied. Needs the \u0060channels:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Duplicate a channel\n# @name management-channels-duplicate\nPOST {{host}}/channels/{{id}}/duplicate\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022key\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Channel duplicated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-duplicate",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "Get a channel",
+      "Slug": "management-channels-get",
+      "Description": "Get a channel by ID. Needs the \u0060channels:read\u0060 permission.",
+      "Language": "http",
+      "Code": "### Get a channel\n# @name management-channels-get\nGET {{host}}/channels/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Channel retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-get",
+      "Setup": null
+    },
+    {
+      "Order": 18,
+      "Title": "List channels",
+      "Slug": "management-channels-list",
+      "Description": "List the channels in a project. Needs the \u0060channels:read\u0060 permission.",
+      "Language": "http",
+      "Code": "### List channels\n# @name management-channels-list\nGET {{host}}/projects/{{projectId}}/channels\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Channels retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-list",
+      "Setup": null
+    },
+    {
+      "Order": 19,
+      "Title": "Update a channel",
+      "Slug": "management-channels-update",
+      "Description": "Update a channel. Fields you leave out keep their value. Needs the \u0060channels:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Update a channel\n# @name management-channels-update\nPUT {{host}}/channels/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022key\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022contentType\u0022: \u0022profile\u0022,\n  \u0022flaggingMode\u0022: \u0022DRY_RUN\u0022,\n  \u0022contextEnabled\u0022: true,\n  \u0022enableImageModeration\u0022: true,\n  \u0022enableVideoModeration\u0022: true,\n  \u0022enableAudioModeration\u0022: true,\n  \u0022enableVoiceModeration\u0022: true,\n  \u0022includeTranscriptInResponse\u0022: true,\n  \u0022transcriptionQuality\u0022: \u0022SPEED\u0022,\n  \u0022unicodeSpoofDetectionEnabled\u0022: true,\n  \u0022frameCaptureInterval\u0022: 0,\n  \u0022maxFramesPerVideo\u0022: 0,\n  \u0022spreadFrames\u0022: true\n}\n\n## Responses\n# 200\n# Description: Channel updated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-channels-update",
+      "Setup": null
+    },
+    {
+      "Order": 20,
+      "Title": "Create a project",
+      "Slug": "management-projects-create",
+      "Description": "Create a project with one channel, a review queue inbox and a secret API key. Give a domain or context and the project suggests policies for the platform. Needs the \u0060projects:write\u0060 permission and a key that reaches all projects.",
+      "Language": "http",
+      "Code": "### Create a project\n# @name management-projects-create\nPOST {{host}}/projects\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022domain\u0022: \u0022string\u0022,\n  \u0022context\u0022: \u0022string\u0022,\n  \u0022brief\u0022: \u0022string\u0022,\n  \u0022usedByMinors\u0022: false\n}\n\n## Responses\n# 200\n# Description: Project created successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-projects-create",
+      "Setup": null
+    },
+    {
+      "Order": 21,
+      "Title": "Delete a project",
+      "Slug": "management-projects-delete",
+      "Description": "Delete a project with everything in it: channels, queues, API keys and stored content. This can\u0027t be undone. The project\u0027s API keys stop working at once. Needs the \u0060projects:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Delete a project\n# @name management-projects-delete\nDELETE {{host}}/projects/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Project deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-projects-delete",
+      "Setup": null
+    },
+    {
+      "Order": 22,
+      "Title": "Duplicate a project",
+      "Slug": "management-projects-duplicate",
+      "Description": "Copy a project\u0027s configuration into a new project: its settings, every channel with its policies, rules and wordlists, its moderation actions and its review queues. The copy gets its own secret API key. Webhooks, integrations, API keys and content are not copied. Needs the \u0060projects:write\u0060 permission and a key that reaches all projects.",
+      "Language": "http",
+      "Code": "### Duplicate a project\n# @name management-projects-duplicate\nPOST {{host}}/projects/{{id}}/duplicate\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Project duplicated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-projects-duplicate",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Get a project",
+      "Slug": "management-projects-get",
+      "Description": "Get a project by ID. Needs the \u0060projects:read\u0060 permission.",
+      "Language": "http",
+      "Code": "### Get a project\n# @name management-projects-get\nGET {{host}}/projects/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Project retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-projects-get",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "List projects",
+      "Slug": "management-projects-list",
+      "Description": "List every project in the organization. Needs the \u0060projects:read\u0060 permission.",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Projects.ManagementProjectsListAsync();",
+      "Format": "sdk",
+      "OperationId": "management-projects-list",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 25,
+      "Title": "Update a project",
+      "Slug": "management-projects-update",
+      "Description": "Update a project. Fields you leave out keep their value. Needs the \u0060projects:write\u0060 permission.",
+      "Language": "http",
+      "Code": "### Update a project\n# @name management-projects-update\nPUT {{host}}/projects/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022domain\u0022: \u0022https://example.com\u0022,\n  \u0022context\u0022: \u0022string\u0022,\n  \u0022globalFlaggingMode\u0022: \u0022DRY_RUN\u0022,\n  \u0022enableRequestLogging\u0022: true,\n  \u0022casebookEnabled\u0022: true\n}\n\n## Responses\n# 200\n# Description: Project updated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "management-projects-update",
+      "Setup": null
+    },
+    {
+      "Order": 26,
       "Title": "Get queue items",
       "Slug": "queueview-opengetitems",
       "Description": "Get paginated list of items in a moderation queue with filtering options",
@@ -155,7 +287,7 @@
       "Setup": null
     },
     {
-      "Order": 15,
+      "Order": 27,
       "Title": "Get a queue",
       "Slug": "queueview-opengetqueue",
       "Description": "Get a queue",
@@ -166,7 +298,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 28,
       "Title": "Get queue statistics",
       "Slug": "queueview-opengetstats",
       "Description": "Get detailed statistics about a moderation queue including review times, action counts, and trends",
@@ -177,7 +309,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 29,
       "Title": "Resolve a queue item",
       "Slug": "queueview-openresolveitem",
       "Description": "Mark a queue item as resolved with a specific moderation action",
@@ -188,7 +320,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 30,
       "Title": "Unresolve a queue item",
       "Slug": "queueview-openunresolveitem",
       "Description": "Mark a previously resolved queue item as unresolved/pending",
@@ -199,7 +331,73 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 31,
+      "Title": "Create a webhook",
+      "Slug": "webhooks-publiccreate",
+      "Description": "Create a webhook subscribed to one or more event types. Deliveries use the v2 envelope and are signed with the project signing secret (see the signing secret endpoint).",
+      "Language": "http",
+      "Code": "### Create a webhook\n# @name webhooks-publicCreate\nPOST {{host}}/webhooks\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022url\u0022: \u0022https://example.com\u0022,\n  \u0022eventTypes\u0022: [\n    \u0022QUEUE_ITEM_NEW\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Webhook created successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "webhooks-publicCreate",
+      "Setup": null
+    },
+    {
+      "Order": 32,
+      "Title": "Delete a webhook",
+      "Slug": "webhooks-publicdelete",
+      "Description": "Delete a webhook.",
+      "Language": "http",
+      "Code": "### Delete a webhook\n# @name webhooks-publicDelete\nDELETE {{host}}/webhooks/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Webhook deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "webhooks-publicDelete",
+      "Setup": null
+    },
+    {
+      "Order": 33,
+      "Title": "Get a webhook",
+      "Slug": "webhooks-publicget",
+      "Description": "Get a webhook by ID.",
+      "Language": "http",
+      "Code": "### Get a webhook\n# @name webhooks-publicGet\nGET {{host}}/webhooks/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Webhook retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "webhooks-publicGet",
+      "Setup": null
+    },
+    {
+      "Order": 34,
+      "Title": "Get the webhook signing secret",
+      "Slug": "webhooks-publicgetsecret",
+      "Description": "Get the signing secret used to sign webhook deliveries for this project, creating one if none exists yet. Verify deliveries by comparing the \u0060modapi-signature\u0060 header to HMAC-SHA256(raw request body, secret) hex-encoded.",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Webhooks.WebhooksPublicGetSecretAsync();",
+      "Format": "sdk",
+      "OperationId": "webhooks-publicGetSecret",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 35,
+      "Title": "List webhooks",
+      "Slug": "webhooks-publiclist",
+      "Description": "List all webhooks for the authenticated project.",
+      "Language": "csharp",
+      "Code": "using var client = new ModerationAPIClient(apiKey);\nvar response = await client.Webhooks.WebhooksPublicListAsync();",
+      "Format": "sdk",
+      "OperationId": "webhooks-publicList",
+      "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 36,
+      "Title": "Update a webhook",
+      "Slug": "webhooks-publicupdate",
+      "Description": "Update a webhook. Legacy v1 webhooks are read-only: delete them and create a new webhook instead.",
+      "Language": "http",
+      "Code": "### Update a webhook\n# @name webhooks-publicUpdate\nPUT {{host}}/webhooks/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022url\u0022: \u0022https://example.com\u0022,\n  \u0022eventTypes\u0022: [\n    \u0022QUEUE_ITEM_NEW\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Webhook updated successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "webhooks-publicUpdate",
+      "Setup": null
+    },
+    {
+      "Order": 37,
       "Title": "Add words to wordlist",
       "Slug": "wordlist-addwords",
       "Description": "Add words to an existing wordlist",
@@ -210,7 +408,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 38,
       "Title": "Get wordlist",
       "Slug": "wordlist-getwordlistpublic",
       "Description": "Get a specific wordlist by ID",
@@ -221,7 +419,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 39,
       "Title": "List wordlists",
       "Slug": "wordlist-list",
       "Description": "List all wordlists for the authenticated organization",
@@ -232,7 +430,7 @@
       "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 22,
+      "Order": 40,
       "Title": "Remove words from wordlist",
       "Slug": "wordlist-removewords",
       "Description": "Remove words from an existing wordlist",
@@ -243,7 +441,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 41,
       "Title": "Update wordlist",
       "Slug": "wordlist-update",
       "Description": "Update a wordlist",
@@ -254,7 +452,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 42,
       "Title": "Get embedding status",
       "Slug": "wordlist-wordlistembeddingstatus",
       "Description": "Get the current embedding progress status for a wordlist",

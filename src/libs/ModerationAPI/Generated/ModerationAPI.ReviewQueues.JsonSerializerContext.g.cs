@@ -36,6 +36,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorInternalServerError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorInternalServerErrorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorInternalServerErrorIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenResolveItemRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenUnresolveItemRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsSortField), TypeInfoPropertyName = "QueueViewOpenGetItemsSortField2")]
@@ -43,11 +44,23 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterIsFlagged2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterFilterLabelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMetadataFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMetadataFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterRecommendationAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterWithinUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus), TypeInfoPropertyName = "QueueViewOpenGetQueueResponseQueueFilterCheckStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetStatsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetStatsResponseReviewStats))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetStatsResponseActionStat>))]
@@ -74,10 +87,18 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenUnresolveItemResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsSortField?), TypeInfoPropertyName = "NullableQueueViewOpenGetItemsSortField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsSortDirection?), TypeInfoPropertyName = "NullableQueueViewOpenGetItemsSortDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterIsFlagged2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterCasebookAnswer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterCasebookAgreement2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterFilterLabelType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterRecommendationAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterWithinUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus?), TypeInfoPropertyName = "NullableQueueViewOpenGetQueueResponseQueueFilterCheckStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsResponseItemStatus?), TypeInfoPropertyName = "NullableQueueViewOpenGetItemsResponseItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorBadRequestIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorUnauthorizedIssue>))]
@@ -85,6 +106,10 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorNotFoundIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorInternalServerErrorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMetadataFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetStatsResponseActionStat>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.QueueViewOpenGetStatsResponseTopReviewer>))]
@@ -171,13 +196,41 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsSortDirection?)
 
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement?)
+
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType)
 
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType?)
 
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType?)
+
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction)
 
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus)
+
+                    || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus?)
 
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsResponseItemStatus)
 
@@ -208,6 +261,36 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetItemsSortDirectionNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterIsFlaggedJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterIsFlagged?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterIsFlaggedNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswerJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswer?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCasebookAnswerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreementJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreement?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCasebookAgreementNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterFilterLabelType))
                 {
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterFilterLabelTypeJsonConverter();
@@ -218,6 +301,26 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterFilterLabelTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterContentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterContentType?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterContentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterMediaType?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterMediaTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction))
                 {
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterRecommendationActionJsonConverter();
@@ -226,6 +329,26 @@ namespace ModerationAPI
                 if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterRecommendationAction?))
                 {
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterRecommendationActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterWithinUnitJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterWithinUnit?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterWithinUnitNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCheckStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetQueueResponseQueueFilterCheckStatus?))
+                {
+                    return new global::ModerationAPI.JsonConverters.QueueViewOpenGetQueueResponseQueueFilterCheckStatusNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsResponseItemStatus))
