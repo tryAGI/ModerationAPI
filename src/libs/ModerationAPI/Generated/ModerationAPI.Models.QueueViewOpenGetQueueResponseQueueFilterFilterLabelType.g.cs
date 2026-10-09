@@ -15,6 +15,10 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
+        Matched,
+        /// <summary>
+        ///
+        /// </summary>
         NotFlagged,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace ModerationAPI
             return value switch
             {
                 QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Flagged => "FLAGGED",
+                QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Matched => "MATCHED",
                 QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.NotFlagged => "NOT_FLAGGED",
                 QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Thresholds => "THRESHOLDS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace ModerationAPI
             return value switch
             {
                 "FLAGGED" => QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Flagged,
+                "MATCHED" => QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Matched,
                 "NOT_FLAGGED" => QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.NotFlagged,
                 "THRESHOLDS" => QueueViewOpenGetQueueResponseQueueFilterFilterLabelType.Thresholds,
                 _ => null,

@@ -27,7 +27,7 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("span")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Span { get; set; }
+        public required global::System.Collections.Generic.IList<double> Span { get; set; }
 
         /// <summary>
         ///
@@ -54,6 +54,18 @@ namespace ModerationAPI
         public string? EntityType { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scripts")]
+        public global::System.Collections.Generic.IList<string>? Scripts { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skeleton")]
+        public string? Skeleton { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,17 +87,21 @@ namespace ModerationAPI
         /// <param name="reasons"></param>
         /// <param name="signals"></param>
         /// <param name="entityType"></param>
+        /// <param name="scripts"></param>
+        /// <param name="skeleton"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicQueueItemLabelsVariant1ItemMatche(
             string match,
             double probability,
-            byte[] span,
+            global::System.Collections.Generic.IList<double> span,
             string? mask,
             global::System.Collections.Generic.IList<string>? reasons,
             global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignals? signals,
-            string? entityType)
+            string? entityType,
+            global::System.Collections.Generic.IList<string>? scripts,
+            string? skeleton)
         {
             this.Match = match ?? throw new global::System.ArgumentNullException(nameof(match));
             this.Probability = probability;
@@ -94,6 +110,8 @@ namespace ModerationAPI
             this.Reasons = reasons;
             this.Signals = signals;
             this.EntityType = entityType;
+            this.Scripts = scripts;
+            this.Skeleton = skeleton;
         }
 
         /// <summary>

@@ -84,12 +84,27 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
+        public ChannelsClient Channels { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ProjectsClient Projects { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public ReviewQueuesClient ReviewQueues { get; }
 
         /// <summary>
         /// Real-time voice moderation over WebSocket.
         /// </summary>
         public VoiceClient Voice { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public WebhooksClient Webhooks { get; }
 
         /// <summary>
         ///

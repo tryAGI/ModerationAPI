@@ -36,6 +36,12 @@ namespace ModerationAPI
         public required global::ModerationAPI.NewModerateModerateResponseRecommendation Recommendation { get; set; }
 
         /// <summary>
+        /// What your casebook — the record of your past moderation decisions — found for this content, or null when it had nothing close enough to say, when the matching cases disagreed, or when casebook lookups are not switched on for this channel. Reports what the casebook found; whether it decided the outcome is shown in `recommendation`, where a higher-priority rule may have settled the item first.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("casebook")]
+        public global::ModerationAPI.NewModerateModerateResponseCasebook? Casebook { get; set; }
+
+        /// <summary>
         /// Results of all policies in the channel. Sorted by highest probability.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("policies")]
@@ -92,6 +98,9 @@ namespace ModerationAPI
         /// <param name="author">
         /// The author of the content if your account has authors enabled. Requires you to send authorId when submitting content.
         /// </param>
+        /// <param name="casebook">
+        /// What your casebook — the record of your past moderation decisions — found for this content, or null when it had nothing close enough to say, when the matching cases disagreed, or when casebook lookups are not switched on for this channel. Reports what the casebook found; whether it decided the outcome is shown in `recommendation`, where a higher-priority rule may have settled the item first.
+        /// </param>
         /// <param name="errors">
         /// Policies that had errors
         /// </param>
@@ -106,12 +115,14 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>> insights,
             global::ModerationAPI.NewModerateModerateResponseMeta meta,
             global::ModerationAPI.NewModerateModerateResponseAuthor? author,
+            global::ModerationAPI.NewModerateModerateResponseCasebook? casebook,
             global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseError>? errors)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Author = author;
             this.Evaluation = evaluation ?? throw new global::System.ArgumentNullException(nameof(evaluation));
             this.Recommendation = recommendation ?? throw new global::System.ArgumentNullException(nameof(recommendation));
+            this.Casebook = casebook;
             this.Policies = policies ?? throw new global::System.ArgumentNullException(nameof(policies));
             this.Insights = insights ?? throw new global::System.ArgumentNullException(nameof(insights));
             this.Meta = meta ?? throw new global::System.ArgumentNullException(nameof(meta));

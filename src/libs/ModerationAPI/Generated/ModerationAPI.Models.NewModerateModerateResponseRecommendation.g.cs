@@ -17,11 +17,11 @@ namespace ModerationAPI
         public required global::ModerationAPI.NewModerateModerateResponseRecommendationAction Action { get; set; }
 
         /// <summary>
-        /// The reason code for the recommendation. Can be used to display a reason to the user.
+        /// Reason codes for the recommendation. Standard codes plus a `rule:&lt;key&gt;` code identifying the rule that produced the action. Can be used to display a reason to the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason_codes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode> ReasonCodes { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>> ReasonCodes { get; set; }
 
         /// <summary>
         /// Rules that matched during evaluation, if rules engine is active.
@@ -42,7 +42,7 @@ namespace ModerationAPI
         /// The action to take based on the recommendation
         /// </param>
         /// <param name="reasonCodes">
-        /// The reason code for the recommendation. Can be used to display a reason to the user.
+        /// Reason codes for the recommendation. Standard codes plus a `rule:&lt;key&gt;` code identifying the rule that produced the action. Can be used to display a reason to the user.
         /// </param>
         /// <param name="matchedRules">
         /// Rules that matched during evaluation, if rules engine is active.
@@ -52,7 +52,7 @@ namespace ModerationAPI
 #endif
         public NewModerateModerateResponseRecommendation(
             global::ModerationAPI.NewModerateModerateResponseRecommendationAction action,
-            global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode> reasonCodes,
+            global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>> reasonCodes,
             global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>? matchedRules)
         {
             this.Action = action;

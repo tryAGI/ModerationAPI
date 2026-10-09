@@ -15,13 +15,6 @@ namespace ModerationAPI
         public string? ContentId { get; set; }
 
         /// <summary>
-        /// The text you'd like to analyze. We recommend to submit plain text or HTML
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Value { get; set; }
-
-        /// <summary>
         /// The key of the channel.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channelKey")]
@@ -50,6 +43,13 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// The text you'd like to analyze. We recommend to submit plain text or HTML
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,12 +94,12 @@ namespace ModerationAPI
             object? metadata)
         {
             this.ContentId = contentId;
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.ChannelKey = channelKey;
             this.DoNotStore = doNotStore;
             this.AuthorId = authorId;
             this.ContextId = contextId;
             this.Metadata = metadata;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

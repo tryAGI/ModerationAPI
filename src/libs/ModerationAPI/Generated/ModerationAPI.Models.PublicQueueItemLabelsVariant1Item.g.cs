@@ -35,6 +35,12 @@ namespace ModerationAPI
         public bool? Flagged { get; set; }
 
         /// <summary>
+        /// Whether this label crossed its threshold under a shadowed policy — reported for visibility, never counted toward a flagging decision
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow_flagged")]
+        public bool? ShadowFlagged { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
@@ -61,6 +67,9 @@ namespace ModerationAPI
         /// <param name="flagged">
         /// Whether this label crossed its flagging threshold
         /// </param>
+        /// <param name="shadowFlagged">
+        /// Whether this label crossed its threshold under a shadowed policy — reported for visibility, never counted toward a flagging decision
+        /// </param>
         /// <param name="matches"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -70,12 +79,14 @@ namespace ModerationAPI
             double score,
             bool? manual,
             bool? flagged,
+            bool? shadowFlagged,
             global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>? matches)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Score = score;
             this.Manual = manual;
             this.Flagged = flagged;
+            this.ShadowFlagged = shadowFlagged;
             this.Matches = matches;
         }
 

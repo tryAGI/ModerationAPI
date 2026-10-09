@@ -23,6 +23,13 @@ namespace ModerationAPI
         public required bool Masked { get; set; }
 
         /// <summary>
+        /// Whether Unicode spoofing normalization rewrote the content — confusables folded to their Latin lookalikes, invisible characters and combining-mark abuse stripped.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unicode_cleaned")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool UnicodeCleaned { get; set; }
+
+        /// <summary>
         /// The modified content, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modified")]
@@ -49,6 +56,9 @@ namespace ModerationAPI
         /// <param name="masked">
         /// Whether any values have been masked.
         /// </param>
+        /// <param name="unicodeCleaned">
+        /// Whether Unicode spoofing normalization rewrote the content — confusables folded to their Latin lookalikes, invisible characters and combining-mark abuse stripped.
+        /// </param>
         /// <param name="modified">
         /// The modified content, if any.
         /// </param>
@@ -61,11 +71,13 @@ namespace ModerationAPI
         public NewModerateModerateResponseContent(
             string id,
             bool masked,
+            bool unicodeCleaned,
             global::ModerationAPI.AnyOf<string, object, global::System.Collections.Generic.Dictionary<string, global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo, global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio>>>? modified,
             string? transcript)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Masked = masked;
+            this.UnicodeCleaned = unicodeCleaned;
             this.Modified = modified;
             this.Transcript = transcript;
         }
