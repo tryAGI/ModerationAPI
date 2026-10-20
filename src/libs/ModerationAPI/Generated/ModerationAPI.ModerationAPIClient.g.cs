@@ -38,14 +38,14 @@ namespace ModerationAPI
 
         internal global::ModerationAPI.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::ModerationAPI.AutoSDKServerConfiguration();
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ModerationAPI.SourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? global::ModerationAPI.SourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
