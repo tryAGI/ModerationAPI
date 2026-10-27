@@ -6,92 +6,70 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
+        /// Mark an item of a queue as resolved. It is the same as a check-off in the dashboard: the item leaves the pending list and a QUEUE_ITEM_COMPLETED webhook is sent. To also take a moderation action, use `POST /actions/execute`.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="itemId">
-        /// The item ID to resolve
+        /// The item ID to resolve.
         /// </param>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue.Items;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ItemResolveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     ItemID = "itemId",<br/>
-        /// };<br/>
-        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.items.resolve({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     itemId: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenResolveItemResponse> QueueViewOpenResolveItemAsync(
             string id,
             string itemId,
-
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
+        /// Mark an item of a queue as resolved. It is the same as a check-off in the dashboard: the item leaves the pending list and a QUEUE_ITEM_COMPLETED webhook is sent. To also take a moderation action, use `POST /actions/execute`.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="itemId">
-        /// The item ID to resolve
+        /// The item ID to resolve.
         /// </param>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue.Items;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ItemResolveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     ItemID = "itemId",<br/>
-        /// };<br/>
-        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.items.resolve({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     itemId: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenResolveItemResponse>> QueueViewOpenResolveItemAsResponseAsync(
             string id,
             string itemId,
-
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request,
-            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
-        /// </summary>
-        /// <param name="id">
-        /// The queue ID
-        /// </param>
-        /// <param name="itemId">
-        /// The item ID to resolve
-        /// </param>
-        /// <param name="comment">
-        /// Optional comment
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenResolveItemResponse> QueueViewOpenResolveItemAsync(
-            string id,
-            string itemId,
-            string? comment = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

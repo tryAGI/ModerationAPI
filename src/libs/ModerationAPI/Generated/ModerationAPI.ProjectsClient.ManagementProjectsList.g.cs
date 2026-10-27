@@ -26,10 +26,14 @@ namespace ModerationAPI
             {                s_ManagementProjectsListSecurityRequirement0,
             };
         partial void PrepareManagementProjectsListArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? pageSize);
         partial void PrepareManagementProjectsListRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? pageSize);
         partial void ProcessManagementProjectsListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,16 +45,41 @@ namespace ModerationAPI
 
         /// <summary>
         /// List projects<br/>
-        /// List every project in the organization. Needs the `projects:read` permission.
+        /// List the projects in the organization. The list is paginated. Needs the `projects:read` permission.
         /// </summary>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::ModerationAPI.Project>> ManagementProjectsListAsync(
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.projects.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.ManagementProjectsListResponse> ManagementProjectsListAsync(
+            int? page = default,
+            int? pageSize = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ManagementProjectsListAsResponseAsync(
+                page: page,
+                pageSize: pageSize,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -59,19 +88,44 @@ namespace ModerationAPI
         }
         /// <summary>
         /// List projects<br/>
-        /// List every project in the organization. Needs the `projects:read` permission.
+        /// List the projects in the organization. The list is paginated. Needs the `projects:read` permission.
         /// </summary>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.Project>>> ManagementProjectsListAsResponseAsync(
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.projects.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ManagementProjectsListResponse>> ManagementProjectsListAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareManagementProjectsListArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                page: ref page,
+                pageSize: ref pageSize);
 
 
             var __authorizations = global::ModerationAPI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -98,7 +152,11 @@ namespace ModerationAPI
 
                             var __pathBuilder = new global::ModerationAPI.PathBuilder(
                                 path: "/projects",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.moderationapi.com/v1", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("page", page?.ToString())
+                                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::ModerationAPI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -138,7 +196,9 @@ namespace ModerationAPI
                     request: __httpRequest);
                 PrepareManagementProjectsListRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    page: page,
+                    pageSize: pageSize);
 
                 return __httpRequest;
             }
@@ -322,19 +382,19 @@ namespace ModerationAPI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::ModerationAPI.ErrorUnauthorized? __value_401 = null;
+                                global::ModerationAPI.AuthenticationError? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -343,7 +403,7 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorUnauthorized>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.AuthenticationError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -359,19 +419,19 @@ namespace ModerationAPI
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::ModerationAPI.ErrorForbidden? __value_403 = null;
+                                global::ModerationAPI.PermissionDeniedError? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::ModerationAPI.ErrorForbidden.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::ModerationAPI.PermissionDeniedError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::ModerationAPI.ErrorForbidden.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::ModerationAPI.PermissionDeniedError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -380,12 +440,49 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorForbidden>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.PermissionDeniedError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Too many requests. Retry after the number of seconds in the `Retry-After` header.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::ModerationAPI.RateLimitError? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.RateLimitError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -413,9 +510,9 @@ namespace ModerationAPI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::ModerationAPI.Project>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::ModerationAPI.Project>), JsonSerializerContext) ??
+                                    var __value = global::ModerationAPI.ManagementProjectsListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.Project>>(
+                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ManagementProjectsListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ModerationAPI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -445,9 +542,9 @@ namespace ModerationAPI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::ModerationAPI.Project>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::ModerationAPI.Project>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ModerationAPI.ManagementProjectsListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.Project>>(
+                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ManagementProjectsListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ModerationAPI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

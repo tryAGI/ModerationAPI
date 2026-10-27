@@ -6,15 +6,15 @@ namespace ModerationAPI
     {
         /// <summary>
         /// List authors<br/>
-        /// Get a paginated list of authors with their activity metrics and reputation
+        /// List the authors of the project, with their status, trust level and content metrics. The list is paginated. By default, the authors that were active most recently come first.
         /// </summary>
-        /// <param name="pageSize">
-        /// Number of authors per page<br/>
-        /// Default Value: 20
-        /// </param>
-        /// <param name="pageNumber">
-        /// Page number to fetch<br/>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
         /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
         /// </param>
         /// <param name="sortBy"></param>
         /// <param name="sortDirection">
@@ -23,40 +23,44 @@ namespace ModerationAPI
         /// </param>
         /// <param name="memberSinceDate"></param>
         /// <param name="lastActiveDate"></param>
-        /// <param name="contentTypes"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Authors;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// AuthorListParams parameters = new();<br/>
-        /// var authors = await client.Authors.List(parameters);<br/>
-        /// Console.WriteLine(authors);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.authors.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AuthorOpenListAuthorsResponse> AuthorOpenListAuthorsAsync(
-            double? pageSize = default,
-            double? pageNumber = default,
+            int? page = default,
+            int? pageSize = default,
             global::ModerationAPI.AuthorOpenListAuthorsSortBy? sortBy = default,
             global::ModerationAPI.AuthorOpenListAuthorsSortDirection? sortDirection = default,
             string? memberSinceDate = default,
             string? lastActiveDate = default,
-            string? contentTypes = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List authors<br/>
-        /// Get a paginated list of authors with their activity metrics and reputation
+        /// List the authors of the project, with their status, trust level and content metrics. The list is paginated. By default, the authors that were active most recently come first.
         /// </summary>
-        /// <param name="pageSize">
-        /// Number of authors per page<br/>
-        /// Default Value: 20
-        /// </param>
-        /// <param name="pageNumber">
-        /// Page number to fetch<br/>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
         /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
         /// </param>
         /// <param name="sortBy"></param>
         /// <param name="sortDirection">
@@ -65,27 +69,31 @@ namespace ModerationAPI
         /// </param>
         /// <param name="memberSinceDate"></param>
         /// <param name="lastActiveDate"></param>
-        /// <param name="contentTypes"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Authors;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// AuthorListParams parameters = new();<br/>
-        /// var authors = await client.Authors.List(parameters);<br/>
-        /// Console.WriteLine(authors);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.authors.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.AuthorOpenListAuthorsResponse>> AuthorOpenListAuthorsAsResponseAsync(
-            double? pageSize = default,
-            double? pageNumber = default,
+            int? page = default,
+            int? pageSize = default,
             global::ModerationAPI.AuthorOpenListAuthorsSortBy? sortBy = default,
             global::ModerationAPI.AuthorOpenListAuthorsSortDirection? sortDirection = default,
             string? memberSinceDate = default,
             string? lastActiveDate = default,
-            string? contentTypes = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -31,10 +31,6 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        ReportCount,
-        /// <summary>
-        ///
-        /// </summary>
         TrustLevel,
         /// <summary>
         ///
@@ -59,7 +55,6 @@ namespace ModerationAPI
                 AuthorOpenListAuthorsSortBy.FlaggedContentRatio => "flaggedContentRatio",
                 AuthorOpenListAuthorsSortBy.LastActive => "lastActive",
                 AuthorOpenListAuthorsSortBy.MemberSince => "memberSince",
-                AuthorOpenListAuthorsSortBy.ReportCount => "reportCount",
                 AuthorOpenListAuthorsSortBy.TrustLevel => "trustLevel",
                 AuthorOpenListAuthorsSortBy.ViolationCount => "violationCount",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -77,7 +72,6 @@ namespace ModerationAPI
                 "flaggedContentRatio" => AuthorOpenListAuthorsSortBy.FlaggedContentRatio,
                 "lastActive" => AuthorOpenListAuthorsSortBy.LastActive,
                 "memberSince" => AuthorOpenListAuthorsSortBy.MemberSince,
-                "reportCount" => AuthorOpenListAuthorsSortBy.ReportCount,
                 "trustLevel" => AuthorOpenListAuthorsSortBy.TrustLevel,
                 "violationCount" => AuthorOpenListAuthorsSortBy.ViolationCount,
                 _ => null,

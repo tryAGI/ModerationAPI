@@ -11,14 +11,30 @@ namespace ModerationAPI
         /// <param name="id">
         /// The ID of the webhook to update.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.update({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     body: {},<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WebhooksPublicUpdateResponse> WebhooksPublicUpdateAsync(
             string id,
 
             global::ModerationAPI.WebhooksPublicUpdateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -28,14 +44,30 @@ namespace ModerationAPI
         /// <param name="id">
         /// The ID of the webhook to update.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.update({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     body: {},<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WebhooksPublicUpdateResponse>> WebhooksPublicUpdateAsResponseAsync(
             string id,
 
             global::ModerationAPI.WebhooksPublicUpdateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -45,6 +77,7 @@ namespace ModerationAPI
         /// <param name="id">
         /// The ID of the webhook to update.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="name">
         /// The webhook's name, used to identify it in the dashboard
         /// </param>
@@ -62,6 +95,7 @@ namespace ModerationAPI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WebhooksPublicUpdateResponse> WebhooksPublicUpdateAsync(
             string id,
+            string? projectId = default,
             string? name = default,
             string? description = default,
             string? url = default,

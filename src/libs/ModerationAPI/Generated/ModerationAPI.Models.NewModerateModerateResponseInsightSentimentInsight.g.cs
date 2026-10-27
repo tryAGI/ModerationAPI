@@ -36,6 +36,12 @@ namespace ModerationAPI
         public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? Value { get; set; }
 
         /// <summary>
+        /// Positive and negative scored independently: mixed content scores high on both. Present whenever `value` is set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
+        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightScores? Scores { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +52,9 @@ namespace ModerationAPI
         /// </summary>
         /// <param name="probability"></param>
         /// <param name="value"></param>
+        /// <param name="scores">
+        /// Positive and negative scored independently: mixed content scores high on both. Present whenever `value` is set.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -54,6 +63,7 @@ namespace ModerationAPI
         public NewModerateModerateResponseInsightSentimentInsight(
             double probability,
             global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? value,
+            global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightScores? scores,
             string id = "sentiment",
             string type = "insight")
         {
@@ -61,6 +71,7 @@ namespace ModerationAPI
             this.Type = type;
             this.Probability = probability;
             this.Value = value;
+            this.Scores = scores;
         }
 
         /// <summary>

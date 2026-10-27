@@ -16,14 +16,7 @@ namespace ModerationAPI
         public required global::ModerationAPI.QueueViewOpenGetStatsResponseReviewStats ReviewStats { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("actionStats")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetStatsResponseActionStat> ActionStats { get; set; }
-
-        /// <summary>
-        /// List of top reviewers and their statistics
+        /// Reviewers with the most resolved items, most first. Up to 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topReviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,9 +39,8 @@ namespace ModerationAPI
         /// Initializes a new instance of the <see cref="QueueViewOpenGetStatsResponse" /> class.
         /// </summary>
         /// <param name="reviewStats"></param>
-        /// <param name="actionStats"></param>
         /// <param name="topReviewers">
-        /// List of top reviewers and their statistics
+        /// Reviewers with the most resolved items, most first. Up to 10.
         /// </param>
         /// <param name="trends"></param>
 #if NET7_0_OR_GREATER
@@ -56,12 +48,10 @@ namespace ModerationAPI
 #endif
         public QueueViewOpenGetStatsResponse(
             global::ModerationAPI.QueueViewOpenGetStatsResponseReviewStats reviewStats,
-            global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetStatsResponseActionStat> actionStats,
             global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetStatsResponseTopReviewer> topReviewers,
             global::ModerationAPI.QueueViewOpenGetStatsResponseTrends trends)
         {
             this.ReviewStats = reviewStats ?? throw new global::System.ArgumentNullException(nameof(reviewStats));
-            this.ActionStats = actionStats ?? throw new global::System.ArgumentNullException(nameof(actionStats));
             this.TopReviewers = topReviewers ?? throw new global::System.ArgumentNullException(nameof(topReviewers));
             this.Trends = trends ?? throw new global::System.ArgumentNullException(nameof(trends));
         }

@@ -6,58 +6,70 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Get queue statistics<br/>
-        /// Get detailed statistics about a moderation queue including review times, action counts, and trends
+        /// Get review statistics of a queue for a period: resolved and pending items, the top reviewers and the resolved items per day.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="withinDays">
-        /// Number of days to analyze statistics for<br/>
+        /// Length of the period in days, up to now.<br/>
         /// Default Value: 30
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// QueueGetStatsParams parameters = new() { ID = "id" };<br/>
-        /// var response = await client.Queue.GetStats(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.getStats({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenGetStatsResponse> QueueViewOpenGetStatsAsync(
             string id,
-            string? withinDays = default,
+            int? withinDays = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get queue statistics<br/>
-        /// Get detailed statistics about a moderation queue including review times, action counts, and trends
+        /// Get review statistics of a queue for a period: resolved and pending items, the top reviewers and the resolved items per day.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="withinDays">
-        /// Number of days to analyze statistics for<br/>
+        /// Length of the period in days, up to now.<br/>
         /// Default Value: 30
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// QueueGetStatsParams parameters = new() { ID = "id" };<br/>
-        /// var response = await client.Queue.GetStats(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.getStats({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenGetStatsResponse>> QueueViewOpenGetStatsAsResponseAsync(
             string id,
-            string? withinDays = default,
+            int? withinDays = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -1,0 +1,101 @@
+
+#nullable enable
+
+namespace ModerationAPI
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class QueueItemLabel
+    {
+        /// <summary>
+        /// The label name
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Label { get; set; }
+
+        /// <summary>
+        /// Confidence score between 0 and 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("score")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Score { get; set; }
+
+        /// <summary>
+        /// True if the label was applied manually by a moderator
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("manual")]
+        public bool? Manual { get; set; }
+
+        /// <summary>
+        /// Whether this label crossed its flagging threshold
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("flagged")]
+        public bool? Flagged { get; set; }
+
+        /// <summary>
+        /// Whether this label crossed its threshold under a shadowed policy — reported for visibility, never counted toward a flagging decision
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shadow_flagged")]
+        public bool? ShadowFlagged { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("matches")]
+        public global::System.Collections.Generic.IList<global::ModerationAPI.QueueItemLabelMatche>? Matches { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemLabel" /> class.
+        /// </summary>
+        /// <param name="label">
+        /// The label name
+        /// </param>
+        /// <param name="score">
+        /// Confidence score between 0 and 1
+        /// </param>
+        /// <param name="manual">
+        /// True if the label was applied manually by a moderator
+        /// </param>
+        /// <param name="flagged">
+        /// Whether this label crossed its flagging threshold
+        /// </param>
+        /// <param name="shadowFlagged">
+        /// Whether this label crossed its threshold under a shadowed policy — reported for visibility, never counted toward a flagging decision
+        /// </param>
+        /// <param name="matches"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public QueueItemLabel(
+            string label,
+            double score,
+            bool? manual,
+            bool? flagged,
+            bool? shadowFlagged,
+            global::System.Collections.Generic.IList<global::ModerationAPI.QueueItemLabelMatche>? matches)
+        {
+            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.Score = score;
+            this.Manual = manual;
+            this.Flagged = flagged;
+            this.ShadowFlagged = shadowFlagged;
+            this.Matches = matches;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemLabel" /> class.
+        /// </summary>
+        public QueueItemLabel()
+        {
+        }
+
+    }
+}

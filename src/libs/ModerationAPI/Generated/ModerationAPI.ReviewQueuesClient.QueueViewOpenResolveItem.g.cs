@@ -29,13 +29,13 @@ namespace ModerationAPI
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
             ref string itemId,
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request);
+            ref string? projectId);
         partial void PrepareQueueViewOpenResolveItemRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
             string itemId,
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request);
+            string? projectId);
         partial void ProcessQueueViewOpenResolveItemResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,44 +47,43 @@ namespace ModerationAPI
 
         /// <summary>
         /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
+        /// Mark an item of a queue as resolved. It is the same as a check-off in the dashboard: the item leaves the pending list and a QUEUE_ITEM_COMPLETED webhook is sent. To also take a moderation action, use `POST /actions/execute`.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="itemId">
-        /// The item ID to resolve
+        /// The item ID to resolve.
         /// </param>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue.Items;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ItemResolveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     ItemID = "itemId",<br/>
-        /// };<br/>
-        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.items.resolve({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     itemId: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenResolveItemResponse> QueueViewOpenResolveItemAsync(
             string id,
             string itemId,
-
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await QueueViewOpenResolveItemAsResponseAsync(
                 id: id,
                 itemId: itemId,
-
-                request: request,
+                projectId: projectId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -93,48 +92,46 @@ namespace ModerationAPI
         }
         /// <summary>
         /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
+        /// Mark an item of a queue as resolved. It is the same as a check-off in the dashboard: the item leaves the pending list and a QUEUE_ITEM_COMPLETED webhook is sent. To also take a moderation action, use `POST /actions/execute`.
         /// </summary>
         /// <param name="id">
-        /// The queue ID
+        /// The queue ID.
         /// </param>
         /// <param name="itemId">
-        /// The item ID to resolve
+        /// The item ID to resolve.
         /// </param>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Queue.Items;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ItemResolveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     ItemID = "itemId",<br/>
-        /// };<br/>
-        /// var response = await client.Queue.Items.Resolve(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.queue.items.resolve({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     itemId: "&lt;id&gt;",<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.QueueViewOpenResolveItemResponse>> QueueViewOpenResolveItemAsResponseAsync(
             string id,
             string itemId,
-
-            global::ModerationAPI.QueueViewOpenResolveItemRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareQueueViewOpenResolveItemArguments(
                 httpClient: HttpClient,
                 id: ref id,
                 itemId: ref itemId,
-                request: request);
+                projectId: ref projectId);
 
 
             var __authorizations = global::ModerationAPI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -161,7 +158,7 @@ namespace ModerationAPI
 
                             var __pathBuilder = new global::ModerationAPI.PathBuilder(
                                 path: $"/queue/{id}/items/{itemId}/resolve",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.moderationapi.com/v1", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::ModerationAPI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -191,12 +188,12 @@ namespace ModerationAPI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
+
+            if (projectId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("projectId", projectId.ToString());
+            }
+
                 global::ModerationAPI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -210,7 +207,7 @@ namespace ModerationAPI
                     httpRequestMessage: __httpRequest,
                     id: id,
                     itemId: itemId,
-                    request: request);
+                    projectId: projectId);
 
                 return __httpRequest;
             }
@@ -394,19 +391,19 @@ namespace ModerationAPI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::ModerationAPI.ErrorBadRequest? __value_400 = null;
+                                global::ModerationAPI.BadRequestError? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::ModerationAPI.ErrorBadRequest.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::ModerationAPI.BadRequestError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::ModerationAPI.ErrorBadRequest.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::ModerationAPI.BadRequestError.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -415,7 +412,7 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorBadRequest>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.BadRequestError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -431,19 +428,19 @@ namespace ModerationAPI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::ModerationAPI.ErrorUnauthorized? __value_401 = null;
+                                global::ModerationAPI.AuthenticationError? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -452,7 +449,7 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorUnauthorized>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.AuthenticationError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -468,19 +465,19 @@ namespace ModerationAPI
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::ModerationAPI.ErrorForbidden? __value_403 = null;
+                                global::ModerationAPI.PermissionDeniedError? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::ModerationAPI.ErrorForbidden.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::ModerationAPI.PermissionDeniedError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::ModerationAPI.ErrorForbidden.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::ModerationAPI.PermissionDeniedError.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -489,7 +486,7 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorForbidden>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.PermissionDeniedError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -500,24 +497,61 @@ namespace ModerationAPI
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Too many requests. Retry after the number of seconds in the `Retry-After` header.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::ModerationAPI.RateLimitError? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.RateLimitError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // Internal server error
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::ModerationAPI.ErrorInternalServerError? __value_500 = null;
+                                global::ModerationAPI.InternalServerError? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::ModerationAPI.ErrorInternalServerError.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::ModerationAPI.InternalServerError.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::ModerationAPI.ErrorInternalServerError.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::ModerationAPI.InternalServerError.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -526,7 +560,7 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorInternalServerError>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.InternalServerError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -632,41 +666,6 @@ namespace ModerationAPI
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Resolve a queue item<br/>
-        /// Mark a queue item as resolved with a specific moderation action
-        /// </summary>
-        /// <param name="id">
-        /// The queue ID
-        /// </param>
-        /// <param name="itemId">
-        /// The item ID to resolve
-        /// </param>
-        /// <param name="comment">
-        /// Optional comment
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.QueueViewOpenResolveItemResponse> QueueViewOpenResolveItemAsync(
-            string id,
-            string itemId,
-            string? comment = default,
-            global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::ModerationAPI.QueueViewOpenResolveItemRequest
-            {
-                Comment = comment,
-            };
-
-            return await QueueViewOpenResolveItemAsync(
-                id: id,
-                itemId: itemId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

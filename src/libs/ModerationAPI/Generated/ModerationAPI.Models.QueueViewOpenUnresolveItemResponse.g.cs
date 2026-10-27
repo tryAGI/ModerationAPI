@@ -16,14 +16,15 @@ namespace ModerationAPI
         public required bool Success { get; set; }
 
         /// <summary>
-        /// New status of the item
+        /// `pending` waits for review. `resolved` is reviewed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.QueueViewOpenUnresolveItemResponseStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required global::ModerationAPI.QueueViewOpenUnresolveItemResponseStatus Status { get; set; }
 
         /// <summary>
-        /// Timestamp when the item was unresolved
+        /// When the item was unresolved (ISO 8601).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unresolvedAt")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,21 +41,21 @@ namespace ModerationAPI
         /// </summary>
         /// <param name="success"></param>
         /// <param name="status">
-        /// New status of the item
+        /// `pending` waits for review. `resolved` is reviewed.
         /// </param>
         /// <param name="unresolvedAt">
-        /// Timestamp when the item was unresolved
+        /// When the item was unresolved (ISO 8601).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenUnresolveItemResponse(
             bool success,
-            string status,
+            global::ModerationAPI.QueueViewOpenUnresolveItemResponseStatus status,
             string unresolvedAt)
         {
             this.Success = success;
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Status = status;
             this.UnresolvedAt = unresolvedAt ?? throw new global::System.ArgumentNullException(nameof(unresolvedAt));
         }
 

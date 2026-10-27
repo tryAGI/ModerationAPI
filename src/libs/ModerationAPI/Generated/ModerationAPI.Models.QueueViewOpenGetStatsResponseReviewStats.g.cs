@@ -9,25 +9,18 @@ namespace ModerationAPI
     public sealed partial class QueueViewOpenGetStatsResponseReviewStats
     {
         /// <summary>
-        /// Average time in milliseconds to review an item
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("averageTimeToReview")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double AverageTimeToReview { get; set; }
-
-        /// <summary>
-        /// Total number of items reviewed
+        /// Number of items resolved in this queue in the period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalReviewed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalReviewed { get; set; }
+        public required int TotalReviewed { get; set; }
 
         /// <summary>
-        /// Total number of items pending review
+        /// Number of items submitted in the period that wait for review now.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalPending")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TotalPending { get; set; }
+        public required int TotalPending { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,24 +31,19 @@ namespace ModerationAPI
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueViewOpenGetStatsResponseReviewStats" /> class.
         /// </summary>
-        /// <param name="averageTimeToReview">
-        /// Average time in milliseconds to review an item
-        /// </param>
         /// <param name="totalReviewed">
-        /// Total number of items reviewed
+        /// Number of items resolved in this queue in the period.
         /// </param>
         /// <param name="totalPending">
-        /// Total number of items pending review
+        /// Number of items submitted in the period that wait for review now.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenGetStatsResponseReviewStats(
-            double averageTimeToReview,
-            double totalReviewed,
-            double totalPending)
+            int totalReviewed,
+            int totalPending)
         {
-            this.AverageTimeToReview = averageTimeToReview;
             this.TotalReviewed = totalReviewed;
             this.TotalPending = totalPending;
         }

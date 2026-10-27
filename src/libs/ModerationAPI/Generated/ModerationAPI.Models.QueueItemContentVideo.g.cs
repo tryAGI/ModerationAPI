@@ -1,0 +1,69 @@
+
+#nullable enable
+
+namespace ModerationAPI
+{
+    /// <summary>
+    /// Video
+    /// </summary>
+    public sealed partial class QueueItemContentVideo
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        /// <default>"video"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "video";
+
+        /// <summary>
+        /// A public URL of the video content
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemContentVideo" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// A public URL of the video content
+        /// </param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public QueueItemContentVideo(
+            string url,
+            string type = "video")
+        {
+            this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemContentVideo" /> class.
+        /// </summary>
+        public QueueItemContentVideo()
+        {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="QueueItemContentVideo"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static QueueItemContentVideo FromUrl(string url)
+        {
+            return new QueueItemContentVideo
+            {
+                Url = url,
+            };
+        }
+
+    }
+}

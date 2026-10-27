@@ -9,18 +9,18 @@ namespace ModerationAPI
     public sealed partial class AuthorOpenListAuthorsResponse
     {
         /// <summary>
-        ///
+        /// The items on this page.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("authors")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> Authors { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> Data { get; set; }
 
         /// <summary>
-        ///
+        /// Where this page is in the full list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::ModerationAPI.AuthorOpenListAuthorsResponsePagination Pagination { get; set; }
+        public required global::ModerationAPI.Pagination Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,16 +31,20 @@ namespace ModerationAPI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthorOpenListAuthorsResponse" /> class.
         /// </summary>
-        /// <param name="authors"></param>
-        /// <param name="pagination"></param>
+        /// <param name="data">
+        /// The items on this page.
+        /// </param>
+        /// <param name="pagination">
+        /// Where this page is in the full list.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuthorOpenListAuthorsResponse(
-            global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> authors,
-            global::ModerationAPI.AuthorOpenListAuthorsResponsePagination pagination)
+            global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor> data,
+            global::ModerationAPI.Pagination pagination)
         {
-            this.Authors = authors ?? throw new global::System.ArgumentNullException(nameof(authors));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Pagination = pagination ?? throw new global::System.ArgumentNullException(nameof(pagination));
         }
 

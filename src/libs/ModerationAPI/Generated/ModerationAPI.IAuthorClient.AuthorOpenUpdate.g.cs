@@ -11,23 +11,35 @@ namespace ModerationAPI
         /// <param name="id">
         /// Either external ID or the ID assigned by moderation API.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Authors;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// AuthorUpdateParams parameters = new() { ID = "id" };<br/>
-        /// var author = await client.Authors.Update(parameters);<br/>
-        /// Console.WriteLine(author);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.authors.update({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     body: {<br/>
+        ///       metadata: {<br/>
+        ///         identityVerified: true,<br/>
+        ///       },<br/>
+        ///       manualTrustLevel: 2,<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenUpdateAsync(
             string id,
 
             global::ModerationAPI.AuthorOpenUpdateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -37,23 +49,35 @@ namespace ModerationAPI
         /// <param name="id">
         /// Either external ID or the ID assigned by moderation API.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Authors;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// AuthorUpdateParams parameters = new() { ID = "id" };<br/>
-        /// var author = await client.Authors.Update(parameters);<br/>
-        /// Console.WriteLine(author);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.authors.update({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     body: {<br/>
+        ///       metadata: {<br/>
+        ///         identityVerified: true,<br/>
+        ///       },<br/>
+        ///       manualTrustLevel: 2,<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.PublicAuthor>> AuthorOpenUpdateAsResponseAsync(
             string id,
 
             global::ModerationAPI.AuthorOpenUpdateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -63,6 +87,7 @@ namespace ModerationAPI
         /// <param name="id">
         /// Either external ID or the ID assigned by moderation API.
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="profilePicture">
         /// URL of the author's profile picture
         /// </param>
@@ -93,6 +118,7 @@ namespace ModerationAPI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.PublicAuthor> AuthorOpenUpdateAsync(
             string id,
+            string? projectId = default,
             string? profilePicture = default,
             string? externalLink = default,
             string? name = default,

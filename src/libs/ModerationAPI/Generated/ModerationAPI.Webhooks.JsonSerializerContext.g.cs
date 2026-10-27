@@ -17,6 +17,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
@@ -29,15 +30,9 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorRiskEvaluation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetrics))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetadata))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorBadRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorBadRequestIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorBadRequestIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorUnauthorized))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorUnauthorizedIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorUnauthorizedIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorNotFound))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorNotFoundIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorNotFoundIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedEventData))]
@@ -62,8 +57,6 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1Item))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignals))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatcheSignalsBrandImpersonation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemContentText))]
@@ -88,17 +81,31 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemAllowedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemAllowedEventData))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEvent), TypeInfoPropertyName = "WebhookEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.Pagination))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<string, double?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>), TypeInfoPropertyName = "AnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode), TypeInfoPropertyName = "BadRequestErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode), TypeInfoPropertyName = "AuthenticationErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode), TypeInfoPropertyName = "NotFoundErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode), TypeInfoPropertyName = "RateLimitErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicCreateRequestEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateRequestEventType), TypeInfoPropertyName = "WebhooksPublicCreateRequestEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicUpdateRequestEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateRequestEventType), TypeInfoPropertyName = "WebhooksPublicUpdateRequestEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItemEventType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType), TypeInfoPropertyName = "WebhooksPublicListResponseItemEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion), TypeInfoPropertyName = "WebhooksPublicListResponseItemPayloadVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseDataItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseDataItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseDataItemEventType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType), TypeInfoPropertyName = "WebhooksPublicListResponseDataItemEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion), TypeInfoPropertyName = "WebhooksPublicListResponseDataItemPayloadVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicCreateResponseEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateResponseEventType), TypeInfoPropertyName = "WebhooksPublicCreateResponseEventType2")]
@@ -113,55 +120,60 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateResponsePayloadVersion), TypeInfoPropertyName = "WebhooksPublicUpdateResponsePayloadVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicGetSecretResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion), TypeInfoPropertyName = "CreateAuthorBlockedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion), TypeInfoPropertyName = "CreateAuthorUnblockedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion), TypeInfoPropertyName = "CreateAuthorSuspendedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion), TypeInfoPropertyName = "CreateAuthorUpdatedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion), TypeInfoPropertyName = "CreateAuthorTrustLevelChangedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion), TypeInfoPropertyName = "CreateAuthorActionWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion), TypeInfoPropertyName = "CreateQueueItemResolvedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion), TypeInfoPropertyName = "CreateQueueItemActionWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion), TypeInfoPropertyName = "CreateQueueItemRejectedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion), TypeInfoPropertyName = "CreateQueueItemAllowedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedWebhookVersion), TypeInfoPropertyName = "AuthorBlockedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion), TypeInfoPropertyName = "AuthorUnblockedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion), TypeInfoPropertyName = "AuthorSuspendedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion), TypeInfoPropertyName = "AuthorUpdatedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion), TypeInfoPropertyName = "AuthorTrustLevelChangedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorActionWebhookVersion), TypeInfoPropertyName = "AuthorActionWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion), TypeInfoPropertyName = "QueueItemResolvedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemActionWebhookVersion), TypeInfoPropertyName = "QueueItemActionWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion), TypeInfoPropertyName = "QueueItemRejectedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion), TypeInfoPropertyName = "QueueItemAllowedWebhookVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorStatus?), TypeInfoPropertyName = "NullablePublicAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionAction?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionBehavior?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionBehavior2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemMetaType?), TypeInfoPropertyName = "NullablePublicQueueItemMetaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEvent?), TypeInfoPropertyName = "NullableWebhookEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode?), TypeInfoPropertyName = "NullableBadRequestErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode?), TypeInfoPropertyName = "NullableAuthenticationErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode?), TypeInfoPropertyName = "NullableNotFoundErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode?), TypeInfoPropertyName = "NullableRateLimitErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateRequestEventType?), TypeInfoPropertyName = "NullableWebhooksPublicCreateRequestEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateRequestEventType?), TypeInfoPropertyName = "NullableWebhooksPublicUpdateRequestEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType?), TypeInfoPropertyName = "NullableWebhooksPublicListResponseItemEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion?), TypeInfoPropertyName = "NullableWebhooksPublicListResponseItemPayloadVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType?), TypeInfoPropertyName = "NullableWebhooksPublicListResponseDataItemEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion?), TypeInfoPropertyName = "NullableWebhooksPublicListResponseDataItemPayloadVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateResponseEventType?), TypeInfoPropertyName = "NullableWebhooksPublicCreateResponseEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicCreateResponsePayloadVersion?), TypeInfoPropertyName = "NullableWebhooksPublicCreateResponsePayloadVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicGetResponseEventType?), TypeInfoPropertyName = "NullableWebhooksPublicGetResponseEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicGetResponsePayloadVersion?), TypeInfoPropertyName = "NullableWebhooksPublicGetResponsePayloadVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateResponseEventType?), TypeInfoPropertyName = "NullableWebhooksPublicUpdateResponseEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhooksPublicUpdateResponsePayloadVersion?), TypeInfoPropertyName = "NullableWebhooksPublicUpdateResponsePayloadVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorBlockedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorUnblockedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorSuspendedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorUpdatedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorTrustLevelChangedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion?), TypeInfoPropertyName = "NullableCreateAuthorActionWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion?), TypeInfoPropertyName = "NullableCreateQueueItemResolvedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion?), TypeInfoPropertyName = "NullableCreateQueueItemActionWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion?), TypeInfoPropertyName = "NullableCreateQueueItemRejectedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion?), TypeInfoPropertyName = "NullableCreateQueueItemAllowedWebhookVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorBadRequestIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorUnauthorizedIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorNotFoundIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedWebhookVersion?), TypeInfoPropertyName = "NullableAuthorBlockedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion?), TypeInfoPropertyName = "NullableAuthorUnblockedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion?), TypeInfoPropertyName = "NullableAuthorSuspendedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion?), TypeInfoPropertyName = "NullableAuthorUpdatedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion?), TypeInfoPropertyName = "NullableAuthorTrustLevelChangedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorActionWebhookVersion?), TypeInfoPropertyName = "NullableAuthorActionWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion?), TypeInfoPropertyName = "NullableQueueItemResolvedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemActionWebhookVersion?), TypeInfoPropertyName = "NullableQueueItemActionWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion?), TypeInfoPropertyName = "NullableQueueItemRejectedWebhookVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion?), TypeInfoPropertyName = "NullableQueueItemAllowedWebhookVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicQueueItemLabelsVariant1ItemMatche>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.AnyOf<string, double?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicCreateRequestEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicUpdateRequestEventType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicListResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicListResponseItemEventType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicListResponseDataItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicListResponseDataItemEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicCreateResponseEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicGetResponseEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicUpdateResponseEventType>))]
@@ -215,6 +227,7 @@ namespace ModerationAPI
             options.Converters.Add(new global::ModerationAPI.JsonConverters.WebhookEventJsonConverter());
             options.Converters.Add(new global::ModerationAPI.JsonConverters.OneOfJsonConverter<global::ModerationAPI.PublicQueueItemContentText, global::ModerationAPI.PublicQueueItemContentImage, global::ModerationAPI.PublicQueueItemContentVideo, global::ModerationAPI.PublicQueueItemContentAudio, global::ModerationAPI.PublicQueueItemContentObject>());
             options.Converters.Add(new global::ModerationAPI.JsonConverters.OneOfJsonConverter<global::ModerationAPI.PublicQueueItemContentObjectDataText, global::ModerationAPI.PublicQueueItemContentObjectDataImage, global::ModerationAPI.PublicQueueItemContentObjectDataVideo, global::ModerationAPI.PublicQueueItemContentObjectDataAudio>());
+            options.Converters.Add(new global::ModerationAPI.JsonConverters.AnyOfJsonConverter<string, double?>());
             options.Converters.Add(new global::ModerationAPI.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -253,6 +266,22 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.PublicQueueItemMetaType?)
 
+                    || typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode?)
+
                     || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicCreateRequestEventType)
 
                     || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicCreateRequestEventType?)
@@ -261,13 +290,13 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicUpdateRequestEventType?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType)
+                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType)
 
-                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType?)
+                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion?)
 
                     || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicCreateResponseEventType)
 
@@ -293,45 +322,45 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.WebhooksPublicUpdateResponsePayloadVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorBlockedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorBlockedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorActionWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.AuthorActionWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemActionWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemActionWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion?)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion)
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion)
 
-                    || typeToConvert == typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion?);
+                    || typeToConvert == typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -378,6 +407,46 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.PublicQueueItemMetaTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.BadRequestErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.BadRequestErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.AuthenticationErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.AuthenticationErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.NotFoundErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.NotFoundErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.RateLimitErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.RateLimitErrorCodeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicCreateRequestEventType))
                 {
                     return new global::ModerationAPI.JsonConverters.WebhooksPublicCreateRequestEventTypeJsonConverter();
@@ -398,24 +467,24 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.WebhooksPublicUpdateRequestEventTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType))
+                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType))
                 {
-                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseItemEventTypeJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseDataItemEventTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemEventType?))
+                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemEventType?))
                 {
-                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseItemEventTypeNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseDataItemEventTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseItemPayloadVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseDataItemPayloadVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseItemPayloadVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicListResponseDataItemPayloadVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseItemPayloadVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.WebhooksPublicListResponseDataItemPayloadVersionNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.WebhooksPublicCreateResponseEventType))
@@ -478,104 +547,104 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.WebhooksPublicUpdateResponsePayloadVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorBlockedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorBlockedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorBlockedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorBlockedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorBlockedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorBlockedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorBlockedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorUnblockedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorUnblockedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorUnblockedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorUnblockedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorUnblockedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorSuspendedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorSuspendedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorSuspendedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorSuspendedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorSuspendedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorUpdatedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorUpdatedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorUpdatedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorUpdatedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorUpdatedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorUpdatedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorTrustLevelChangedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorTrustLevelChangedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorTrustLevelChangedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorTrustLevelChangedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorTrustLevelChangedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorActionWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorActionWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorActionWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateAuthorActionWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.AuthorActionWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateAuthorActionWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.AuthorActionWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemResolvedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemResolvedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemResolvedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemResolvedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemResolvedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemResolvedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemActionWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemActionWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemActionWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemActionWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemActionWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemActionWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemActionWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemRejectedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemRejectedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemRejectedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemRejectedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemRejectedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemRejectedWebhookVersionNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemAllowedWebhookVersionJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemAllowedWebhookVersionJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.CreateQueueItemAllowedWebhookVersion?))
+                if (typeToConvert == typeof(global::ModerationAPI.QueueItemAllowedWebhookVersion?))
                 {
-                    return new global::ModerationAPI.JsonConverters.CreateQueueItemAllowedWebhookVersionNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.QueueItemAllowedWebhookVersionNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

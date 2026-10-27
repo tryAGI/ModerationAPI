@@ -17,7 +17,7 @@ public partial class Tests
         //// Each action has an ID, name, and configuration.
         Assert.IsNotNull(actions);
 
-        foreach (var action in actions)
+        foreach (var action in actions.Data)
         {
             Console.WriteLine($"Action: {action.Name} (ID: {action.Id})");
         }

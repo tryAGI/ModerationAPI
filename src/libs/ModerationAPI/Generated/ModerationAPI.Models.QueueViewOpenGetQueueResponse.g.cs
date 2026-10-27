@@ -13,7 +13,7 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queue")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::ModerationAPI.QueueViewOpenGetQueueResponseQueue Queue { get; set; }
+        public required global::ModerationAPI.QueueWithCounts Queue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace ModerationAPI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenGetQueueResponse(
-            global::ModerationAPI.QueueViewOpenGetQueueResponseQueue queue)
+            global::ModerationAPI.QueueWithCounts queue)
         {
             this.Queue = queue ?? throw new global::System.ArgumentNullException(nameof(queue));
         }

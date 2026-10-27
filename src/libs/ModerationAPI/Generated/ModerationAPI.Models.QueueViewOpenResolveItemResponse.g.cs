@@ -16,17 +16,11 @@ namespace ModerationAPI
         public required bool Success { get; set; }
 
         /// <summary>
-        /// Timestamp when the item was resolved
+        /// When the item was resolved (ISO 8601).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolvedAt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ResolvedAt { get; set; }
-
-        /// <summary>
-        /// Optional comment
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
-        public string? Comment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,22 +33,17 @@ namespace ModerationAPI
         /// </summary>
         /// <param name="success"></param>
         /// <param name="resolvedAt">
-        /// Timestamp when the item was resolved
-        /// </param>
-        /// <param name="comment">
-        /// Optional comment
+        /// When the item was resolved (ISO 8601).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenResolveItemResponse(
             bool success,
-            string resolvedAt,
-            string? comment)
+            string resolvedAt)
         {
             this.Success = success;
             this.ResolvedAt = resolvedAt ?? throw new global::System.ArgumentNullException(nameof(resolvedAt));
-            this.Comment = comment;
         }
 
         /// <summary>

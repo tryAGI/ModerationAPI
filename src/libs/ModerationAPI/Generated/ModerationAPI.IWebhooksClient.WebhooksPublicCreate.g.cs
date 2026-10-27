@@ -8,32 +8,77 @@ namespace ModerationAPI
         /// Create a webhook<br/>
         /// Create a webhook subscribed to one or more event types. Deliveries use the v2 envelope and are signed with the project signing secret (see the signing secret endpoint).
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.create({<br/>
+        ///     body: {<br/>
+        ///       name: "Moderation events",<br/>
+        ///       url: "https://example.com/webhooks/moderation",<br/>
+        ///       eventTypes: [<br/>
+        ///         "QUEUE_ITEM_REJECTED",<br/>
+        ///         "AUTHOR_BLOCKED",<br/>
+        ///       ],<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WebhooksPublicCreateResponse> WebhooksPublicCreateAsync(
 
             global::ModerationAPI.WebhooksPublicCreateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a webhook<br/>
         /// Create a webhook subscribed to one or more event types. Deliveries use the v2 envelope and are signed with the project signing secret (see the signing secret endpoint).
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.create({<br/>
+        ///     body: {<br/>
+        ///       name: "Moderation events",<br/>
+        ///       url: "https://example.com/webhooks/moderation",<br/>
+        ///       eventTypes: [<br/>
+        ///         "QUEUE_ITEM_REJECTED",<br/>
+        ///         "AUTHOR_BLOCKED",<br/>
+        ///       ],<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WebhooksPublicCreateResponse>> WebhooksPublicCreateAsResponseAsync(
 
             global::ModerationAPI.WebhooksPublicCreateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a webhook<br/>
         /// Create a webhook subscribed to one or more event types. Deliveries use the v2 envelope and are signed with the project signing secret (see the signing secret endpoint).
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="name">
         /// The webhook's name, used to identify it in the dashboard
         /// </param>
@@ -53,6 +98,7 @@ namespace ModerationAPI
             string name,
             string url,
             global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicCreateRequestEventType> eventTypes,
+            string? projectId = default,
             string? description = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

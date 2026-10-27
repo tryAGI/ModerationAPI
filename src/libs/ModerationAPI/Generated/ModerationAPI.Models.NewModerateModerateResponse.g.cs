@@ -53,7 +53,7 @@ namespace ModerationAPI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insights")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>> Insights { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight, global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight, global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight, global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight, global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight>> Insights { get; set; }
 
         /// <summary>
         /// Metadata about the moderation request
@@ -112,7 +112,7 @@ namespace ModerationAPI
             global::ModerationAPI.NewModerateModerateResponseEvaluation evaluation,
             global::ModerationAPI.NewModerateModerateResponseRecommendation recommendation,
             global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>> policies,
-            global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight>> insights,
+            global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight, global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight, global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight, global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight, global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight>> insights,
             global::ModerationAPI.NewModerateModerateResponseMeta meta,
             global::ModerationAPI.NewModerateModerateResponseAuthor? author,
             global::ModerationAPI.NewModerateModerateResponseCasebook? casebook,

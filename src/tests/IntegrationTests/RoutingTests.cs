@@ -29,7 +29,7 @@ public class RoutingTests
         await call.Should().ThrowAsync<ApiException>();
         await call.Should().ThrowAsync<ApiException>();
         handler.Paths.Should().Equal(expectedUrl, expectedUrl);
-        http.BaseAddress.Should().Be(useProxy ? proxy : null);
+        http.BaseAddress.Should().Be(useProxy ? proxy : new Uri(ModerationAPIClient.DefaultBaseUrl));
     }
 
     private sealed class RecordingHandler : HttpMessageHandler

@@ -12,6 +12,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
@@ -24,21 +25,24 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorRiskEvaluation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetrics))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorMetadata))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorBadRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorBadRequestIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorBadRequestIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorUnauthorized))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorUnauthorizedIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorUnauthorizedIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorForbidden))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorForbiddenIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorForbiddenIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorNotFound))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorNotFoundIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorNotFoundIssue))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorInternalServerError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorInternalServerErrorIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorInternalServerErrorIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.Pagination))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ErrorIssue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<string, double?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>), TypeInfoPropertyName = "AnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode), TypeInfoPropertyName = "BadRequestErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ErrorIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode), TypeInfoPropertyName = "AuthenticationErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PermissionDeniedError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PermissionDeniedErrorCode), TypeInfoPropertyName = "PermissionDeniedErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode), TypeInfoPropertyName = "NotFoundErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode), TypeInfoPropertyName = "RateLimitErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.InternalServerError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.InternalServerErrorCode), TypeInfoPropertyName = "InternalServerErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenCreateRequestMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenUpdateRequest))]
@@ -47,18 +51,22 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortDirection), TypeInfoPropertyName = "AuthorOpenListAuthorsSortDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.PublicAuthor>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsResponsePagination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicAuthorStatus?), TypeInfoPropertyName = "NullablePublicAuthorStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode?), TypeInfoPropertyName = "NullableBadRequestErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode?), TypeInfoPropertyName = "NullableAuthenticationErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PermissionDeniedErrorCode?), TypeInfoPropertyName = "NullablePermissionDeniedErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode?), TypeInfoPropertyName = "NullableNotFoundErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode?), TypeInfoPropertyName = "NullableRateLimitErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.InternalServerErrorCode?), TypeInfoPropertyName = "NullableInternalServerErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy?), TypeInfoPropertyName = "NullableAuthorOpenListAuthorsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortDirection?), TypeInfoPropertyName = "NullableAuthorOpenListAuthorsSortDirection2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorBadRequestIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorUnauthorizedIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorForbiddenIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorNotFoundIssue>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorInternalServerErrorIssue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.AnyOf<string, double?>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ErrorIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.PublicAuthor>))]
     internal sealed partial class AuthorSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -107,6 +115,7 @@ namespace ModerationAPI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
+            options.Converters.Add(new global::ModerationAPI.JsonConverters.AnyOfJsonConverter<string, double?>());
             options.Converters.Add(new global::ModerationAPI.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -133,6 +142,30 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.PublicAuthorStatus?)
 
+                    || typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.PermissionDeniedErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.PermissionDeniedErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.InternalServerErrorCode)
+
+                    || typeToConvert == typeof(global::ModerationAPI.InternalServerErrorCode?)
+
                     || typeToConvert == typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy)
 
                     || typeToConvert == typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy?)
@@ -154,6 +187,66 @@ namespace ModerationAPI
                 if (typeToConvert == typeof(global::ModerationAPI.PublicAuthorStatus?))
                 {
                     return new global::ModerationAPI.JsonConverters.PublicAuthorStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.BadRequestErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.BadRequestErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.BadRequestErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.AuthenticationErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.AuthenticationErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.AuthenticationErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.PermissionDeniedErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.PermissionDeniedErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.PermissionDeniedErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.PermissionDeniedErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.NotFoundErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.NotFoundErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.NotFoundErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.RateLimitErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.RateLimitErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.RateLimitErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.InternalServerErrorCode))
+                {
+                    return new global::ModerationAPI.JsonConverters.InternalServerErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.InternalServerErrorCode?))
+                {
+                    return new global::ModerationAPI.JsonConverters.InternalServerErrorCodeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy))

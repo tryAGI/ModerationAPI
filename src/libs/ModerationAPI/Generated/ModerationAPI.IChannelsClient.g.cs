@@ -4,6 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
+    /// Channels in a project. Needs an organization key.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

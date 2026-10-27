@@ -27,7 +27,7 @@ namespace ModerationAPI
         public string? Description { get; set; }
 
         /// <summary>
-        /// New words for the wordlist. Replace the existing words with these new ones. Duplicate words will be ignored.
+        /// New words for the wordlist. Replace the existing words with these new ones. Words are converted to lowercase. Duplicate and empty words are ignored. Maximum 5000 words.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("words")]
         public global::System.Collections.Generic.IList<string>? Words { get; set; }
@@ -57,7 +57,7 @@ namespace ModerationAPI
         /// New description for the wordlist
         /// </param>
         /// <param name="words">
-        /// New words for the wordlist. Replace the existing words with these new ones. Duplicate words will be ignored.
+        /// New words for the wordlist. Replace the existing words with these new ones. Words are converted to lowercase. Duplicate and empty words are ignored. Maximum 5000 words.
         /// </param>
         /// <param name="strict">
         /// Deprecated. Now using threshold in project settings.

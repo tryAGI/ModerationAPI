@@ -9,18 +9,18 @@ namespace ModerationAPI
     public sealed partial class QueueViewOpenGetItemsResponse
     {
         /// <summary>
-        ///
+        /// The items on this page.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetItemsResponseItem> Items { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.QueueItem> Data { get; set; }
 
         /// <summary>
-        ///
+        /// Where this page is in the full list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::ModerationAPI.QueueViewOpenGetItemsResponsePagination Pagination { get; set; }
+        public required global::ModerationAPI.Pagination Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,16 +31,20 @@ namespace ModerationAPI
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueViewOpenGetItemsResponse" /> class.
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="pagination"></param>
+        /// <param name="data">
+        /// The items on this page.
+        /// </param>
+        /// <param name="pagination">
+        /// Where this page is in the full list.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QueueViewOpenGetItemsResponse(
-            global::System.Collections.Generic.IList<global::ModerationAPI.QueueViewOpenGetItemsResponseItem> items,
-            global::ModerationAPI.QueueViewOpenGetItemsResponsePagination pagination)
+            global::System.Collections.Generic.IList<global::ModerationAPI.QueueItem> data,
+            global::ModerationAPI.Pagination pagination)
         {
-            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Pagination = pagination ?? throw new global::System.ArgumentNullException(nameof(pagination));
         }
 

@@ -14,28 +14,32 @@ namespace ModerationAPI
         /// <param name="words">
         /// Array of words to remove from the wordlist
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Wordlist.Words;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// WordRemoveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     Words =<br/>
-        ///     [<br/>
-        ///         "string"<br/>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.wordlist.words.remove({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     words: [<br/>
+        ///       "&lt;value 1&gt;",<br/>
+        ///       "&lt;value 2&gt;",<br/>
+        ///       "&lt;value 3&gt;",<br/>
         ///     ],<br/>
-        /// };<br/>
-        /// var word = await client.Wordlist.Words.Remove(parameters);<br/>
-        /// Console.WriteLine(word);
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.WordlistRemoveWordsResponse> WordlistRemoveWordsAsync(
             string id,
             global::System.Collections.Generic.IList<string> words,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -48,28 +52,32 @@ namespace ModerationAPI
         /// <param name="words">
         /// Array of words to remove from the wordlist
         /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Wordlist.Words;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// WordRemoveParams parameters = new()<br/>
-        /// {<br/>
-        ///     ID = "id",<br/>
-        ///     Words =<br/>
-        ///     [<br/>
-        ///         "string"<br/>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.wordlist.words.remove({<br/>
+        ///     id: "&lt;id&gt;",<br/>
+        ///     words: [<br/>
+        ///       "&lt;value 1&gt;",<br/>
+        ///       "&lt;value 2&gt;",<br/>
+        ///       "&lt;value 3&gt;",<br/>
         ///     ],<br/>
-        /// };<br/>
-        /// var word = await client.Wordlist.Words.Remove(parameters);<br/>
-        /// Console.WriteLine(word);
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WordlistRemoveWordsResponse>> WordlistRemoveWordsAsResponseAsync(
             string id,
             global::System.Collections.Generic.IList<string> words,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

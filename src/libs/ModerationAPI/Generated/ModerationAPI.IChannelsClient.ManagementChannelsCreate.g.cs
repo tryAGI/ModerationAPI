@@ -15,6 +15,22 @@ namespace ModerationAPI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.channels.create({<br/>
+        ///     projectId: "&lt;id&gt;",<br/>
+        ///     body: {<br/>
+        ///       name: "&lt;value&gt;",<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.Channel> ManagementChannelsCreateAsync(
             string projectId,
 
@@ -32,6 +48,22 @@ namespace ModerationAPI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.channels.create({<br/>
+        ///     projectId: "&lt;id&gt;",<br/>
+        ///     body: {<br/>
+        ///       name: "&lt;value&gt;",<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.Channel>> ManagementChannelsCreateAsResponseAsync(
             string projectId,
 

@@ -8,50 +8,73 @@ namespace ModerationAPI
         /// Create an action<br/>
         /// Create an action.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Actions;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ActionCreateParams parameters = new() { Name = "name" };<br/>
-        /// var action = await client.Actions.Create(parameters);<br/>
-        /// Console.WriteLine(action);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.actions.create({<br/>
+        ///     body: {<br/>
+        ///       key: "suspend-24h",<br/>
+        ///       name: "Suspend for 24 hours",<br/>
+        ///       type: "AUTHOR_BLOCK_TEMP",<br/>
+        ///       queueBehaviour: "REMOVE",<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsCreateResponse> ActionsCreateAsync(
 
             global::ModerationAPI.ActionsCreateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an action<br/>
         /// Create an action.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Actions;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ActionCreateParams parameters = new() { Name = "name" };<br/>
-        /// var action = await client.Actions.Create(parameters);<br/>
-        /// Console.WriteLine(action);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.actions.create({<br/>
+        ///     body: {<br/>
+        ///       key: "suspend-24h",<br/>
+        ///       name: "Suspend for 24 hours",<br/>
+        ///       type: "AUTHOR_BLOCK_TEMP",<br/>
+        ///       queueBehaviour: "REMOVE",<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.ActionsCreateResponse>> ActionsCreateAsResponseAsync(
 
             global::ModerationAPI.ActionsCreateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an action<br/>
         /// Create an action.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="key">
         /// User defined key of the action.
         /// </param>
@@ -97,6 +120,7 @@ namespace ModerationAPI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.ActionsCreateResponse> ActionsCreateAsync(
             string name,
+            string? projectId = default,
             string? key = default,
             string? description = default,
             global::ModerationAPI.ActionsCreateRequestType? type = default,

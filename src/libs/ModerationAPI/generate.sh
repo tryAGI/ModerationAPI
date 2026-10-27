@@ -12,10 +12,27 @@ fetch_spec() {
     --connect-timeout 30 --max-time 300
 }
 
-install_autosdk_cli
+if [[ -n "${AUTOSDK_EXECUTABLE:-}" ]]; then
+  autosdk() { "$AUTOSDK_EXECUTABLE" "$@"; }
+else
+  install_autosdk_cli
+fi
 
 rm -rf Generated
-fetch_spec --fail --silent --show-error -L -o openapi.yaml https://docs.moderationapi.com/openapi.json
+spec_tmp="$(mktemp)"
+trap 'rm -f "$spec_tmp"' EXIT
+fetch_spec --fail --silent --show-error -L -o "$spec_tmp" https://api.moderationapi.com/v1/openapi.json
+# Provider documentation renamed operation IDs and groups. Preserve existing C#
+# names without changing paths, request/response schemas or newly added operations.
+jq --slurpfile overrides operation-id-overrides.json '
+  reduce $overrides[0][] as $op (.;
+    if .paths[$op.path][$op.method] == null then
+      error("Existing SDK operation disappeared from the provider schema: " + $op.method + " " + $op.path)
+    else .paths[$op.path][$op.method].operationId = $op.operationId
+      | .paths[$op.path][$op.method].tags = $op.tags
+      | del(.paths[$op.path][$op.method]["x-speakeasy-group"], .paths[$op.path][$op.method]["x-speakeasy-name-override"])
+    end)
+' "$spec_tmp" > openapi.yaml
 autosdk generate openapi.yaml \
   --namespace ModerationAPI \
   --clientClassName ModerationAPIClient \

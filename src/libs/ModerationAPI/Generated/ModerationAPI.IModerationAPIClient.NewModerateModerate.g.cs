@@ -5,50 +5,85 @@ namespace ModerationAPI
     public partial interface IModerationAPIClient
     {
         /// <summary>
-        ///
+        /// Submit content
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Content;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ContentSubmitParams parameters = new() { Content = new Text("text") };<br/>
-        /// var response = await client.Content.Submit(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.content.submit({<br/>
+        ///     body: {<br/>
+        ///       content: {<br/>
+        ///         type: "text",<br/>
+        ///         text: "Hey, check out my profile for a deal!",<br/>
+        ///       },<br/>
+        ///       contentId: "message-48213",<br/>
+        ///       authorId: "user-1092",<br/>
+        ///       conversationId: "room-general",<br/>
+        ///       metadata: {<br/>
+        ///         "platform": "ios",<br/>
+        ///       },<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.NewModerateModerateResponse> NewModerateModerateAsync(
 
             global::ModerationAPI.NewModerateModerateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        ///
+        /// Submit content
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
         /// <remarks>
-        /// using System;<br/>
-        /// using ModerationApi;<br/>
-        /// using ModerationApi.Models.Content;<br/>
-        /// ModerationApiClient client = new();<br/>
-        /// ContentSubmitParams parameters = new() { Content = new Text("text") };<br/>
-        /// var response = await client.Content.Submit(parameters);<br/>
-        /// Console.WriteLine(response);
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.content.submit({<br/>
+        ///     body: {<br/>
+        ///       content: {<br/>
+        ///         type: "text",<br/>
+        ///         text: "Hey, check out my profile for a deal!",<br/>
+        ///       },<br/>
+        ///       contentId: "message-48213",<br/>
+        ///       authorId: "user-1092",<br/>
+        ///       conversationId: "room-general",<br/>
+        ///       metadata: {<br/>
+        ///         "platform": "ios",<br/>
+        ///       },<br/>
+        ///     },<br/>
+        ///   });<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
         /// </remarks>
         global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.NewModerateModerateResponse>> NewModerateModerateAsResponseAsync(
 
             global::ModerationAPI.NewModerateModerateRequest request,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        ///
+        /// Submit content
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="content">
         /// The content sent for moderation
         /// </param>
@@ -77,7 +112,7 @@ namespace ModerationAPI
         /// A recommendation from your own client-side flagging (e.g. a banned-IP list or a third-party tool). Feeds the rules engine and can escalate or override the recommended action. Does not change whether our analysis flagged the content.
         /// </param>
         /// <param name="doNotStore">
-        /// Do not store the content. The content won't enter the review queue
+        /// Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.
         /// </param>
         /// <param name="policies">
         /// (Enterprise) override the channel policies for this moderation request only.
@@ -87,6 +122,7 @@ namespace ModerationAPI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ModerationAPI.NewModerateModerateResponse> NewModerateModerateAsync(
             global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestContentText, global::ModerationAPI.NewModerateModerateRequestContentImage, global::ModerationAPI.NewModerateModerateRequestContentVideo, global::ModerationAPI.NewModerateModerateRequestContentAudio, global::ModerationAPI.NewModerateModerateRequestContentObject> content,
+            string? projectId = default,
             double? timestamp = default,
             string? channel = default,
             string? contentId = default,
@@ -96,7 +132,7 @@ namespace ModerationAPI
             object? metadata = default,
             global::ModerationAPI.NewModerateModerateRequestClientAction? clientAction = default,
             bool? doNotStore = default,
-            global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieToxicitySevere, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieSexualMinors, global::ModerationAPI.NewModerateModerateRequestPolicieFlirtation, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieLowQualityContent, global::ModerationAPI.NewModerateModerateRequestPolicieFaceDetection, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPolicieUnicodeSpoofing, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlRisk, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? policies = default,
+            global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieSexualMinors, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieLowQualityContent, global::ModerationAPI.NewModerateModerateRequestPolicieFaceDetection, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieThreat, global::ModerationAPI.NewModerateModerateRequestPolicieSexualSolicitation, global::ModerationAPI.NewModerateModerateRequestPolicieChannelCircumvention, global::ModerationAPI.NewModerateModerateRequestPolicieIllegalTrade, global::ModerationAPI.NewModerateModerateRequestPolicieAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieGambling, global::ModerationAPI.NewModerateModerateRequestPolicieTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieWeapons, global::ModerationAPI.NewModerateModerateRequestPoliciePromotion, global::ModerationAPI.NewModerateModerateRequestPolicieExtremism, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPolicieUnicodeSpoofing, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlRisk, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>? policies = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

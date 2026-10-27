@@ -26,10 +26,16 @@ namespace ModerationAPI
             {                s_WebhooksPublicListSecurityRequirement0,
             };
         partial void PrepareWebhooksPublicListArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? pageSize,
+            ref string? projectId);
         partial void PrepareWebhooksPublicListRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? pageSize,
+            string? projectId);
         partial void ProcessWebhooksPublicListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,16 +47,44 @@ namespace ModerationAPI
 
         /// <summary>
         /// List webhooks<br/>
-        /// List all webhooks for the authenticated project.
+        /// List the webhooks of the project. The list is paginated.
         /// </summary>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>> WebhooksPublicListAsync(
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.WebhooksPublicListResponse> WebhooksPublicListAsync(
+            int? page = default,
+            int? pageSize = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await WebhooksPublicListAsResponseAsync(
+                page: page,
+                pageSize: pageSize,
+                projectId: projectId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -59,19 +93,47 @@ namespace ModerationAPI
         }
         /// <summary>
         /// List webhooks<br/>
-        /// List all webhooks for the authenticated project.
+        /// List the webhooks of the project. The list is paginated.
         /// </summary>
+        /// <param name="page">
+        /// Page number, starting at 1.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Number of items per page. Maximum 100.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="projectId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>>> WebhooksPublicListAsResponseAsync(
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.webhooks.list({});<br/>
+        ///   for await (const page of result) {<br/>
+        ///     console.log(page);<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WebhooksPublicListResponse>> WebhooksPublicListAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
+            string? projectId = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareWebhooksPublicListArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                page: ref page,
+                pageSize: ref pageSize,
+                projectId: ref projectId);
 
 
             var __authorizations = global::ModerationAPI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -98,7 +160,11 @@ namespace ModerationAPI
 
                             var __pathBuilder = new global::ModerationAPI.PathBuilder(
                                 path: "/webhooks",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.moderationapi.com/v1", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("page", page?.ToString())
+                                .AddOptionalParameter("pageSize", pageSize?.ToString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::ModerationAPI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -128,6 +194,12 @@ namespace ModerationAPI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (projectId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("projectId", projectId.ToString());
+            }
+
                 global::ModerationAPI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -138,7 +210,10 @@ namespace ModerationAPI
                     request: __httpRequest);
                 PrepareWebhooksPublicListRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    page: page,
+                    pageSize: pageSize,
+                    projectId: projectId);
 
                 return __httpRequest;
             }
@@ -322,19 +397,19 @@ namespace ModerationAPI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::ModerationAPI.ErrorUnauthorized? __value_401 = null;
+                                global::ModerationAPI.AuthenticationError? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::ModerationAPI.ErrorUnauthorized.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::ModerationAPI.AuthenticationError.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -343,12 +418,49 @@ namespace ModerationAPI
                                 }
 
 
-                                throw global::ModerationAPI.ApiException<global::ModerationAPI.ErrorUnauthorized>.Create(
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.AuthenticationError>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Too many requests. Retry after the number of seconds in the `Retry-After` header.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::ModerationAPI.RateLimitError? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::ModerationAPI.RateLimitError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::ModerationAPI.ApiException<global::ModerationAPI.RateLimitError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -376,9 +488,9 @@ namespace ModerationAPI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>), JsonSerializerContext) ??
+                                    var __value = global::ModerationAPI.WebhooksPublicListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>>(
+                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WebhooksPublicListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ModerationAPI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -408,9 +520,9 @@ namespace ModerationAPI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ModerationAPI.WebhooksPublicListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::ModerationAPI.WebhooksPublicListResponseItem>>(
+                                    return new global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.WebhooksPublicListResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ModerationAPI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

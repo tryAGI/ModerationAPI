@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// API for automated content moderation<br/>
+    /// Moderate text, images, video and audio in real time, manage authors, review queues and actions, and receive webhooks.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -21,7 +21,7 @@ namespace ModerationAPI
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::ModerationAPI.EndPointAuthorization> Authorizations { get; }
@@ -34,9 +34,6 @@ namespace ModerationAPI
 
         /// <inheritdoc/>
         public global::ModerationAPI.AutoSDKClientOptions Options { get; }
-
-
-        internal global::ModerationAPI.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::ModerationAPI.AutoSDKServerConfiguration();
 
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
@@ -51,23 +48,30 @@ namespace ModerationAPI
 
 
         /// <summary>
-        ///
+        /// The account that owns the API key.
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
-        ///
+        /// Moderation actions reviewers and rules can take.
         /// </summary>
         public ActionsClient Actions => new ActionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -77,27 +81,60 @@ namespace ModerationAPI
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
-        ///
+        /// Channels in a project. Needs an organization key.
         /// </summary>
         public ChannelsClient Channels => new ChannelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         ///
         /// </summary>
+        public FeedbackClient Feedback => new FeedbackClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        /// Projects in the organization. Needs an organization key.
+        /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ProjectsApiKeysClient ProjectsApiKeys => new ProjectsApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public QueueClient Queue => new QueueClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public QueueItemsClient QueueItems => new QueueItemsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -107,27 +144,15 @@ namespace ModerationAPI
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
-        /// Real-time voice moderation over WebSocket.
-        /// </summary>
-        public VoiceClient Voice => new VoiceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
+        /// Endpoints that receive events, and the events they receive.
         /// </summary>
         public WebhooksClient Webhooks => new WebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
@@ -137,36 +162,7 @@ namespace ModerationAPI
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
-
-
-        private static readonly global::ModerationAPI.AutoSDKServer[] s_availableServers = new global::ModerationAPI.AutoSDKServer[]
-        {            new global::ModerationAPI.AutoSDKServer(
-                id: "https-api-moderationapi-com-v1",
-                name: "api.moderationapi.com v1",
-                url: "https://api.moderationapi.com/v1",
-                description: ""),
-            new global::ModerationAPI.AutoSDKServer(
-                id: "wss-voice-moderationapi-com-v1",
-                name: "Voice streaming gateway",
-                url: "wss://voice.moderationapi.com/v1",
-                description: "Voice streaming gateway"),
-        };
-
-        /// <summary>
-        /// The server options available for this client.
-        /// </summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::ModerationAPI.AutoSDKServer> AvailableServers => s_availableServers;
-
-        /// <summary>
-        /// The currently selected server for this client, if any.
-        /// </summary>
-        public global::ModerationAPI.AutoSDKServer? SelectedServer
-        {
-            get => ResolveSelectedServer();
-            set => SelectServer(value);
-        }
 
         /// <summary>
         /// Creates a new instance of the ModerationAPIClient.
@@ -230,15 +226,10 @@ namespace ModerationAPI
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            if (baseUri is not null)
-            {
-                HttpClient.BaseAddress ??= baseUri;
-            }
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::ModerationAPI.EndPointAuthorization>();
             Options = options ?? new global::ModerationAPI.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
-
-            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }
@@ -266,117 +257,5 @@ namespace ModerationAPI
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
-
-
-        /// <summary>
-        /// Selects one of the generated server options by id.
-        /// </summary>
-        public bool TrySelectServer(string serverId)
-        {
-            if (string.IsNullOrWhiteSpace(serverId))
-            {
-                return false;
-            }
-
-            foreach (var server in s_availableServers)
-            {
-                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
-                {
-                    AutoSDKServerConfiguration.SelectedServer = server;
-                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Clears the currently selected server.
-        /// </summary>
-        public void ClearSelectedServer()
-        {
-            AutoSDKServerConfiguration.SelectedServer = null;
-        }
-
-        private global::ModerationAPI.AutoSDKServer? ResolveSelectedServer()
-        {
-            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
-            if (selectedServer is null)
-            {
-                return null;
-            }
-
-            foreach (var server in s_availableServers)
-            {
-                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
-                {
-                    return server;
-                }
-            }
-
-            return null;
-        }
-
-        private void SelectServer(global::ModerationAPI.AutoSDKServer? server)
-        {
-            if (server is null)
-            {
-                AutoSDKServerConfiguration.SelectedServer = null;
-                return;
-            }
-
-            foreach (var candidate in s_availableServers)
-            {
-                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
-                {
-                    AutoSDKServerConfiguration.SelectedServer = candidate;
-                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
-                    return;
-                }
-            }
-
-            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
-        }
-
-        private global::System.Uri? ResolveDisplayedBaseUri()
-        {
-            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
-            {
-                return explicitBaseUri;
-            }
-
-            return ResolveSelectedServer()?.Uri ?? (s_availableServers.Length > 0 ? s_availableServers[0].Uri : HttpClient.BaseAddress);
-        }
-
-        private global::System.Uri? ResolveBaseUri(
-            global::ModerationAPI.AutoSDKServer[] servers,
-            string defaultBaseUrl)
-        {
-            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
-            {
-                return explicitBaseUri;
-            }
-
-            if (AutoSDKServerConfiguration.SelectedServer is global::ModerationAPI.AutoSDKServer selectedServer)
-            {
-                foreach (var server in servers)
-                {
-                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
-                    {
-                        return server.Uri;
-                    }
-                }
-            }
-
-            if (servers.Length > 0)
-            {
-                return servers[0].Uri;
-            }
-
-            return string.IsNullOrWhiteSpace(defaultBaseUrl)
-                ? HttpClient.BaseAddress
-                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
-        }
     }
 }

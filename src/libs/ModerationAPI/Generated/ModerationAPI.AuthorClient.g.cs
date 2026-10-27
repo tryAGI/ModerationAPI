@@ -34,9 +34,6 @@ namespace ModerationAPI
         /// <inheritdoc/>
         public global::ModerationAPI.AutoSDKClientOptions Options { get; }
 
-
-        internal global::ModerationAPI.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::ModerationAPI.AutoSDKServerConfiguration();
-
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
@@ -111,15 +108,10 @@ namespace ModerationAPI
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            if (baseUri is not null)
-            {
-                HttpClient.BaseAddress ??= baseUri;
-            }
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::ModerationAPI.EndPointAuthorization>();
             Options = options ?? new global::ModerationAPI.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
-
-            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }

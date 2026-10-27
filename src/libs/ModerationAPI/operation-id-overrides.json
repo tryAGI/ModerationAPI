@@ -1,0 +1,372 @@
+[
+  {
+    "path": "/authors",
+    "method": "get",
+    "operationId": "author-openListAuthors",
+    "tags": [
+      "author"
+    ]
+  },
+  {
+    "path": "/authors",
+    "method": "post",
+    "operationId": "author-openCreate",
+    "tags": [
+      "author"
+    ]
+  },
+  {
+    "path": "/authors/{id}",
+    "method": "get",
+    "operationId": "author-openGetAuthorDetails",
+    "tags": [
+      "author"
+    ]
+  },
+  {
+    "path": "/authors/{id}",
+    "method": "put",
+    "operationId": "author-openUpdate",
+    "tags": [
+      "author"
+    ]
+  },
+  {
+    "path": "/authors/{id}",
+    "method": "delete",
+    "operationId": "author-delete",
+    "tags": [
+      "author"
+    ]
+  },
+  {
+    "path": "/queue/{id}",
+    "method": "get",
+    "operationId": "queueView-openGetQueue",
+    "tags": [
+      "review-queues"
+    ]
+  },
+  {
+    "path": "/queue/{id}/stats",
+    "method": "get",
+    "operationId": "queueView-openGetStats",
+    "tags": [
+      "review-queues"
+    ]
+  },
+  {
+    "path": "/queue/{id}/items",
+    "method": "get",
+    "operationId": "queueView-openGetItems",
+    "tags": [
+      "review-queues"
+    ]
+  },
+  {
+    "path": "/queue/{id}/items/{itemId}/resolve",
+    "method": "post",
+    "operationId": "queueView-openResolveItem",
+    "tags": [
+      "review-queues"
+    ]
+  },
+  {
+    "path": "/queue/{id}/items/{itemId}/unresolve",
+    "method": "post",
+    "operationId": "queueView-openUnresolveItem",
+    "tags": [
+      "review-queues"
+    ]
+  },
+  {
+    "path": "/actions",
+    "method": "get",
+    "operationId": "actions-list",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions",
+    "method": "post",
+    "operationId": "actions-create",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions/{id}",
+    "method": "get",
+    "operationId": "actions-get",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions/{id}",
+    "method": "put",
+    "operationId": "actions-update",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions/{id}",
+    "method": "delete",
+    "operationId": "actions-delete",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions/execute",
+    "method": "post",
+    "operationId": "actions-execute",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/actions/{actionId}/execute",
+    "method": "post",
+    "operationId": "actions-executeDeprecated",
+    "tags": [
+      "Actions"
+    ]
+  },
+  {
+    "path": "/webhooks",
+    "method": "get",
+    "operationId": "webhooks-publicList",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/webhooks",
+    "method": "post",
+    "operationId": "webhooks-publicCreate",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/webhooks/{id}",
+    "method": "get",
+    "operationId": "webhooks-publicGet",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/webhooks/{id}",
+    "method": "put",
+    "operationId": "webhooks-publicUpdate",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/webhooks/{id}",
+    "method": "delete",
+    "operationId": "webhooks-publicDelete",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/webhook-secret",
+    "method": "get",
+    "operationId": "webhooks-publicGetSecret",
+    "tags": [
+      "Webhooks"
+    ]
+  },
+  {
+    "path": "/moderate/text",
+    "method": "post",
+    "operationId": "moderation-text",
+    "tags": [
+      "Moderate"
+    ]
+  },
+  {
+    "path": "/moderate/image",
+    "method": "post",
+    "operationId": "moderation-image",
+    "tags": [
+      "Moderate"
+    ]
+  },
+  {
+    "path": "/account",
+    "method": "get",
+    "operationId": "account-get",
+    "tags": [
+      "Account"
+    ]
+  },
+  {
+    "path": "/auth",
+    "method": "get",
+    "operationId": "account-legacyAuthGet",
+    "tags": []
+  },
+  {
+    "path": "/auth",
+    "method": "post",
+    "operationId": "account-legacyAuthPost",
+    "tags": []
+  },
+  {
+    "path": "/wordlist",
+    "method": "get",
+    "operationId": "wordlist-list",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/wordlist/{id}",
+    "method": "get",
+    "operationId": "wordlist-getWordlistPublic",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/wordlist/{id}",
+    "method": "put",
+    "operationId": "wordlist-update",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/wordlist/{id}/embedding-status",
+    "method": "get",
+    "operationId": "wordlist-wordlistEmbeddingStatus",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/wordlist/{id}/words",
+    "method": "post",
+    "operationId": "wordlist-addWords",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/wordlist/{id}/words",
+    "method": "delete",
+    "operationId": "wordlist-removeWords",
+    "tags": [
+      "wordlist"
+    ]
+  },
+  {
+    "path": "/moderate",
+    "method": "post",
+    "operationId": "newModerate-moderate",
+    "tags": []
+  },
+  {
+    "path": "/projects",
+    "method": "get",
+    "operationId": "management-projects-list",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects",
+    "method": "post",
+    "operationId": "management-projects-create",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects/{id}",
+    "method": "get",
+    "operationId": "management-projects-get",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects/{id}",
+    "method": "put",
+    "operationId": "management-projects-update",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects/{id}",
+    "method": "delete",
+    "operationId": "management-projects-delete",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects/{id}/duplicate",
+    "method": "post",
+    "operationId": "management-projects-duplicate",
+    "tags": [
+      "Projects"
+    ]
+  },
+  {
+    "path": "/projects/{projectId}/channels",
+    "method": "get",
+    "operationId": "management-channels-list",
+    "tags": [
+      "Channels"
+    ]
+  },
+  {
+    "path": "/projects/{projectId}/channels",
+    "method": "post",
+    "operationId": "management-channels-create",
+    "tags": [
+      "Channels"
+    ]
+  },
+  {
+    "path": "/channels/{id}",
+    "method": "get",
+    "operationId": "management-channels-get",
+    "tags": [
+      "Channels"
+    ]
+  },
+  {
+    "path": "/channels/{id}",
+    "method": "put",
+    "operationId": "management-channels-update",
+    "tags": [
+      "Channels"
+    ]
+  },
+  {
+    "path": "/channels/{id}",
+    "method": "delete",
+    "operationId": "management-channels-delete",
+    "tags": [
+      "Channels"
+    ]
+  },
+  {
+    "path": "/channels/{id}/duplicate",
+    "method": "post",
+    "operationId": "management-channels-duplicate",
+    "tags": [
+      "Channels"
+    ]
+  }
+]

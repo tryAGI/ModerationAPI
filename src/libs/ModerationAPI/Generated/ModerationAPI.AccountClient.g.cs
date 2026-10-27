@@ -4,6 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
+    /// The account that owns the API key.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -33,9 +34,6 @@ namespace ModerationAPI
 
         /// <inheritdoc/>
         public global::ModerationAPI.AutoSDKClientOptions Options { get; }
-
-
-        internal global::ModerationAPI.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::ModerationAPI.AutoSDKServerConfiguration();
 
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
@@ -111,15 +109,10 @@ namespace ModerationAPI
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            if (baseUri is not null)
-            {
-                HttpClient.BaseAddress ??= baseUri;
-            }
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::ModerationAPI.EndPointAuthorization>();
             Options = options ?? new global::ModerationAPI.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
-
-            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }

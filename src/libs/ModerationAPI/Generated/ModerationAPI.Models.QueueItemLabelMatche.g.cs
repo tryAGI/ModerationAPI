@@ -1,0 +1,125 @@
+
+#nullable enable
+
+namespace ModerationAPI
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class QueueItemLabelMatche
+    {
+        /// <summary>
+        /// The matched substring
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("match")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Match { get; set; }
+
+        /// <summary>
+        /// Match confidence between 0 and 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("probability")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Probability { get; set; }
+
+        /// <summary>
+        /// [start, end] character offsets in the source text
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("span")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<double> Span { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
+        public string? Mask { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasons")]
+        public global::System.Collections.Generic.IList<string>? Reasons { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signals")]
+        public global::ModerationAPI.QueueItemLabelMatcheSignals? Signals { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("entity_type")]
+        public string? EntityType { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scripts")]
+        public global::System.Collections.Generic.IList<string>? Scripts { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skeleton")]
+        public string? Skeleton { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemLabelMatche" /> class.
+        /// </summary>
+        /// <param name="match">
+        /// The matched substring
+        /// </param>
+        /// <param name="probability">
+        /// Match confidence between 0 and 1
+        /// </param>
+        /// <param name="span">
+        /// [start, end] character offsets in the source text
+        /// </param>
+        /// <param name="mask"></param>
+        /// <param name="reasons"></param>
+        /// <param name="signals"></param>
+        /// <param name="entityType"></param>
+        /// <param name="scripts"></param>
+        /// <param name="skeleton"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public QueueItemLabelMatche(
+            string match,
+            double probability,
+            global::System.Collections.Generic.IList<double> span,
+            string? mask,
+            global::System.Collections.Generic.IList<string>? reasons,
+            global::ModerationAPI.QueueItemLabelMatcheSignals? signals,
+            string? entityType,
+            global::System.Collections.Generic.IList<string>? scripts,
+            string? skeleton)
+        {
+            this.Match = match ?? throw new global::System.ArgumentNullException(nameof(match));
+            this.Probability = probability;
+            this.Span = span ?? throw new global::System.ArgumentNullException(nameof(span));
+            this.Mask = mask;
+            this.Reasons = reasons;
+            this.Signals = signals;
+            this.EntityType = entityType;
+            this.Scripts = scripts;
+            this.Skeleton = skeleton;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueueItemLabelMatche" /> class.
+        /// </summary>
+        public QueueItemLabelMatche()
+        {
+        }
+
+    }
+}
