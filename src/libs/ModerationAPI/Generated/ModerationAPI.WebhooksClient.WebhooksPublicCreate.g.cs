@@ -59,14 +59,12 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.webhooks.create({<br/>
-        ///     body: {<br/>
-        ///       name: "Moderation events",<br/>
-        ///       url: "https://example.com/webhooks/moderation",<br/>
-        ///       eventTypes: [<br/>
-        ///         "QUEUE_ITEM_REJECTED",<br/>
-        ///         "AUTHOR_BLOCKED",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///     name: "Moderation events",<br/>
+        ///     url: "https://example.com/webhooks/moderation",<br/>
+        ///     eventTypes: [<br/>
+        ///       "QUEUE_ITEM_REJECTED",<br/>
+        ///       "AUTHOR_BLOCKED",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -105,14 +103,12 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.webhooks.create({<br/>
-        ///     body: {<br/>
-        ///       name: "Moderation events",<br/>
-        ///       url: "https://example.com/webhooks/moderation",<br/>
-        ///       eventTypes: [<br/>
-        ///         "QUEUE_ITEM_REJECTED",<br/>
-        ///         "AUTHOR_BLOCKED",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///     name: "Moderation events",<br/>
+        ///     url: "https://example.com/webhooks/moderation",<br/>
+        ///     eventTypes: [<br/>
+        ///       "QUEUE_ITEM_REJECTED",<br/>
+        ///       "AUTHOR_BLOCKED",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

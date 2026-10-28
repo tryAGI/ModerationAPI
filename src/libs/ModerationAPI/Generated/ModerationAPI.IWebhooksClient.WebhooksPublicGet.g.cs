@@ -21,9 +21,7 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.webhooks.retrieve({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///   });<br/>
+        ///   const result = await moderationApi.webhooks.retrieve("&lt;id&gt;");<br/>
         ///   console.log(result);<br/>
         /// }<br/>
         /// run();
@@ -50,9 +48,7 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.webhooks.retrieve({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///   });<br/>
+        ///   const result = await moderationApi.webhooks.retrieve("&lt;id&gt;");<br/>
         ///   console.log(result);<br/>
         /// }<br/>
         /// run();

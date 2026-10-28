@@ -64,7 +64,7 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.projects.list({});<br/>
+        ///   const result = await moderationApi.projects.list();<br/>
         ///   for await (const page of result) {<br/>
         ///     console.log(page);<br/>
         ///   }<br/>
@@ -107,7 +107,7 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.projects.list({});<br/>
+        ///   const result = await moderationApi.projects.list();<br/>
         ///   for await (const page of result) {<br/>
         ///     console.log(page);<br/>
         ///   }<br/>

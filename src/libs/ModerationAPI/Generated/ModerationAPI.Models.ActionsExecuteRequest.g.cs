@@ -46,6 +46,18 @@ namespace ModerationAPI
         public double? Duration { get; set; }
 
         /// <summary>
+        /// The user ID or email of the organization member who made the decision. The action is recorded as theirs.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderator")]
+        public string? Moderator { get; set; }
+
+        /// <summary>
+        /// Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("createCasebookCase")]
+        public bool? CreateCasebookCase { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +84,12 @@ namespace ModerationAPI
         /// <param name="duration">
         /// Optional duration in milliseconds for actions with timeouts
         /// </param>
+        /// <param name="moderator">
+        /// The user ID or email of the organization member who made the decision. The action is recorded as theirs.
+        /// </param>
+        /// <param name="createCasebookCase">
+        /// Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,7 +99,9 @@ namespace ModerationAPI
             global::System.Collections.Generic.IList<string>? authorIds,
             string? value,
             string? queueId,
-            double? duration)
+            double? duration,
+            string? moderator,
+            bool? createCasebookCase)
         {
             this.ActionKey = actionKey ?? throw new global::System.ArgumentNullException(nameof(actionKey));
             this.ContentIds = contentIds;
@@ -89,6 +109,8 @@ namespace ModerationAPI
             this.Value = value;
             this.QueueId = queueId;
             this.Duration = duration;
+            this.Moderator = moderator;
+            this.CreateCasebookCase = createCasebookCase;
         }
 
         /// <summary>

@@ -22,14 +22,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.wordlist.words.add({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       words: [<br/>
-        ///         "free money",<br/>
-        ///         "click here",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.wordlist.words.add("&lt;id&gt;", {<br/>
+        ///     words: [<br/>
+        ///       "free money",<br/>
+        ///       "click here",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -60,14 +57,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.wordlist.words.add({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       words: [<br/>
-        ///         "free money",<br/>
-        ///         "click here",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.wordlist.words.add("&lt;id&gt;", {<br/>
+        ///     words: [<br/>
+        ///       "free money",<br/>
+        ///       "click here",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

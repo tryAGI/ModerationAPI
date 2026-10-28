@@ -59,12 +59,10 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.actions.create({<br/>
-        ///     body: {<br/>
-        ///       key: "suspend-24h",<br/>
-        ///       name: "Suspend for 24 hours",<br/>
-        ///       type: "AUTHOR_BLOCK_TEMP",<br/>
-        ///       queueBehaviour: "REMOVE",<br/>
-        ///     },<br/>
+        ///     key: "suspend-24h",<br/>
+        ///     name: "Suspend for 24 hours",<br/>
+        ///     type: "AUTHOR_BLOCK_TEMP",<br/>
+        ///     queueBehaviour: "REMOVE",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -103,12 +101,10 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.actions.create({<br/>
-        ///     body: {<br/>
-        ///       key: "suspend-24h",<br/>
-        ///       name: "Suspend for 24 hours",<br/>
-        ///       type: "AUTHOR_BLOCK_TEMP",<br/>
-        ///       queueBehaviour: "REMOVE",<br/>
-        ///     },<br/>
+        ///     key: "suspend-24h",<br/>
+        ///     name: "Suspend for 24 hours",<br/>
+        ///     type: "AUTHOR_BLOCK_TEMP",<br/>
+        ///     queueBehaviour: "REMOVE",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

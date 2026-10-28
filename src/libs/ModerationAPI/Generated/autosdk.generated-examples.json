@@ -57,6 +57,28 @@
     },
     {
       "Order": 6,
+      "Title": "Suspend author",
+      "Slug": "suspendauthor",
+      "Description": "Block an author for a limited time with the built-in suspend action.",
+      "Language": "http",
+      "Code": "### Suspend author\n# @name suspendAuthor\nPOST {{host}}/authors/{{id}}/suspend\nAuthorization: Bearer {{token}}\nProject-Id: {{Project-Id}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022reason\u0022: \u0022Violation of community guidelines\u0022,\n  \u0022duration\u0022: 604800000\n}\n\n## Responses\n# 200\n# Description: Action executed successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Retry after the number of seconds in the \u0060Retry-After\u0060 header.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "suspendAuthor",
+      "Setup": null
+    },
+    {
+      "Order": 7,
+      "Title": "Reject content",
+      "Slug": "rejectcontent",
+      "Description": "Reject a content item with the built-in reject action, and resolve it in the review queue.",
+      "Language": "http",
+      "Code": "### Reject content\n# @name rejectContent\nPOST {{host}}/content/{{id}}/reject\nAuthorization: Bearer {{token}}\nProject-Id: {{Project-Id}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022reason\u0022: \u0022Spam\u0022\n}\n\n## Responses\n# 200\n# Description: Action executed successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 404\n# Description: Not found\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Retry after the number of seconds in the \u0060Retry-After\u0060 header.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "rejectContent",
+      "Setup": null
+    },
+    {
+      "Order": 8,
       "Title": "Send feedback",
       "Slug": "createfeedback",
       "Description": "Sends a feature request, bug report or other feedback to the Moderation API team. The team reads every request and can reply by email. Limited to 5 requests per minute per organization.",
@@ -67,7 +89,7 @@
       "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 7,
+      "Order": 9,
       "Title": "Resolve queue items",
       "Slug": "resolvequeueitems",
       "Description": "Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with \u0060POST /queue/{id}/items/{itemId}/resolve\u0060. IDs that do not exist in the project are skipped and returned in \u0060notFoundIds\u0060.",
@@ -78,7 +100,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 10,
       "Title": "Create a webhook",
       "Slug": "webhooks-publiccreate",
       "Description": "Create a webhook subscribed to one or more event types. Deliveries use the v2 envelope and are signed with the project signing secret (see the signing secret endpoint).",
@@ -89,7 +111,7 @@
       "Setup": "This example assumes \u0060using ModerationAPI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 9,
+      "Order": 11,
       "Title": "Add words to wordlist",
       "Slug": "wordlist-addwords",
       "Description": "Add words to an existing wordlist",

@@ -20,11 +20,9 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.feedback.create({<br/>
-        ///     body: {<br/>
-        ///       title: "Filter queue items by author trust level",<br/>
-        ///       description: "We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.",<br/>
-        ///       source: "mcp",<br/>
-        ///     },<br/>
+        ///     title: "Filter queue items by author trust level",<br/>
+        ///     description: "We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.",<br/>
+        ///     source: "mcp",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -52,11 +50,9 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.feedback.create({<br/>
-        ///     body: {<br/>
-        ///       title: "Filter queue items by author trust level",<br/>
-        ///       description: "We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.",<br/>
-        ///       source: "mcp",<br/>
-        ///     },<br/>
+        ///     title: "Filter queue items by author trust level",<br/>
+        ///     description: "We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.",<br/>
+        ///     source: "mcp",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

@@ -66,9 +66,19 @@ namespace ModerationAPI
         public AuthorClient Author { get; }
 
         /// <summary>
+        ///
+        /// </summary>
+        public AuthorsClient Authors { get; }
+
+        /// <summary>
         /// Channels in a project. Needs an organization key.
         /// </summary>
         public ChannelsClient Channels { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentClient Content { get; }
 
         /// <summary>
         ///
