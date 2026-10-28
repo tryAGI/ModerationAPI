@@ -58,17 +58,15 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.content.submit({<br/>
-        ///     body: {<br/>
-        ///       content: {<br/>
-        ///         type: "text",<br/>
-        ///         text: "Hey, check out my profile for a deal!",<br/>
-        ///       },<br/>
-        ///       contentId: "message-48213",<br/>
-        ///       authorId: "user-1092",<br/>
-        ///       conversationId: "room-general",<br/>
-        ///       metadata: {<br/>
-        ///         "platform": "ios",<br/>
-        ///       },<br/>
+        ///     content: {<br/>
+        ///       type: "text",<br/>
+        ///       text: "Hey, check out my profile for a deal!",<br/>
+        ///     },<br/>
+        ///     contentId: "message-48213",<br/>
+        ///     authorId: "user-1092",<br/>
+        ///     conversationId: "room-general",<br/>
+        ///     metadata: {<br/>
+        ///       "platform": "ios",<br/>
         ///     },<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
@@ -107,17 +105,15 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.content.submit({<br/>
-        ///     body: {<br/>
-        ///       content: {<br/>
-        ///         type: "text",<br/>
-        ///         text: "Hey, check out my profile for a deal!",<br/>
-        ///       },<br/>
-        ///       contentId: "message-48213",<br/>
-        ///       authorId: "user-1092",<br/>
-        ///       conversationId: "room-general",<br/>
-        ///       metadata: {<br/>
-        ///         "platform": "ios",<br/>
-        ///       },<br/>
+        ///     content: {<br/>
+        ///       type: "text",<br/>
+        ///       text: "Hey, check out my profile for a deal!",<br/>
+        ///     },<br/>
+        ///     contentId: "message-48213",<br/>
+        ///     authorId: "user-1092",<br/>
+        ///     conversationId: "room-general",<br/>
+        ///     metadata: {<br/>
+        ///       "platform": "ios",<br/>
         ///     },<br/>
         ///   });<br/>
         ///   console.log(result);<br/>

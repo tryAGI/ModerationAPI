@@ -59,15 +59,13 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.authors.create({<br/>
-        ///     body: {<br/>
-        ///       name: "Jamie Rivera",<br/>
-        ///       email: "jamie@example.com",<br/>
-        ///       metadata: {<br/>
-        ///         emailVerified: true,<br/>
-        ///         isPayingCustomer: false,<br/>
-        ///       },<br/>
-        ///       externalId: "user-1092",<br/>
+        ///     name: "Jamie Rivera",<br/>
+        ///     email: "jamie@example.com",<br/>
+        ///     metadata: {<br/>
+        ///       emailVerified: true,<br/>
+        ///       isPayingCustomer: false,<br/>
         ///     },<br/>
+        ///     externalId: "user-1092",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -106,15 +104,13 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.authors.create({<br/>
-        ///     body: {<br/>
-        ///       name: "Jamie Rivera",<br/>
-        ///       email: "jamie@example.com",<br/>
-        ///       metadata: {<br/>
-        ///         emailVerified: true,<br/>
-        ///         isPayingCustomer: false,<br/>
-        ///       },<br/>
-        ///       externalId: "user-1092",<br/>
+        ///     name: "Jamie Rivera",<br/>
+        ///     email: "jamie@example.com",<br/>
+        ///     metadata: {<br/>
+        ///       emailVerified: true,<br/>
+        ///       isPayingCustomer: false,<br/>
         ///     },<br/>
+        ///     externalId: "user-1092",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

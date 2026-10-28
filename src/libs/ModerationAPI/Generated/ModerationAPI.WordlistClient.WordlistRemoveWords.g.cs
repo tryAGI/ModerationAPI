@@ -65,14 +65,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.wordlist.words.remove({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     words: [<br/>
-        ///       "&lt;value 1&gt;",<br/>
-        ///       "&lt;value 2&gt;",<br/>
-        ///       "&lt;value 3&gt;",<br/>
-        ///     ],<br/>
-        ///   });<br/>
+        ///   const result = await moderationApi.wordlist.words.remove("&lt;id&gt;", [<br/>
+        ///     "&lt;value 1&gt;",<br/>
+        ///     "&lt;value 2&gt;",<br/>
+        ///     "&lt;value 3&gt;",<br/>
+        ///   ]);<br/>
         ///   console.log(result);<br/>
         /// }<br/>
         /// run();
@@ -114,14 +111,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.wordlist.words.remove({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     words: [<br/>
-        ///       "&lt;value 1&gt;",<br/>
-        ///       "&lt;value 2&gt;",<br/>
-        ///       "&lt;value 3&gt;",<br/>
-        ///     ],<br/>
-        ///   });<br/>
+        ///   const result = await moderationApi.wordlist.words.remove("&lt;id&gt;", [<br/>
+        ///     "&lt;value 1&gt;",<br/>
+        ///     "&lt;value 2&gt;",<br/>
+        ///     "&lt;value 3&gt;",<br/>
+        ///   ]);<br/>
         ///   console.log(result);<br/>
         /// }<br/>
         /// run();

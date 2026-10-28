@@ -408,7 +408,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.summary({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.summary();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -640,7 +640,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.policies({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.policies();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -874,7 +874,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.authors({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.authors();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -1091,7 +1091,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.channels({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.channels();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -1333,7 +1333,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.volumes({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.volumes();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -1622,7 +1622,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.automation({});\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.analytics.automation();\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -2129,7 +2129,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.create({\n    body: {\n      name: \"Jamie Rivera\",\n      email: \"jamie@example.com\",\n      metadata: {\n        emailVerified: true,\n        isPayingCustomer: false,\n      },\n      externalId: \"user-1092\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.create({\n    name: \"Jamie Rivera\",\n    email: \"jamie@example.com\",\n    metadata: {\n      emailVerified: true,\n      isPayingCustomer: false,\n    },\n    externalId: \"user-1092\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -2281,7 +2281,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -2555,7 +2555,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.update({\n    id: \"<id>\",\n    body: {\n      metadata: {\n        identityVerified: true,\n      },\n      manualTrustLevel: 2,\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.update(\"<id>\", {\n    metadata: {\n      identityVerified: true,\n    },\n    manualTrustLevel: 2,\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -2714,7 +2714,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.delete({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -2899,7 +2899,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.feedback.create({\n    body: {\n      title: \"Filter queue items by author trust level\",\n      description: \"We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.\",\n      source: \"mcp\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.feedback.create({\n    title: \"Filter queue items by author trust level\",\n    description: \"We review queue items by hand. We want to see items from new authors first, so we need a filter for trust level on the queue items list.\",\n    source: \"mcp\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -3101,7 +3101,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.list({});\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.list();\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -3262,7 +3262,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -3515,7 +3515,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.getStats({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.getStats(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -3962,7 +3962,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.resolve({\n    id: \"<id>\",\n    itemId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.resolve(\"<id>\", \"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -4154,7 +4154,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.resolveMany({\n    id: \"<id>\",\n    body: {\n      itemIds: [\n        \"clx8k2v0e000108l4a9bz3f7q\",\n        \"clx8k2v0e000208l4h2mc6d1r\",\n      ],\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.resolveMany(\"<id>\", {\n    itemIds: [\n      \"clx8k2v0e000108l4a9bz3f7q\",\n      \"clx8k2v0e000208l4h2mc6d1r\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -4329,7 +4329,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.unresolve({\n    id: \"<id>\",\n    itemId: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.queue.items.unresolve(\"<id>\", \"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -4664,7 +4664,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.list({});\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.list();\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -5037,7 +5037,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.create({\n    body: {\n      key: \"suspend-24h\",\n      name: \"Suspend for 24 hours\",\n      type: \"AUTHOR_BLOCK_TEMP\",\n      queueBehaviour: \"REMOVE\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.create({\n    key: \"suspend-24h\",\n    name: \"Suspend for 24 hours\",\n    type: \"AUTHOR_BLOCK_TEMP\",\n    queueBehaviour: \"REMOVE\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -5297,7 +5297,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -5681,7 +5681,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.update({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.update(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -5826,7 +5826,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.delete({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -5913,6 +5913,14 @@
                     "description": "Optional duration in milliseconds for actions with timeouts",
                     "type": "number",
                     "minimum": 0
+                  },
+                  "moderator": {
+                    "description": "The user ID or email of the organization member who made the decision. The action is recorded as theirs.",
+                    "type": "string"
+                  },
+                  "createCasebookCase": {
+                    "description": "Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.",
+                    "type": "boolean"
                   }
                 },
                 "required": [
@@ -6012,7 +6020,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.execute({\n    body: {\n      actionKey: \"suspend-24h\",\n      authorIds: [\n        \"user-1092\",\n      ],\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.actions.execute({\n    actionKey: \"suspend-24h\",\n    authorIds: [\n      \"user-1092\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -6191,6 +6199,847 @@
           }
         },
         "x-speakeasy-ignore": true
+      }
+    },
+    "/content/{id}/reject": {
+      "post": {
+        "operationId": "rejectContent",
+        "summary": "Reject content",
+        "description": "Reject a content item with the built-in reject action, and resolve it in the review queue.",
+        "tags": [
+          "Content"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The content ID you sent when you submitted the content, or the ID Moderation API assigned."
+            },
+            "required": true,
+            "description": "The content ID you sent when you submitted the content, or the ID Moderation API assigned."
+          },
+          {
+            "in": "header",
+            "name": "Project-Id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The project to act on, by ID or name. Required with an organization key unless the key reaches only one project; list projects with GET /projects. A project key acts on its own project and needs no value: naming another one is an error.",
+            "x-speakeasy-name-override": "projectId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "description": "Why the action was taken. Saved with the action and sent in the webhook event.",
+                    "type": "string"
+                  },
+                  "queueId": {
+                    "description": "The queue the content is reviewed in. Defaults to the project's default queue.",
+                    "type": "string"
+                  },
+                  "moderator": {
+                    "description": "The user ID or email of the organization member who made the decision. The action is recorded as theirs.",
+                    "type": "string"
+                  },
+                  "createCasebookCase": {
+                    "description": "Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.",
+                    "type": "boolean"
+                  }
+                }
+              },
+              "example": {
+                "reason": "Spam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the action was executed successfully"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Execution result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "content",
+        "x-speakeasy-name-override": "reject",
+        "x-speakeasy-mcp": {
+          "title": "Reject content",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.content.reject(\"<id>\", {\n    reason: \"Spam\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.content.reject(id=\"<id>\", reason=\"Spam\")\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\nuse ModerationApi\\Models\\Operations;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n$body = new Operations\\RejectContentRequestBody(\n    reason: 'Spam',\n);\n\n$response = $sdk->content->reject(\n    id: '<id>',\n    body: $body\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.content.reject(id: '<id>', body: Models::Operations::RejectContentRequestBody.new(\n  reason: 'Spam'\n))\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi content reject --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>' --reason Spam\n"
+          }
+        ]
+      }
+    },
+    "/content/{id}/allow": {
+      "post": {
+        "operationId": "allowContent",
+        "summary": "Allow content",
+        "description": "Allow a content item with the built-in allow action, and resolve it in the review queue.",
+        "tags": [
+          "Content"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The content ID you sent when you submitted the content, or the ID Moderation API assigned."
+            },
+            "required": true,
+            "description": "The content ID you sent when you submitted the content, or the ID Moderation API assigned."
+          },
+          {
+            "in": "header",
+            "name": "Project-Id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The project to act on, by ID or name. Required with an organization key unless the key reaches only one project; list projects with GET /projects. A project key acts on its own project and needs no value: naming another one is an error.",
+            "x-speakeasy-name-override": "projectId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "description": "Why the action was taken. Saved with the action and sent in the webhook event.",
+                    "type": "string"
+                  },
+                  "queueId": {
+                    "description": "The queue the content is reviewed in. Defaults to the project's default queue.",
+                    "type": "string"
+                  },
+                  "moderator": {
+                    "description": "The user ID or email of the organization member who made the decision. The action is recorded as theirs.",
+                    "type": "string"
+                  },
+                  "createCasebookCase": {
+                    "description": "Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the action was executed successfully"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Execution result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "content",
+        "x-speakeasy-name-override": "allow",
+        "x-speakeasy-mcp": {
+          "title": "Allow content",
+          "scopes": [
+            "write"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": false
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.content.allow(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.content.allow(id=\"<id>\")\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\nuse ModerationApi\\Models\\Operations;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n$body = new Operations\\AllowContentRequestBody();\n\n$response = $sdk->content->allow(\n    id: '<id>',\n    body: $body\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.content.allow(id: '<id>', body: Models::Operations::AllowContentRequestBody.new)\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi content allow --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>'\n"
+          }
+        ]
+      }
+    },
+    "/authors/{id}/block": {
+      "post": {
+        "operationId": "blockAuthor",
+        "summary": "Block author",
+        "description": "Block an author with the built-in block action. A blocked author cannot post new content until unblocked.",
+        "tags": [
+          "Authors"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "Either external ID or the ID assigned by moderation API."
+            },
+            "required": true,
+            "description": "Either external ID or the ID assigned by moderation API."
+          },
+          {
+            "in": "header",
+            "name": "Project-Id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The project to act on, by ID or name. Required with an organization key unless the key reaches only one project; list projects with GET /projects. A project key acts on its own project and needs no value: naming another one is an error.",
+            "x-speakeasy-name-override": "projectId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "description": "Why the action was taken. Saved with the action and sent in the webhook event.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the action was executed successfully"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Execution result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "authors",
+        "x-speakeasy-name-override": "block",
+        "x-speakeasy-mcp": {
+          "title": "Block author",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.block(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.authors.block(id=\"<id>\")\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\nuse ModerationApi\\Models\\Operations;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n$body = new Operations\\BlockAuthorRequestBody();\n\n$response = $sdk->authors->block(\n    id: '<id>',\n    body: $body\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.authors.block(id: '<id>', body: Models::Operations::BlockAuthorRequestBody.new)\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi authors block --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>'\n"
+          }
+        ]
+      }
+    },
+    "/authors/{id}/suspend": {
+      "post": {
+        "operationId": "suspendAuthor",
+        "summary": "Suspend author",
+        "description": "Block an author for a limited time with the built-in suspend action.",
+        "tags": [
+          "Authors"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "Either external ID or the ID assigned by moderation API."
+            },
+            "required": true,
+            "description": "Either external ID or the ID assigned by moderation API."
+          },
+          {
+            "in": "header",
+            "name": "Project-Id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The project to act on, by ID or name. Required with an organization key unless the key reaches only one project; list projects with GET /projects. A project key acts on its own project and needs no value: naming another one is an error.",
+            "x-speakeasy-name-override": "projectId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "description": "Why the action was taken. Saved with the action and sent in the webhook event.",
+                    "type": "string"
+                  },
+                  "duration": {
+                    "description": "How long the suspension lasts, in milliseconds. Defaults to 24 hours.",
+                    "type": "number",
+                    "minimum": 0
+                  }
+                }
+              },
+              "example": {
+                "reason": "Violation of community guidelines",
+                "duration": 604800000
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the action was executed successfully"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Execution result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "authors",
+        "x-speakeasy-name-override": "suspend",
+        "x-speakeasy-mcp": {
+          "title": "Suspend author",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.suspend(\"<id>\", {\n    reason: \"Violation of community guidelines\",\n    duration: 604800000,\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.authors.suspend(id=\"<id>\", reason=\"Violation of community guidelines\", duration=604800000)\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\nuse ModerationApi\\Models\\Operations;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n$body = new Operations\\SuspendAuthorRequestBody(\n    reason: 'Violation of community guidelines',\n    duration: 604800000,\n);\n\n$response = $sdk->authors->suspend(\n    id: '<id>',\n    body: $body\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.authors.suspend(id: '<id>', body: Models::Operations::SuspendAuthorRequestBody.new(\n  reason: 'Violation of community guidelines',\n  duration: 604_800_000.0\n))\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi authors suspend --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>' --reason 'Violation of community guidelines' --duration 604800000\n"
+          }
+        ]
+      }
+    },
+    "/authors/{id}/unblock": {
+      "post": {
+        "operationId": "unblockAuthor",
+        "summary": "Unblock author",
+        "description": "Unblock a blocked or suspended author with the built-in unblock action, so they can post new content again.",
+        "tags": [
+          "Authors"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "Either external ID or the ID assigned by moderation API."
+            },
+            "required": true,
+            "description": "Either external ID or the ID assigned by moderation API."
+          },
+          {
+            "in": "header",
+            "name": "Project-Id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The project to act on, by ID or name. Required with an organization key unless the key reaches only one project; list projects with GET /projects. A project key acts on its own project and needs no value: naming another one is an error.",
+            "x-speakeasy-name-override": "projectId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "description": "Why the action was taken. Saved with the action and sent in the webhook event.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the action was executed successfully"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Execution result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "authors",
+        "x-speakeasy-name-override": "unblock",
+        "x-speakeasy-mcp": {
+          "title": "Unblock author",
+          "scopes": [
+            "write"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": false
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.authors.unblock(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.authors.unblock(id=\"<id>\")\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\nuse ModerationApi\\Models\\Operations;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n$body = new Operations\\UnblockAuthorRequestBody();\n\n$response = $sdk->authors->unblock(\n    id: '<id>',\n    body: $body\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.authors.unblock(id: '<id>', body: Models::Operations::UnblockAuthorRequestBody.new)\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi authors unblock --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>'\n"
+          }
+        ]
       }
     },
     "/webhooks": {
@@ -6391,7 +7240,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.list({});\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.list();\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -6627,7 +7476,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.create({\n    body: {\n      name: \"Moderation events\",\n      url: \"https://example.com/webhooks/moderation\",\n      eventTypes: [\n        \"QUEUE_ITEM_REJECTED\",\n        \"AUTHOR_BLOCKED\",\n      ],\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.create({\n    name: \"Moderation events\",\n    url: \"https://example.com/webhooks/moderation\",\n    eventTypes: [\n      \"QUEUE_ITEM_REJECTED\",\n      \"AUTHOR_BLOCKED\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -6812,7 +7661,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -7055,7 +7904,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.update({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.update(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -7190,7 +8039,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.delete({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.webhooks.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -8517,7 +9366,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.list({});\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.list();\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -8722,7 +9571,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.create({\n    body: {\n      name: \"<value>\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.create({\n    name: \"<value>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -8931,7 +9780,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -9153,7 +10002,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.update({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.update(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -9326,7 +10175,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.getEmbeddingStatus({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.getEmbeddingStatus(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -9509,7 +10358,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.words.add({\n    id: \"<id>\",\n    body: {\n      words: [\n        \"free money\",\n        \"click here\",\n      ],\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.words.add(\"<id>\", {\n    words: [\n      \"free money\",\n      \"click here\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -9675,7 +10524,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.words.remove({\n    id: \"<id>\",\n    words: [\n      \"<value 1>\",\n      \"<value 2>\",\n      \"<value 3>\",\n    ],\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.words.remove(\"<id>\", [\n    \"<value 1>\",\n    \"<value 2>\",\n    \"<value 3>\",\n  ]);\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -10825,13 +11674,15 @@
                               "const": "unicode_spoofing"
                             },
                             "signals": {
-                              "description": "Per-signal flag toggles. Omitted spoofing signals are enabled; encoding_damage defaults to off because decode damage (U+FFFD) marks a broken pipeline, not an attack. A disabled signal is still detected and reported as a label, but does not by itself flag the policy.",
+                              "description": "Per-signal flag toggles. Omitted spoofing signals are enabled; encoding_damage defaults to off because decode damage (U+FFFD) marks a broken pipeline, not an attack, and hidden_lookalike and leetspeak default to off because they are opt-in. A disabled signal is still detected and reported as a label, but does not by itself flag the policy. Lookalike words are only spelled out in the cleaned text when their signal is enabled.",
                               "type": "object",
                               "propertyNames": {
                                 "type": "string",
                                 "enum": [
                                   "mixed_script",
                                   "confusable_word",
+                                  "hidden_lookalike",
+                                  "leetspeak",
                                   "invisible",
                                   "zalgo",
                                   "illegal",
@@ -12103,7 +12954,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.content.submit({\n    body: {\n      content: {\n        type: \"text\",\n        text: \"Hey, check out my profile for a deal!\",\n      },\n      contentId: \"message-48213\",\n      authorId: \"user-1092\",\n      conversationId: \"room-general\",\n      metadata: {\n        \"platform\": \"ios\",\n      },\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.content.submit({\n    content: {\n      type: \"text\",\n      text: \"Hey, check out my profile for a deal!\",\n    },\n    contentId: \"message-48213\",\n    authorId: \"user-1092\",\n    conversationId: \"room-general\",\n    metadata: {\n      \"platform\": \"ios\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -12263,7 +13114,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.list({});\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.list();\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -12535,7 +13386,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -12735,7 +13586,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.update({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.update(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -12870,7 +13721,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.delete({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13020,7 +13871,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.duplicate({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.duplicate(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13173,7 +14024,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.apiKeys.create({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.projects.apiKeys.create(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13353,7 +14204,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.list({\n    projectId: \"<id>\",\n  });\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.list(\"<id>\");\n\n  for await (const page of result) {\n    console.log(page);\n  }\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13531,7 +14382,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.create({\n    projectId: \"<id>\",\n    body: {\n      name: \"<value>\",\n    },\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.create(\"<id>\", {\n    name: \"<value>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13653,7 +14504,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.retrieve({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.retrieve(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -13896,7 +14747,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.update({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.update(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -14041,7 +14892,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.delete({\n    id: \"<id>\",\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",
@@ -14198,7 +15049,7 @@
           {
             "lang": "typescript",
             "label": "TypeScript",
-            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.duplicate({\n    id: \"<id>\",\n    body: {},\n  });\n\n  console.log(result);\n}\n\nrun();\n"
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.channels.duplicate(\"<id>\", {});\n\n  console.log(result);\n}\n\nrun();\n"
           },
           {
             "lang": "python",

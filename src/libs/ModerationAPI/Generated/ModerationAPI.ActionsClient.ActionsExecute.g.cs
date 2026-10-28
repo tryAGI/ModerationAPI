@@ -59,12 +59,10 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.actions.execute({<br/>
-        ///     body: {<br/>
-        ///       actionKey: "suspend-24h",<br/>
-        ///       authorIds: [<br/>
-        ///         "user-1092",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///     actionKey: "suspend-24h",<br/>
+        ///     authorIds: [<br/>
+        ///       "user-1092",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -103,12 +101,10 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.actions.execute({<br/>
-        ///     body: {<br/>
-        ///       actionKey: "suspend-24h",<br/>
-        ///       authorIds: [<br/>
-        ///         "user-1092",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///     actionKey: "suspend-24h",<br/>
+        ///     authorIds: [<br/>
+        ///       "user-1092",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -655,6 +651,12 @@ namespace ModerationAPI
         /// <param name="duration">
         /// Optional duration in milliseconds for actions with timeouts
         /// </param>
+        /// <param name="moderator">
+        /// The user ID or email of the organization member who made the decision. The action is recorded as theirs.
+        /// </param>
+        /// <param name="createCasebookCase">
+        /// Record an allow or reject decision as a casebook case. Defaults to true when `moderator` is set, else false. Without `moderator`, the case is recorded as System.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -666,6 +668,8 @@ namespace ModerationAPI
             string? value = default,
             string? queueId = default,
             double? duration = default,
+            string? moderator = default,
+            bool? createCasebookCase = default,
             global::ModerationAPI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -677,6 +681,8 @@ namespace ModerationAPI
                 Value = value,
                 QueueId = queueId,
                 Duration = duration,
+                Moderator = moderator,
+                CreateCasebookCase = createCasebookCase,
             };
 
             return await ActionsExecuteAsync(

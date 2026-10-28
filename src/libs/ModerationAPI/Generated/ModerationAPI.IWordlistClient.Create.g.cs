@@ -20,9 +20,7 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.wordlist.create({<br/>
-        ///     body: {<br/>
-        ///       name: "&lt;value&gt;",<br/>
-        ///     },<br/>
+        ///     name: "&lt;value&gt;",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -50,9 +48,7 @@ namespace ModerationAPI
         /// });<br/>
         /// async function run() {<br/>
         ///   const result = await moderationApi.wordlist.create({<br/>
-        ///     body: {<br/>
-        ///       name: "&lt;value&gt;",<br/>
-        ///     },<br/>
+        ///     name: "&lt;value&gt;",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

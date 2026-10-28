@@ -60,11 +60,8 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.channels.create({<br/>
-        ///     projectId: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       name: "&lt;value&gt;",<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.channels.create("&lt;id&gt;", {<br/>
+        ///     name: "&lt;value&gt;",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -104,11 +101,8 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.channels.create({<br/>
-        ///     projectId: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       name: "&lt;value&gt;",<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.channels.create("&lt;id&gt;", {<br/>
+        ///     name: "&lt;value&gt;",<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

@@ -22,14 +22,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.queue.items.resolveMany({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       itemIds: [<br/>
-        ///         "clx8k2v0e000108l4a9bz3f7q",<br/>
-        ///         "clx8k2v0e000208l4h2mc6d1r",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.queue.items.resolveMany("&lt;id&gt;", {<br/>
+        ///     itemIds: [<br/>
+        ///       "clx8k2v0e000108l4a9bz3f7q",<br/>
+        ///       "clx8k2v0e000208l4h2mc6d1r",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -60,14 +57,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.queue.items.resolveMany({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       itemIds: [<br/>
-        ///         "clx8k2v0e000108l4a9bz3f7q",<br/>
-        ///         "clx8k2v0e000208l4h2mc6d1r",<br/>
-        ///       ],<br/>
-        ///     },<br/>
+        ///   const result = await moderationApi.queue.items.resolveMany("&lt;id&gt;", {<br/>
+        ///     itemIds: [<br/>
+        ///       "clx8k2v0e000108l4a9bz3f7q",<br/>
+        ///       "clx8k2v0e000208l4h2mc6d1r",<br/>
+        ///     ],<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>

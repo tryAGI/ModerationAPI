@@ -63,14 +63,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.authors.update({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       metadata: {<br/>
-        ///         identityVerified: true,<br/>
-        ///       },<br/>
-        ///       manualTrustLevel: 2,<br/>
+        ///   const result = await moderationApi.authors.update("&lt;id&gt;", {<br/>
+        ///     metadata: {<br/>
+        ///       identityVerified: true,<br/>
         ///     },<br/>
+        ///     manualTrustLevel: 2,<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
@@ -113,14 +110,11 @@ namespace ModerationAPI
         ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
         /// });<br/>
         /// async function run() {<br/>
-        ///   const result = await moderationApi.authors.update({<br/>
-        ///     id: "&lt;id&gt;",<br/>
-        ///     body: {<br/>
-        ///       metadata: {<br/>
-        ///         identityVerified: true,<br/>
-        ///       },<br/>
-        ///       manualTrustLevel: 2,<br/>
+        ///   const result = await moderationApi.authors.update("&lt;id&gt;", {<br/>
+        ///     metadata: {<br/>
+        ///       identityVerified: true,<br/>
         ///     },<br/>
+        ///     manualTrustLevel: 2,<br/>
         ///   });<br/>
         ///   console.log(result);<br/>
         /// }<br/>
