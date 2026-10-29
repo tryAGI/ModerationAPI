@@ -92,7 +92,7 @@
       "Order": 9,
       "Title": "Resolve queue items",
       "Slug": "resolvequeueitems",
-      "Description": "Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with \u0060POST /queue/{id}/items/{itemId}/resolve\u0060. IDs that do not exist in the project are skipped and returned in \u0060notFoundIds\u0060.",
+      "Description": "Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with \u0060POST /queue/{id}/items/{itemId}/resolve\u0060, and each ID is an item \u0060id\u0060 or your \u0060contentId\u0060. IDs that match no item in the project are skipped and returned in \u0060notFoundIds\u0060.",
       "Language": "http",
       "Code": "### Resolve queue items\n# @name resolveQueueItems\nPOST {{host}}/queue/{{id}}/items/resolve\nAuthorization: Bearer {{token}}\nProject-Id: {{Project-Id}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022itemIds\u0022: [\n    \u0022clx8k2v0e000108l4a9bz3f7q\u0022,\n    \u0022clx8k2v0e000208l4h2mc6d1r\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Successful response\n# Content-Type: application/json\n# 400\n# Description: Invalid input data\n# Content-Type: application/json\n# 401\n# Description: Authorization not provided\n# Content-Type: application/json\n# 403\n# Description: Insufficient access\n# Content-Type: application/json\n# 429\n# Description: Too many requests. Retry after the number of seconds in the \u0060Retry-After\u0060 header.\n# Content-Type: application/json\n# 500\n# Description: Internal server error\n# Content-Type: application/json",
       "Format": "http",

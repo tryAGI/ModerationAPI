@@ -9,7 +9,7 @@ namespace ModerationAPI
     public sealed partial class ResolveQueueItemsRequest
     {
         /// <summary>
-        /// The item IDs to resolve. Up to 100.
+        /// The items to resolve, up to 100. Each is the item `id` from `GET /queue/{id}/items`, or the `contentId` you sent to `POST /moderate` (webhooks send it as `item.id`). For a content ID, the newest submission with that content ID is used, as the queue shows it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("itemIds")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,7 @@ namespace ModerationAPI
         /// Initializes a new instance of the <see cref="ResolveQueueItemsRequest" /> class.
         /// </summary>
         /// <param name="itemIds">
-        /// The item IDs to resolve. Up to 100.
+        /// The items to resolve, up to 100. Each is the item `id` from `GET /queue/{id}/items`, or the `contentId` you sent to `POST /moderate` (webhooks send it as `item.id`). For a content ID, the newest submission with that content ID is used, as the queue shows it.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
