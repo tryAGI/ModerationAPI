@@ -16,7 +16,7 @@ namespace ModerationAPI
         public required int Resolved { get; set; }
 
         /// <summary>
-        /// Item IDs that do not exist in the project.
+        /// IDs from `itemIds` that match no item or content ID in the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notFoundIds")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace ModerationAPI
         /// Number of items resolved.
         /// </param>
         /// <param name="notFoundIds">
-        /// Item IDs that do not exist in the project.
+        /// IDs from `itemIds` that match no item or content ID in the project.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

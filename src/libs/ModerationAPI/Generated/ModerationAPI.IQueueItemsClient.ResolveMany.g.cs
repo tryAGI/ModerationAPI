@@ -6,7 +6,7 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Resolve queue items<br/>
-        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`. IDs that do not exist in the project are skipped and returned in `notFoundIds`.
+        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`, and each ID is an item `id` or your `contentId`. IDs that match no item in the project are skipped and returned in `notFoundIds`.
         /// </summary>
         /// <param name="id">
         /// The queue ID.
@@ -41,7 +41,7 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Resolve queue items<br/>
-        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`. IDs that do not exist in the project are skipped and returned in `notFoundIds`.
+        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`, and each ID is an item `id` or your `contentId`. IDs that match no item in the project are skipped and returned in `notFoundIds`.
         /// </summary>
         /// <param name="id">
         /// The queue ID.
@@ -76,14 +76,14 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Resolve queue items<br/>
-        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`. IDs that do not exist in the project are skipped and returned in `notFoundIds`.
+        /// Mark up to 100 items of a queue as resolved in one request. Each item is resolved the same as with `POST /queue/{id}/items/{itemId}/resolve`, and each ID is an item `id` or your `contentId`. IDs that match no item in the project are skipped and returned in `notFoundIds`.
         /// </summary>
         /// <param name="id">
         /// The queue ID.
         /// </param>
         /// <param name="projectId"></param>
         /// <param name="itemIds">
-        /// The item IDs to resolve. Up to 100.
+        /// The items to resolve, up to 100. Each is the item `id` from `GET /queue/{id}/items`, or the `contentId` you sent to `POST /moderate` (webhooks send it as `item.id`). For a content ID, the newest submission with that content ID is used, as the queue shows it.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

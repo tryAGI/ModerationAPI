@@ -1486,255 +1486,259 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.WordlistWordlistEmbeddingStatusResponse? Type362 { get; set; }
+        public global::ModerationAPI.DeleteWordlistResponse? Type362 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.WordlistAddWordsResponse? Type363 { get; set; }
+        public global::ModerationAPI.WordlistWordlistEmbeddingStatusResponse? Type363 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.WordlistRemoveWordsResponse? Type364 { get; set; }
+        public global::ModerationAPI.WordlistAddWordsResponse? Type364 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponse? Type365 { get; set; }
+        public global::ModerationAPI.WordlistRemoveWordsResponse? Type365 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContent? Type366 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponse? Type366 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText? Type367 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContent? Type367 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage? Type368 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentText? Type368 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo? Type369 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentImage? Type369 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio? Type370 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentVideo? Type370 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseAuthor? Type371 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseContentModifiedVariant1ModifiedNestedObjectContentAudio? Type371 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseAuthorBlock? Type372 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseAuthor? Type372 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseAuthorStatus? Type373 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseAuthorBlock? Type373 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseAuthorTrustLevel? Type374 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseAuthorStatus? Type374 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseEvaluation? Type375 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseAuthorTrustLevel? Type375 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseRecommendation? Type376 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseEvaluation? Type376 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseRecommendationAction? Type377 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseRecommendation? Type377 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>>? Type378 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseRecommendationAction? Type378 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>? Type379 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>>? Type379 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode? Type380 { get; set; }
+        public global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>? Type380 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>? Type381 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode? Type381 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule? Type382 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>? Type382 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseCasebook? Type383 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule? Type383 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseCasebookVerdict? Type384 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseCasebook? Type384 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseCasebookTopic? Type385 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseCasebookVerdict? Type385 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>? Type386 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseCasebookTopic? Type386 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput? Type387 { get; set; }
+        public global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>? Type387 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>? Type388 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput? Type388 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel? Type389 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>? Type389 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput? Type390 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel? Type390 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche>? Type391 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput? Type391 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche? Type392 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche>? Type392 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type393 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche? Type393 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignals? Type394 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type394 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation? Type395 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignals? Type395 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod? Type396 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonation? Type396 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight? Type397 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod? Type397 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? Type398 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight? Type398 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightScores? Type399 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightValue? Type399 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight? Type400 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsightScores? Type400 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight? Type401 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight? Type401 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight? Type402 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight? Type402 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight? Type403 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight? Type403 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight? Type404 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight? Type404 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseMeta? Type405 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight? Type405 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseMetaStatus? Type406 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseMeta? Type406 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseError>? Type407 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseMetaStatus? Type407 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.NewModerateModerateResponseError? Type408 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseError>? Type408 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.ManagementProjectsListResponse? Type409 { get; set; }
+        public global::ModerationAPI.NewModerateModerateResponseError? Type409 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.Project>? Type410 { get; set; }
+        public global::ModerationAPI.ManagementProjectsListResponse? Type410 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.ManagementProjectsDeleteResponse? Type411 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.Project>? Type411 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.ManagementChannelsListResponse? Type412 { get; set; }
+        public global::ModerationAPI.ManagementProjectsDeleteResponse? Type412 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ModerationAPI.Channel>? Type413 { get; set; }
+        public global::ModerationAPI.ManagementChannelsListResponse? Type413 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.ManagementChannelsDeleteResponse? Type414 { get; set; }
+        public global::System.Collections.Generic.IList<global::ModerationAPI.Channel>? Type414 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorBlockedWebhookVersion? Type415 { get; set; }
+        public global::ModerationAPI.ManagementChannelsDeleteResponse? Type415 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorUnblockedWebhookVersion? Type416 { get; set; }
+        public global::ModerationAPI.AuthorBlockedWebhookVersion? Type416 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorSuspendedWebhookVersion? Type417 { get; set; }
+        public global::ModerationAPI.AuthorUnblockedWebhookVersion? Type417 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorUpdatedWebhookVersion? Type418 { get; set; }
+        public global::ModerationAPI.AuthorSuspendedWebhookVersion? Type418 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion? Type419 { get; set; }
+        public global::ModerationAPI.AuthorUpdatedWebhookVersion? Type419 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.AuthorActionWebhookVersion? Type420 { get; set; }
+        public global::ModerationAPI.AuthorTrustLevelChangedWebhookVersion? Type420 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemResolvedWebhookVersion? Type421 { get; set; }
+        public global::ModerationAPI.AuthorActionWebhookVersion? Type421 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemActionWebhookVersion? Type422 { get; set; }
+        public global::ModerationAPI.QueueItemResolvedWebhookVersion? Type422 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemRejectedWebhookVersion? Type423 { get; set; }
+        public global::ModerationAPI.QueueItemActionWebhookVersion? Type423 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::ModerationAPI.QueueItemAllowedWebhookVersion? Type424 { get; set; }
+        public global::ModerationAPI.QueueItemRejectedWebhookVersion? Type424 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::ModerationAPI.QueueItemAllowedWebhookVersion? Type425 { get; set; }
 
         /// <summary>
         ///

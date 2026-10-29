@@ -65,7 +65,7 @@ namespace ModerationAPI
 
         /// <summary>
         /// List queue items<br/>
-        /// List the items of a review queue, with the filters and the date window of the queue applied. By default only pending items. The list is paginated. Use the item `id` to resolve or unresolve an item.
+        /// List the items of a review queue, with the filters and the date window of the queue applied. By default only pending items. The list is paginated. Use the item `id` or `contentId` to resolve or unresolve an item.
         /// </summary>
         /// <param name="id">
         /// The queue ID.
@@ -142,7 +142,7 @@ namespace ModerationAPI
         }
         /// <summary>
         /// List queue items<br/>
-        /// List the items of a review queue, with the filters and the date window of the queue applied. By default only pending items. The list is paginated. Use the item `id` to resolve or unresolve an item.
+        /// List the items of a review queue, with the filters and the date window of the queue applied. By default only pending items. The list is paginated. Use the item `id` or `contentId` to resolve or unresolve an item.
         /// </summary>
         /// <param name="id">
         /// The queue ID.
