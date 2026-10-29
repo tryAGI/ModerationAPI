@@ -10142,7 +10142,34 @@
           ],
           "readOnlyHint": false,
           "destructiveHint": true
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "typescript",
+            "label": "TypeScript",
+            "source": "import { ModerationApi } from \"@moderation-api/sdk\";\n\nconst moderationApi = new ModerationApi({\n  secretKey: process.env[\"MODAPI_SECRET_KEY\"] ?? \"\",\n});\n\nasync function run() {\n  const result = await moderationApi.wordlist.delete(\"<id>\");\n\n  console.log(result);\n}\n\nrun();\n"
+          },
+          {
+            "lang": "python",
+            "label": "Python",
+            "source": "import os\nfrom moderation_api import ModerationAPI\n\n\nwith ModerationAPI(\n    secret_key=os.environ[\"MODAPI_SECRET_KEY\"],\n) as moderation_api:\n\n    res = moderation_api.wordlist.delete(id=\"<id>\")\n\n    # Handle response\n    print(res)\n"
+          },
+          {
+            "lang": "php",
+            "label": "PHP",
+            "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse ModerationApi;\n\n$sdk = ModerationApi\\ModerationApi::builder()\n    ->setSecurity(\n        getenv('MODAPI_SECRET_KEY')\n    )\n    ->build();\n\n\n\n$response = $sdk->wordlist->delete(\n    id: '<id>'\n);\n\nif ($response->object !== null) {\n    // handle response\n}\n"
+          },
+          {
+            "lang": "ruby",
+            "label": "Ruby",
+            "source": "require 'moderation_api'\n\nModels = ::ModerationApi::Models\ns = ::ModerationApi::ModerationApi.new(\n  secret_key: ENV.fetch('MODAPI_SECRET_KEY')\n)\nres = s.wordlist.delete(id: '<id>')\n\nunless res.object.nil?\n  # handle response\nend\n"
+          },
+          {
+            "lang": "bash",
+            "label": "CLI",
+            "source": "modapi wordlist delete --secret-key \"$MODAPI_SECRET_KEY\" --id '<id>'\n"
+          }
+        ]
       }
     },
     "/wordlist/{id}/embedding-status": {
