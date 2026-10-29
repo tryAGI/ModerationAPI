@@ -54,6 +54,17 @@ namespace ModerationAPI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.wordlist.delete("&lt;id&gt;");<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.DeleteWordlistResponse> DeleteAsync(
             string id,
             string? projectId = default,
@@ -80,6 +91,17 @@ namespace ModerationAPI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ModerationAPI.ApiException"></exception>
+        /// <remarks>
+        /// import { ModerationApi } from "@moderation-api/sdk";<br/>
+        /// const moderationApi = new ModerationApi({<br/>
+        ///   secretKey: process.env["MODAPI_SECRET_KEY"] ?? "",<br/>
+        /// });<br/>
+        /// async function run() {<br/>
+        ///   const result = await moderationApi.wordlist.delete("&lt;id&gt;");<br/>
+        ///   console.log(result);<br/>
+        /// }<br/>
+        /// run();
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::ModerationAPI.AutoSDKHttpResponse<global::ModerationAPI.DeleteWordlistResponse>> DeleteAsResponseAsync(
             string id,
             string? projectId = default,
