@@ -6,7 +6,7 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Get an action<br/>
-        /// Get an action by ID.
+        /// Get an action by ID: its type, where it shows in the review queues, the values it takes and its webhooks.
         /// </summary>
         /// <param name="id">
         /// The ID of the action to get.
@@ -33,7 +33,7 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get an action<br/>
-        /// Get an action by ID.
+        /// Get an action by ID: its type, where it shows in the review queues, the values it takes and its webhooks.
         /// </summary>
         /// <param name="id">
         /// The ID of the action to get.

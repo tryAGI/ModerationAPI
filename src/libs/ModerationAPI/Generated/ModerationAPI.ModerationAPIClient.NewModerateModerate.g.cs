@@ -44,7 +44,8 @@ namespace ModerationAPI
             ref string content);
 
         /// <summary>
-        /// Submit content
+        /// Submit content<br/>
+        /// Moderate one piece of content: text, an image, a video, audio or an object with several fields. The project checks it against the policies of its channel and returns the result. Act on `recommendation.action` (allow, review or reject). The content is stored in the project unless `doNotStore` is set, and items to review go to the review queue. The project can send the result to its webhook endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -91,7 +92,8 @@ namespace ModerationAPI
             return __response.Body;
         }
         /// <summary>
-        /// Submit content
+        /// Submit content<br/>
+        /// Moderate one piece of content: text, an image, a video, audio or an object with several fields. The project checks it against the policies of its channel and returns the result. Act on `recommendation.action` (allow, review or reject). The content is stored in the project unless `doNotStore` is set, and items to review go to the review queue. The project can send the result to its webhook endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -676,7 +678,8 @@ namespace ModerationAPI
             }
         }
         /// <summary>
-        /// Submit content
+        /// Submit content<br/>
+        /// Moderate one piece of content: text, an image, a video, audio or an object with several fields. The project checks it against the policies of its channel and returns the result. Act on `recommendation.action` (allow, review or reject). The content is stored in the project unless `doNotStore` is set, and items to review go to the review queue. The project can send the result to its webhook endpoints.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="content">
