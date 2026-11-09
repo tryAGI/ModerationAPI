@@ -6,7 +6,7 @@ namespace ModerationAPI
     {
         /// <summary>
         /// Update an action<br/>
-        /// Update an action.
+        /// Update the settings of an action: its name, type, queues and values. The new settings apply the next time the action is executed. Updating an action does not execute it.
         /// </summary>
         /// <param name="id">
         /// The ID of the action to update.
@@ -36,7 +36,7 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an action<br/>
-        /// Update an action.
+        /// Update the settings of an action: its name, type, queues and values. The new settings apply the next time the action is executed. Updating an action does not execute it.
         /// </summary>
         /// <param name="id">
         /// The ID of the action to update.
@@ -66,7 +66,7 @@ namespace ModerationAPI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an action<br/>
-        /// Update an action.
+        /// Update the settings of an action: its name, type, queues and values. The new settings apply the next time the action is executed. Updating an action does not execute it.
         /// </summary>
         /// <param name="id">
         /// The ID of the action to update.

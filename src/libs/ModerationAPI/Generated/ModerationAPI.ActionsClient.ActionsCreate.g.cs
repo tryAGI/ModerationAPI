@@ -45,7 +45,7 @@ namespace ModerationAPI
 
         /// <summary>
         /// Create an action<br/>
-        /// Create an action.
+        /// Create an action that reviewers and rules can take. `type` sets what it does: a built-in type changes the item or author in Moderation API, and a custom type (`ITEM_CUSTOM`, `AUTHOR_CUSTOM`) only records the decision for the webhooks to deliver. Creating an action does not execute it.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -87,7 +87,7 @@ namespace ModerationAPI
         }
         /// <summary>
         /// Create an action<br/>
-        /// Create an action.
+        /// Create an action that reviewers and rules can take. `type` sets what it does: a built-in type changes the item or author in Moderation API, and a custom type (`ITEM_CUSTOM`, `AUTHOR_CUSTOM`) only records the decision for the webhooks to deliver. Creating an action does not execute it.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
@@ -630,7 +630,7 @@ namespace ModerationAPI
         }
         /// <summary>
         /// Create an action<br/>
-        /// Create an action.
+        /// Create an action that reviewers and rules can take. `type` sets what it does: a built-in type changes the item or author in Moderation API, and a custom type (`ITEM_CUSTOM`, `AUTHOR_CUSTOM`) only records the decision for the webhooks to deliver. Creating an action does not execute it.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="key">
