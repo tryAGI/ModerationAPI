@@ -23,6 +23,10 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
+        RobocallDesc,
+        /// <summary>
+        ///
+        /// </summary>
         SeverityDesc,
     }
 
@@ -41,6 +45,7 @@ namespace ModerationAPI
                 QueueViewOpenGetItemsSort.Fifo => "FIFO",
                 QueueViewOpenGetItemsSort.Lifo => "LIFO",
                 QueueViewOpenGetItemsSort.Random => "RANDOM",
+                QueueViewOpenGetItemsSort.RobocallDesc => "ROBOCALL_DESC",
                 QueueViewOpenGetItemsSort.SeverityDesc => "SEVERITY_DESC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -55,6 +60,7 @@ namespace ModerationAPI
                 "FIFO" => QueueViewOpenGetItemsSort.Fifo,
                 "LIFO" => QueueViewOpenGetItemsSort.Lifo,
                 "RANDOM" => QueueViewOpenGetItemsSort.Random,
+                "ROBOCALL_DESC" => QueueViewOpenGetItemsSort.RobocallDesc,
                 "SEVERITY_DESC" => QueueViewOpenGetItemsSort.SeverityDesc,
                 _ => null,
             };
