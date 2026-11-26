@@ -21,6 +21,7 @@ namespace ModerationAPI
         /// - `account_disabled`: The organization account is disabled.<br/>
         /// - `quota_exceeded`: The organization has used all API requests on its plan.<br/>
         /// - `plan_feature_unavailable`: The current plan does not include this feature.<br/>
+        /// - `campaigns_not_enabled`: The campaign add-on is switched off for the project.<br/>
         /// - `plan_limit_exceeded`: The request goes over a limit of the current plan.<br/>
         /// - `organization_key_required`: This endpoint needs an organization API key, but a project key was used.<br/>
         /// - `missing_key_permission`: The organization key does not have the permission this endpoint needs.<br/>
@@ -79,6 +80,7 @@ namespace ModerationAPI
         /// - `account_disabled`: The organization account is disabled.<br/>
         /// - `quota_exceeded`: The organization has used all API requests on its plan.<br/>
         /// - `plan_feature_unavailable`: The current plan does not include this feature.<br/>
+        /// - `campaigns_not_enabled`: The campaign add-on is switched off for the project.<br/>
         /// - `plan_limit_exceeded`: The request goes over a limit of the current plan.<br/>
         /// - `organization_key_required`: This endpoint needs an organization API key, but a project key was used.<br/>
         /// - `missing_key_permission`: The organization key does not have the permission this endpoint needs.<br/>

@@ -15,6 +15,8 @@ namespace ModerationAPI
     /// - `webhook_not_found`: The webhook does not exist.<br/>
     /// - `project_not_found`: The project does not exist.<br/>
     /// - `channel_not_found`: The channel does not exist.<br/>
+    /// - `campaign_not_found`: The campaign does not exist.<br/>
+    /// - `brand_not_found`: The brand does not exist.<br/>
     /// Example: resource_not_found
     /// </summary>
     public readonly partial struct NotFoundErrorCode : global::System.IEquatable<NotFoundErrorCode>
@@ -40,6 +42,16 @@ namespace ModerationAPI
         /// The author does not exist.
         /// </summary>
         public static NotFoundErrorCode AuthorNotFound { get; } = new("author_not_found");
+
+        /// <summary>
+        /// The brand does not exist.
+        /// </summary>
+        public static NotFoundErrorCode BrandNotFound { get; } = new("brand_not_found");
+
+        /// <summary>
+        /// The campaign does not exist.
+        /// </summary>
+        public static NotFoundErrorCode CampaignNotFound { get; } = new("campaign_not_found");
 
         /// <summary>
         /// The channel does not exist.
@@ -86,6 +98,8 @@ namespace ModerationAPI
             {
                 "action_not_found" => ActionNotFound,
                 "author_not_found" => AuthorNotFound,
+                "brand_not_found" => BrandNotFound,
+                "campaign_not_found" => CampaignNotFound,
                 "channel_not_found" => ChannelNotFound,
                 "project_not_found" => ProjectNotFound,
                 "queue_item_not_found" => QueueItemNotFound,
@@ -104,6 +118,8 @@ namespace ModerationAPI
         {
             "action_not_found" => true,
             "author_not_found" => true,
+            "brand_not_found" => true,
+            "campaign_not_found" => true,
             "channel_not_found" => true,
             "project_not_found" => true,
             "queue_item_not_found" => true,
