@@ -26,6 +26,8 @@ namespace ModerationAPI
         /// - `webhook_not_found`: The webhook does not exist.<br/>
         /// - `project_not_found`: The project does not exist.<br/>
         /// - `channel_not_found`: The channel does not exist.<br/>
+        /// - `campaign_not_found`: The campaign does not exist.<br/>
+        /// - `brand_not_found`: The brand does not exist.<br/>
         /// Example: resource_not_found
         /// </summary>
         /// <example>resource_not_found</example>
@@ -85,6 +87,8 @@ namespace ModerationAPI
         /// - `webhook_not_found`: The webhook does not exist.<br/>
         /// - `project_not_found`: The project does not exist.<br/>
         /// - `channel_not_found`: The channel does not exist.<br/>
+        /// - `campaign_not_found`: The campaign does not exist.<br/>
+        /// - `brand_not_found`: The brand does not exist.<br/>
         /// Example: resource_not_found
         /// </param>
         /// <param name="message">

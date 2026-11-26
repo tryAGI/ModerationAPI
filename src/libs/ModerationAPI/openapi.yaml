@@ -11016,6 +11016,39 @@
                     },
                     "additionalProperties": {}
                   },
+                  "campaign": {
+                    "description": "The messaging campaign (10DLC) that sends this message. Requires the campaign add-on.",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100,
+                        "description": "Your ID for the campaign, for example the TCR campaign ID. The campaign is created the first time we see it."
+                      },
+                      "brandId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100,
+                        "description": "Your ID for the brand that owns the campaign, for example the TCR brand ID."
+                      },
+                      "accountId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100,
+                        "description": "The ID of the account in your system that sends for this campaign."
+                      },
+                      "subAccountId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100,
+                        "description": "The ID of the sub-account in your system that sends for this campaign."
+                      }
+                    },
+                    "required": [
+                      "id"
+                    ]
+                  },
                   "clientAction": {
                     "description": "A recommendation from your own client-side flagging (e.g. a banned-IP list or a third-party tool). Feeds the rules engine and can escalate or override the recommended action. Does not change whether our analysis flagged the content.",
                     "type": "object",
@@ -12400,7 +12433,10 @@
                                   "rule_default",
                                   "rule_fallback",
                                   "client_override",
-                                  "casebook_match"
+                                  "casebook_match",
+                                  "campaign_drift",
+                                  "campaign_paused",
+                                  "brand_block"
                                 ]
                               },
                               {
@@ -12508,6 +12544,103 @@
                         }
                       ],
                       "description": "What your casebook — the record of your past moderation decisions — found for this content, or null when it had nothing close enough to say, when the matching cases disagreed, or when casebook lookups are not switched on for this channel. Reports what the casebook found; whether it decided the outcome is shown in `recommendation`, where a higher-priority rule may have settled the item first."
+                    },
+                    "campaign": {
+                      "description": "What the campaign add-on found for this message. Only in the response when the request names a campaign and the add-on is switched on for the project. Null when the campaign is new with this message. Reports what was found; whether it decided the outcome is shown in `recommendation`.",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "description": "Your ID for the campaign."
+                            },
+                            "status": {
+                              "type": "string",
+                              "enum": [
+                                "active",
+                                "paused"
+                              ],
+                              "description": "The status of the campaign. A paused campaign is rejected."
+                            },
+                            "brand_status": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "enum": [
+                                    "enabled",
+                                    "blocked"
+                                  ]
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ],
+                              "description": "The status of the brand, or null when the campaign has none."
+                            },
+                            "drift": {
+                              "type": "string",
+                              "enum": [
+                                "none",
+                                "slight",
+                                "strong"
+                              ],
+                              "description": "How far the message is from what the campaign is registered or expected to send: the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`."
+                            },
+                            "cluster": {
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "description": "The ID of the cluster."
+                                    },
+                                    "status": {
+                                      "type": "string",
+                                      "enum": [
+                                        "baseline",
+                                        "pending",
+                                        "allowed",
+                                        "drift"
+                                      ],
+                                      "description": "baseline: what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift."
+                                    },
+                                    "baseline_similarity": {
+                                      "description": "How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.",
+                                      "type": [
+                                        "number",
+                                        "null"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "id",
+                                    "status",
+                                    "baseline_similarity"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ],
+                              "description": "The group of similar messages of the campaign that this message is in, or null when it is in none yet."
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "status",
+                            "brand_status",
+                            "drift",
+                            "cluster"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     },
                     "policies": {
                       "type": "array",
@@ -18693,13 +18826,14 @@
               "account_disabled",
               "quota_exceeded",
               "plan_feature_unavailable",
+              "campaigns_not_enabled",
               "plan_limit_exceeded",
               "organization_key_required",
               "missing_key_permission",
               "project_not_reachable"
             ],
             "x-speakeasy-unknown-values": "allow",
-            "description": "Exactly what went wrong. Stable; safe to branch on. New codes may be added.\n\n- `permission_denied`: The API key cannot perform this request.\n- `account_disabled`: The organization account is disabled.\n- `quota_exceeded`: The organization has used all API requests on its plan.\n- `plan_feature_unavailable`: The current plan does not include this feature.\n- `plan_limit_exceeded`: The request goes over a limit of the current plan.\n- `organization_key_required`: This endpoint needs an organization API key, but a project key was used.\n- `missing_key_permission`: The organization key does not have the permission this endpoint needs.\n- `project_not_reachable`: The organization key is limited to other projects.",
+            "description": "Exactly what went wrong. Stable; safe to branch on. New codes may be added.\n\n- `permission_denied`: The API key cannot perform this request.\n- `account_disabled`: The organization account is disabled.\n- `quota_exceeded`: The organization has used all API requests on its plan.\n- `plan_feature_unavailable`: The current plan does not include this feature.\n- `campaigns_not_enabled`: The campaign add-on is switched off for the project.\n- `plan_limit_exceeded`: The request goes over a limit of the current plan.\n- `organization_key_required`: This endpoint needs an organization API key, but a project key was used.\n- `missing_key_permission`: The organization key does not have the permission this endpoint needs.\n- `project_not_reachable`: The organization key is limited to other projects.",
             "example": "permission_denied"
           },
           "message": {
@@ -18753,10 +18887,12 @@
               "wordlist_not_found",
               "webhook_not_found",
               "project_not_found",
-              "channel_not_found"
+              "channel_not_found",
+              "campaign_not_found",
+              "brand_not_found"
             ],
             "x-speakeasy-unknown-values": "allow",
-            "description": "Exactly what went wrong. Stable; safe to branch on. New codes may be added.\n\n- `resource_not_found`: The resource does not exist.\n- `action_not_found`: The action does not exist.\n- `author_not_found`: The author does not exist.\n- `queue_not_found`: The review queue does not exist.\n- `queue_item_not_found`: The queue item does not exist in the project.\n- `wordlist_not_found`: The wordlist does not exist.\n- `webhook_not_found`: The webhook does not exist.\n- `project_not_found`: The project does not exist.\n- `channel_not_found`: The channel does not exist.",
+            "description": "Exactly what went wrong. Stable; safe to branch on. New codes may be added.\n\n- `resource_not_found`: The resource does not exist.\n- `action_not_found`: The action does not exist.\n- `author_not_found`: The author does not exist.\n- `queue_not_found`: The review queue does not exist.\n- `queue_item_not_found`: The queue item does not exist in the project.\n- `wordlist_not_found`: The wordlist does not exist.\n- `webhook_not_found`: The webhook does not exist.\n- `project_not_found`: The project does not exist.\n- `channel_not_found`: The channel does not exist.\n- `campaign_not_found`: The campaign does not exist.\n- `brand_not_found`: The brand does not exist.",
             "example": "resource_not_found"
           },
           "message": {

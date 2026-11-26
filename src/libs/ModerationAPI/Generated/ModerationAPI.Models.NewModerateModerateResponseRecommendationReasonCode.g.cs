@@ -15,6 +15,18 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
+        BrandBlock,
+        /// <summary>
+        ///
+        /// </summary>
+        CampaignDrift,
+        /// <summary>
+        ///
+        /// </summary>
+        CampaignPaused,
+        /// <summary>
+        ///
+        /// </summary>
         CasebookMatch,
         /// <summary>
         ///
@@ -67,6 +79,9 @@ namespace ModerationAPI
             return value switch
             {
                 NewModerateModerateResponseRecommendationReasonCode.AuthorBlock => "author_block",
+                NewModerateModerateResponseRecommendationReasonCode.BrandBlock => "brand_block",
+                NewModerateModerateResponseRecommendationReasonCode.CampaignDrift => "campaign_drift",
+                NewModerateModerateResponseRecommendationReasonCode.CampaignPaused => "campaign_paused",
                 NewModerateModerateResponseRecommendationReasonCode.CasebookMatch => "casebook_match",
                 NewModerateModerateResponseRecommendationReasonCode.ClientOverride => "client_override",
                 NewModerateModerateResponseRecommendationReasonCode.DryRun => "dry_run",
@@ -88,6 +103,9 @@ namespace ModerationAPI
             return value switch
             {
                 "author_block" => NewModerateModerateResponseRecommendationReasonCode.AuthorBlock,
+                "brand_block" => NewModerateModerateResponseRecommendationReasonCode.BrandBlock,
+                "campaign_drift" => NewModerateModerateResponseRecommendationReasonCode.CampaignDrift,
+                "campaign_paused" => NewModerateModerateResponseRecommendationReasonCode.CampaignPaused,
                 "casebook_match" => NewModerateModerateResponseRecommendationReasonCode.CasebookMatch,
                 "client_override" => NewModerateModerateResponseRecommendationReasonCode.ClientOverride,
                 "dry_run" => NewModerateModerateResponseRecommendationReasonCode.DryRun,

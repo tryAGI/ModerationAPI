@@ -42,6 +42,12 @@ namespace ModerationAPI
         public global::ModerationAPI.NewModerateModerateResponseCasebook? Casebook { get; set; }
 
         /// <summary>
+        /// What the campaign add-on found for this message. Only in the response when the request names a campaign and the add-on is switched on for the project. Null when the campaign is new with this message. Reports what was found; whether it decided the outcome is shown in `recommendation`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("campaign")]
+        public global::ModerationAPI.NewModerateModerateResponseCampaign? Campaign { get; set; }
+
+        /// <summary>
         /// Results of all policies in the channel. Sorted by highest probability.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("policies")]
@@ -101,6 +107,9 @@ namespace ModerationAPI
         /// <param name="casebook">
         /// What your casebook — the record of your past moderation decisions — found for this content, or null when it had nothing close enough to say, when the matching cases disagreed, or when casebook lookups are not switched on for this channel. Reports what the casebook found; whether it decided the outcome is shown in `recommendation`, where a higher-priority rule may have settled the item first.
         /// </param>
+        /// <param name="campaign">
+        /// What the campaign add-on found for this message. Only in the response when the request names a campaign and the add-on is switched on for the project. Null when the campaign is new with this message. Reports what was found; whether it decided the outcome is shown in `recommendation`.
+        /// </param>
         /// <param name="errors">
         /// Policies that had errors
         /// </param>
@@ -116,6 +125,7 @@ namespace ModerationAPI
             global::ModerationAPI.NewModerateModerateResponseMeta meta,
             global::ModerationAPI.NewModerateModerateResponseAuthor? author,
             global::ModerationAPI.NewModerateModerateResponseCasebook? casebook,
+            global::ModerationAPI.NewModerateModerateResponseCampaign? campaign,
             global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseError>? errors)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
@@ -123,6 +133,7 @@ namespace ModerationAPI
             this.Evaluation = evaluation ?? throw new global::System.ArgumentNullException(nameof(evaluation));
             this.Recommendation = recommendation ?? throw new global::System.ArgumentNullException(nameof(recommendation));
             this.Casebook = casebook;
+            this.Campaign = campaign;
             this.Policies = policies ?? throw new global::System.ArgumentNullException(nameof(policies));
             this.Insights = insights ?? throw new global::System.ArgumentNullException(nameof(insights));
             this.Meta = meta ?? throw new global::System.ArgumentNullException(nameof(meta));
