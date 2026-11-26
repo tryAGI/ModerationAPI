@@ -16,7 +16,7 @@ namespace ModerationAPI
         public required string Id { get; set; }
 
         /// <summary>
-        /// baseline: what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignClusterStatusJsonConverter))]
@@ -42,7 +42,7 @@ namespace ModerationAPI
         /// The ID of the cluster.
         /// </param>
         /// <param name="status">
-        /// baseline: what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </param>
         /// <param name="baselineSimilarity">
         /// How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.
