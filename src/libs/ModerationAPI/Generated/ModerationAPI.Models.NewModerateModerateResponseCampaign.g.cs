@@ -30,7 +30,7 @@ namespace ModerationAPI
         public global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus? BrandStatus { get; set; }
 
         /// <summary>
-        /// How far the message is from what the campaign is registered or expected to send: the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`.
+        /// How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("drift")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignDriftJsonConverter))]
@@ -59,7 +59,7 @@ namespace ModerationAPI
         /// The status of the campaign. A paused campaign is rejected.
         /// </param>
         /// <param name="drift">
-        /// How far the message is from what the campaign is registered or expected to send: the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`.
+        /// How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`.
         /// </param>
         /// <param name="brandStatus">
         /// The status of the brand, or null when the campaign has none.

@@ -12585,7 +12585,7 @@
                                 "slight",
                                 "strong"
                               ],
-                              "description": "How far the message is from what the campaign is registered or expected to send: the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`."
+                              "description": "How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`."
                             },
                             "cluster": {
                               "anyOf": [
@@ -12604,7 +12604,7 @@
                                         "allowed",
                                         "drift"
                                       ],
-                                      "description": "baseline: what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift."
+                                      "description": "baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift."
                                     },
                                     "baseline_similarity": {
                                       "description": "How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.",

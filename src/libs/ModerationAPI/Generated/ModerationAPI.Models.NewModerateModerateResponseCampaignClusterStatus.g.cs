@@ -4,24 +4,24 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// baseline: what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+    /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
     /// </summary>
     public enum NewModerateModerateResponseCampaignClusterStatus
     {
         /// <summary>
-        /// what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </summary>
         Allowed,
         /// <summary>
-        /// what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </summary>
         Baseline,
         /// <summary>
-        /// what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </summary>
         Drift,
         /// <summary>
-        /// what the campaign is expected to send. pending: waits for a decision. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
         /// </summary>
         Pending,
     }

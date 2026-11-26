@@ -4,7 +4,7 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// How far the message is from what the campaign is registered or expected to send: the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`.
+    /// How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`.
     /// </summary>
     public enum NewModerateModerateResponseCampaignDrift
     {
@@ -17,7 +17,7 @@ namespace ModerationAPI
         /// </summary>
         Slight,
         /// <summary>
-        /// the strongest level of its campaign signals. The signals are the labels of the `campaign` policy in `policies`.
+        ///
         /// </summary>
         Strong,
     }
