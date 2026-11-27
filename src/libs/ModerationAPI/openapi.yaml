@@ -8251,7 +8251,7 @@
                     "type": "string"
                   },
                   "doNotStore": {
-                    "description": "Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.",
+                    "description": "Only for content you are not allowed to store, such as private messages under a data agreement. The item is still created with its moderation results, but its content is empty, so the dashboard, review queue and author history cannot show what was sent. Do not set it for tests or trials: users check the dashboard to see what was sent.",
                     "type": "boolean"
                   },
                   "authorId": {
@@ -8563,7 +8563,7 @@
                     "type": "string"
                   },
                   "doNotStore": {
-                    "description": "Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.",
+                    "description": "Only for content you are not allowed to store, such as private messages under a data agreement. The item is still created with its moderation results, but its content is empty, so the dashboard, review queue and author history cannot show what was sent. Do not set it for tests or trials: users check the dashboard to see what was sent.",
                     "type": "boolean"
                   },
                   "authorId": {
@@ -11086,7 +11086,7 @@
                     ]
                   },
                   "doNotStore": {
-                    "description": "Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.",
+                    "description": "Only for content you are not allowed to store, such as private messages under a data agreement. The item is still created with its moderation results, but its content is empty, so the dashboard, review queue and author history cannot show what was sent. Do not set it for tests or trials: users check the dashboard to see what was sent.",
                     "type": "boolean"
                   },
                   "policies": {
@@ -12578,14 +12578,20 @@
                               ],
                               "description": "The status of the brand, or null when the campaign has none."
                             },
-                            "drift": {
-                              "type": "string",
-                              "enum": [
-                                "none",
-                                "slight",
-                                "strong"
-                              ],
-                              "description": "How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`."
+                            "signals": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "off_purpose",
+                                  "sender_missing",
+                                  "sender_similar",
+                                  "sender_mismatch",
+                                  "url_not_declared",
+                                  "url_mismatch"
+                                ]
+                              },
+                              "description": "The campaign signals of the message: off_purpose (the message is in a group that does not fit the purpose of the campaign), sender_missing, sender_similar, sender_mismatch (the sender name), url_not_declared, url_mismatch (the links). They are also the labels of the `campaign` policy in `policies`."
                             },
                             "cluster": {
                               "anyOf": [
@@ -12602,9 +12608,13 @@
                                         "baseline",
                                         "pending",
                                         "allowed",
-                                        "drift"
+                                        "rejected"
                                       ],
-                                      "description": "baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift."
+                                      "description": "baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected."
+                                    },
+                                    "off_purpose": {
+                                      "type": "boolean",
+                                      "description": "The group does not fit the purpose of the campaign, as registered or learned."
                                     },
                                     "baseline_similarity": {
                                       "description": "How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.",
@@ -12617,6 +12627,7 @@
                                   "required": [
                                     "id",
                                     "status",
+                                    "off_purpose",
                                     "baseline_similarity"
                                   ],
                                   "additionalProperties": false
@@ -12632,7 +12643,7 @@
                             "id",
                             "status",
                             "brand_status",
-                            "drift",
+                            "signals",
                             "cluster"
                           ],
                           "additionalProperties": false
@@ -15412,6 +15423,1069 @@
         ]
       }
     },
+    "/channels/{id}/policies": {
+      "get": {
+        "operationId": "getChannelPolicies",
+        "summary": "Get channel policies",
+        "description": "List every policy the channel can use, on and off, with its settings. Call this first: each policy's `key` is what Update channel policies takes, and `available` says whether the plan and channel let it be turned on. `enabled` means the channel runs the policy; `flag` means its result can flag content (when false it only scores). Guidelines and wordlists have their own endpoints. Needs the `channels:read` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Policies retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "policies": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelPolicy"
+                      },
+                      "description": "Every policy the channel can use, on and off. Policies that are off show their default settings. Guidelines and wordlists have their own endpoints."
+                    }
+                  },
+                  "required": [
+                    "policies"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.policies",
+        "x-speakeasy-name-override": "retrieve",
+        "x-speakeasy-mcp": {
+          "title": "Get channel policies",
+          "scopes": [
+            "read"
+          ],
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      "patch": {
+        "operationId": "updateChannelPolicies",
+        "summary": "Update channel policies",
+        "description": "Turn policies on or off and change their flag, threshold and settings, by `key` from Get channel policies. Only the policies you send change; settings you leave out keep their value. All changes are saved together, or none when one fails. To make a channel run only a custom guideline, turn the other policies off here and add the guideline with Update channel guidelines. Returns the full list as Get channel policies does. Needs the `channels:write` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "policies": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "description": "The `key` of the policy, from Get channel policies."
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "True turns the policy on. False turns it off."
+                        },
+                        "flag": {
+                          "type": "boolean",
+                          "description": "Whether the policy flags content. When false, the policy only scores it."
+                        },
+                        "threshold": {
+                          "description": "The score (0 to 1) at which it flags. Null goes back to the model default.",
+                          "anyOf": [
+                            {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1,
+                              "description": "The score (0 to 1) at which the policy flags. Leave out to use the model default."
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "settings": {
+                          "description": "Settings of this policy type, merged into the current settings. `pii_masking` and `url_masking`: `entities`, for example `{ \"email\": { \"enable\": true, \"shouldMask\": true, \"mask\": \"[EMAIL]\" } }`. `url_risk`: `allowlistWordlistIds`, `blocklistWordlistIds`, `flagLinkShorteners`. `unicode_spoofing`: `signals`. Get channel policies shows the current settings of each policy.",
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {}
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "enabled"
+                      ]
+                    },
+                    "description": "The policies to change. Policies you leave out keep their state. All changes are saved together, or none when one fails."
+                  }
+                },
+                "required": [
+                  "policies"
+                ]
+              },
+              "example": {
+                "policies": [
+                  {
+                    "key": "toxicity",
+                    "enabled": true,
+                    "flag": true,
+                    "threshold": 0.8
+                  },
+                  {
+                    "key": "spam",
+                    "enabled": true
+                  },
+                  {
+                    "key": "profanity",
+                    "enabled": false
+                  },
+                  {
+                    "key": "sentiment",
+                    "enabled": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Policies updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "policies": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelPolicy"
+                      },
+                      "description": "Every policy the channel can use, on and off. Policies that are off show their default settings. Guidelines and wordlists have their own endpoints."
+                    }
+                  },
+                  "required": [
+                    "policies"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.policies",
+        "x-speakeasy-name-override": "update",
+        "x-speakeasy-mcp": {
+          "title": "Update channel policies",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      }
+    },
+    "/channels/{id}/policies/{policyId}/upgrade": {
+      "post": {
+        "operationId": "upgradeChannelPolicy",
+        "summary": "Upgrade a channel policy",
+        "description": "Move the channel off a legacy policy onto the policy that replaces it (`upgradeTo` in Get channel policies). The new policy keeps the settings, scores the same, and the channel's rules read the new policy. Needs the `channels:write` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          },
+          {
+            "in": "path",
+            "name": "policyId",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "intent_to_share",
+                "illicit",
+                "illicit_drugs",
+                "illicit_alcohol",
+                "illicit_firearms",
+                "illicit_tobacco",
+                "illicit_gambling",
+                "adult",
+                "self_promotion"
+              ],
+              "description": "The ID of the legacy policy, for example `illicit_alcohol`. Policies with an `upgradeTo` can be upgraded."
+            },
+            "required": true,
+            "description": "The ID of the legacy policy, for example `illicit_alcohol`. Policies with an `upgradeTo` can be upgraded."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Policy upgraded successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "successor": {
+                      "type": "string",
+                      "description": "The policy the channel runs now."
+                    },
+                    "rulesUpdated": {
+                      "type": "integer",
+                      "description": "How many of the channel's rules now read the new policy."
+                    }
+                  },
+                  "required": [
+                    "successor",
+                    "rulesUpdated"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.policies",
+        "x-speakeasy-name-override": "upgrade",
+        "x-speakeasy-mcp": {
+          "title": "Upgrade a channel policy",
+          "scopes": [
+            "write"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      }
+    },
+    "/channels/{id}/guidelines": {
+      "get": {
+        "operationId": "getChannelGuidelines",
+        "summary": "Get channel guidelines",
+        "description": "List the channel's guidelines. A guideline is a custom policy written in plain words: an AI model checks each message against its instructions and flags it when it matches. Needs the `channels:read` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Guidelines retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "guidelines": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelGuideline"
+                      },
+                      "description": "The channel's guidelines."
+                    }
+                  },
+                  "required": [
+                    "guidelines"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.guidelines",
+        "x-speakeasy-name-override": "retrieve",
+        "x-speakeasy-mcp": {
+          "title": "Get channel guidelines",
+          "scopes": [
+            "read"
+          ],
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      "patch": {
+        "operationId": "updateChannelGuidelines",
+        "summary": "Update channel guidelines",
+        "description": "Add, change or delete guidelines by key. A new key adds a guideline and needs `instructions`; an existing key changes it; `enabled: false` deletes it with its instructions. Write instructions as one or two plain sentences that say what to flag. The key shows in results and rules, so use a short name such as `sales_pitch`. Only the guidelines you send change. All changes are saved together, or none when one fails. Needs the `channels:write` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "guidelines": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 100,
+                          "description": "The guideline key. A new key adds a guideline; an existing key changes it."
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "True adds or keeps the guideline. False deletes it, with its instructions."
+                        },
+                        "instructions": {
+                          "description": "What the guideline flags. Needed for a new guideline.",
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "flag": {
+                          "type": "boolean",
+                          "description": "Whether the policy flags content. When false, the policy only scores it."
+                        },
+                        "threshold": {
+                          "description": "The score (0 to 1) at which it flags. Null goes back to the model default.",
+                          "anyOf": [
+                            {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1,
+                              "description": "The score (0 to 1) at which the policy flags. Leave out to use the model default."
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "enabled"
+                      ]
+                    },
+                    "description": "The guidelines to add, change or delete. Guidelines you leave out stay as they are. All changes are saved together, or none when one fails."
+                  }
+                },
+                "required": [
+                  "guidelines"
+                ]
+              },
+              "example": {
+                "guidelines": [
+                  {
+                    "key": "sales_pitch",
+                    "enabled": true,
+                    "instructions": "Flag messages that try to sell a product or service, or ask people to contact the sender to buy something."
+                  },
+                  {
+                    "key": "old_rule",
+                    "enabled": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Guidelines updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "guidelines": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelGuideline"
+                      },
+                      "description": "The channel's guidelines."
+                    }
+                  },
+                  "required": [
+                    "guidelines"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.guidelines",
+        "x-speakeasy-name-override": "update",
+        "x-speakeasy-mcp": {
+          "title": "Update channel guidelines",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      }
+    },
+    "/channels/{id}/wordlists": {
+      "get": {
+        "operationId": "getChannelWordlists",
+        "summary": "Get channel wordlists",
+        "description": "List every wordlist in the organization, with whether the channel uses it and how it matches. To create a wordlist or add and remove its words, use the wordlist endpoints; then turn it on for the channel with Update channel wordlists. Needs the `channels:read` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Wordlists retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "wordlists": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelWordlist"
+                      },
+                      "description": "Every wordlist in the organization, with whether the channel uses it. Wordlists the channel does not use show the default settings."
+                    }
+                  },
+                  "required": [
+                    "wordlists"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.wordlists",
+        "x-speakeasy-name-override": "retrieve",
+        "x-speakeasy-mcp": {
+          "title": "Get channel wordlists",
+          "scopes": [
+            "read"
+          ],
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      "patch": {
+        "operationId": "updateChannelWordlists",
+        "summary": "Update channel wordlists",
+        "description": "Make the channel use wordlists or stop using them, and set how each one matches. Only the wordlists you send change. All changes are saved together, or none when one fails. Needs the `channels:write` permission.",
+        "tags": [
+          "Channels"
+        ],
+        "security": [
+          {
+            "Authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "description": "The ID of the channel."
+            },
+            "required": true,
+            "description": "The ID of the channel."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "wordlists": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "wordlistId": {
+                          "type": "string",
+                          "description": "The ID of the wordlist."
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "True makes the channel use the wordlist. False stops it. The wordlist itself is not deleted."
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "BLOCK_LIST",
+                            "REQUIRE_LIST",
+                            "PASS_LIST"
+                          ],
+                          "description": "`BLOCK_LIST` flags content that matches. `REQUIRE_LIST` flags content that does not match. `PASS_LIST` never flags, but still returns matches and masks them."
+                        },
+                        "mask": {
+                          "description": "The text that replaces a match, for example `***`. Null does not mask.",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "threshold": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1,
+                          "description": "How close a word must be to match: 1 is an exact match, lower values also match similar words."
+                        }
+                      },
+                      "required": [
+                        "wordlistId",
+                        "enabled"
+                      ]
+                    },
+                    "description": "The wordlists to change. Wordlists you leave out keep their state. All changes are saved together, or none when one fails."
+                  }
+                },
+                "required": [
+                  "wordlists"
+                ]
+              },
+              "example": {
+                "wordlists": [
+                  {
+                    "wordlistId": "clx8k2v0e000308l4b1yq9n2c",
+                    "enabled": true,
+                    "type": "BLOCK_LIST",
+                    "mask": "***"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Wordlists updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "wordlists": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ChannelWordlist"
+                      },
+                      "description": "Every wordlist in the organization, with whether the channel uses it. Wordlists the channel does not use show the default settings."
+                    }
+                  },
+                  "required": [
+                    "wordlists"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authorization not provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDeniedError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests. Retry after the number of seconds in the `Retry-After` header.",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds to wait before retrying.",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RateLimitError"
+                }
+              }
+            }
+          }
+        },
+        "x-speakeasy-group": "channels.wordlists",
+        "x-speakeasy-name-override": "update",
+        "x-speakeasy-mcp": {
+          "title": "Update channel wordlists",
+          "scopes": [
+            "destructive"
+          ],
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      }
+    },
     "/stream": {
       "get": {
         "tags": [
@@ -16623,6 +17697,185 @@
           "spreadFrames",
           "createdAt",
           "updatedAt"
+        ],
+        "additionalProperties": false
+      },
+      "ChannelPolicy": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Names the policy in an update. The policy ID, or `custom_model:<id>` and `ai_agent:<id>` for models."
+          },
+          "id": {
+            "type": "string",
+            "description": "The policy ID, for example `toxicity`."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "classifier",
+              "insight",
+              "entity",
+              "custom_model",
+              "ai_agent"
+            ],
+            "description": "`classifier` scores content and can flag it. `insight` only reports (sentiment, language, tone). `entity` finds and masks entities (PII, URLs). `custom_model` and `ai_agent` are models made for the organization."
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the channel runs the policy."
+          },
+          "available": {
+            "type": "boolean",
+            "description": "Whether the channel can turn the policy on. See `unavailableReason`."
+          },
+          "unavailableReason": {
+            "description": "Why the channel cannot turn the policy on, or null.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "flag": {
+            "anyOf": [
+              {
+                "type": "boolean",
+                "description": "Whether the policy flags content. When false, the policy only scores it."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the policy flags content. When false, the policy only scores it. Null for insights."
+          },
+          "threshold": {
+            "description": "The score (0 to 1) at which the policy flags. Null uses the model default.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "settings": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {},
+            "description": "Settings of this policy type, for example `entities` for PII masking or `allowlistWordlistIds` for URL risk. Empty for most policies."
+          },
+          "upgradeTo": {
+            "description": "For a legacy policy: the policy that replaces it. Move to it with Upgrade a channel policy. Null for current policies.",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "id",
+          "type",
+          "title",
+          "description",
+          "enabled",
+          "available",
+          "unavailableReason",
+          "flag",
+          "threshold",
+          "settings",
+          "upgradeTo"
+        ],
+        "additionalProperties": false
+      },
+      "ChannelGuideline": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The guideline key. It names the guideline in results and rules."
+          },
+          "instructions": {
+            "type": "string",
+            "description": "What the guideline flags, in plain words."
+          },
+          "flag": {
+            "type": "boolean",
+            "description": "Whether the policy flags content. When false, the policy only scores it."
+          },
+          "threshold": {
+            "description": "The score (0 to 1) at which the guideline flags. Null uses the model default.",
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "instructions",
+          "flag",
+          "threshold"
+        ],
+        "additionalProperties": false
+      },
+      "ChannelWordlist": {
+        "type": "object",
+        "properties": {
+          "wordlistId": {
+            "type": "string",
+            "description": "The ID of the wordlist."
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "key": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the channel uses the wordlist."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "BLOCK_LIST",
+              "REQUIRE_LIST",
+              "PASS_LIST"
+            ],
+            "description": "`BLOCK_LIST` flags content that matches. `REQUIRE_LIST` flags content that does not match. `PASS_LIST` never flags, but still returns matches and masks them."
+          },
+          "mask": {
+            "description": "The text that replaces a match, for example `***`. Null does not mask.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "threshold": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "How close a word must be to match: 1 is an exact match, lower values also match similar words."
+          }
+        },
+        "required": [
+          "wordlistId",
+          "name",
+          "key",
+          "enabled",
+          "type",
+          "mask",
+          "threshold"
         ],
         "additionalProperties": false
       },

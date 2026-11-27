@@ -78,6 +78,21 @@ namespace ModerationAPI
         /// <summary>
         ///
         /// </summary>
+        public ChannelsGuidelinesClient ChannelsGuidelines { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChannelsPoliciesClient ChannelsPolicies { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ChannelsWordlistsClient ChannelsWordlists { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public ContentClient Content { get; }
 
         /// <summary>

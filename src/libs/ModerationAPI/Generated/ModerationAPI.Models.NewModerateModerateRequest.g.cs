@@ -72,7 +72,7 @@ namespace ModerationAPI
         public global::ModerationAPI.NewModerateModerateRequestClientAction? ClientAction { get; set; }
 
         /// <summary>
-        /// Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.
+        /// Only for content you are not allowed to store, such as private messages under a data agreement. The item is still created with its moderation results, but its content is empty, so the dashboard, review queue and author history cannot show what was sent. Do not set it for tests or trials: users check the dashboard to see what was sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("doNotStore")]
         public bool? DoNotStore { get; set; }
@@ -123,7 +123,7 @@ namespace ModerationAPI
         /// A recommendation from your own client-side flagging (e.g. a banned-IP list or a third-party tool). Feeds the rules engine and can escalate or override the recommended action. Does not change whether our analysis flagged the content.
         /// </param>
         /// <param name="doNotStore">
-        /// Process the content without saving it on our servers. The item is still created and appears in the review queue, analytics and author history with its moderation results, but its content is empty, so reviewers cannot see what was submitted.
+        /// Only for content you are not allowed to store, such as private messages under a data agreement. The item is still created with its moderation results, but its content is empty, so the dashboard, review queue and author history cannot show what was sent. Do not set it for tests or trials: users check the dashboard to see what was sent.
         /// </param>
         /// <param name="policies">
         /// (Enterprise) override the channel policies for this moderation request only.

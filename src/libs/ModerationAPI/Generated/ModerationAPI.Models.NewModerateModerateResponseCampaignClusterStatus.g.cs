@@ -4,26 +4,26 @@
 namespace ModerationAPI
 {
     /// <summary>
-    /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+    /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
     /// </summary>
     public enum NewModerateModerateResponseCampaignClusterStatus
     {
         /// <summary>
-        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
         /// </summary>
         Allowed,
         /// <summary>
-        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
         /// </summary>
         Baseline,
         /// <summary>
-        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
-        /// </summary>
-        Drift,
-        /// <summary>
-        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
         /// </summary>
         Pending,
+        /// <summary>
+        /// what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
+        /// </summary>
+        Rejected,
     }
 
     /// <summary>
@@ -40,8 +40,8 @@ namespace ModerationAPI
             {
                 NewModerateModerateResponseCampaignClusterStatus.Allowed => "allowed",
                 NewModerateModerateResponseCampaignClusterStatus.Baseline => "baseline",
-                NewModerateModerateResponseCampaignClusterStatus.Drift => "drift",
                 NewModerateModerateResponseCampaignClusterStatus.Pending => "pending",
+                NewModerateModerateResponseCampaignClusterStatus.Rejected => "rejected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,8 +54,8 @@ namespace ModerationAPI
             {
                 "allowed" => NewModerateModerateResponseCampaignClusterStatus.Allowed,
                 "baseline" => NewModerateModerateResponseCampaignClusterStatus.Baseline,
-                "drift" => NewModerateModerateResponseCampaignClusterStatus.Drift,
                 "pending" => NewModerateModerateResponseCampaignClusterStatus.Pending,
+                "rejected" => NewModerateModerateResponseCampaignClusterStatus.Rejected,
                 _ => null,
             };
         }

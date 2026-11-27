@@ -30,12 +30,11 @@ namespace ModerationAPI
         public global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus? BrandStatus { get; set; }
 
         /// <summary>
-        /// How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`.
+        /// The campaign signals of the message: off_purpose (the message is in a group that does not fit the purpose of the campaign), sender_missing, sender_similar, sender_mismatch (the sender name), url_not_declared, url_mismatch (the links). They are also the labels of the `campaign` policy in `policies`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("drift")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignDriftJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("signals")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::ModerationAPI.NewModerateModerateResponseCampaignDrift Drift { get; set; }
+        public required global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseCampaignSignal> Signals { get; set; }
 
         /// <summary>
         /// The group of similar messages of the campaign that this message is in, or null when it is in none yet.
@@ -58,8 +57,8 @@ namespace ModerationAPI
         /// <param name="status">
         /// The status of the campaign. A paused campaign is rejected.
         /// </param>
-        /// <param name="drift">
-        /// How far the message is from what the campaign is registered or expected to send: the highest level of its campaign checks. The checks are the labels of the `campaign` policy in `policies`.
+        /// <param name="signals">
+        /// The campaign signals of the message: off_purpose (the message is in a group that does not fit the purpose of the campaign), sender_missing, sender_similar, sender_mismatch (the sender name), url_not_declared, url_mismatch (the links). They are also the labels of the `campaign` policy in `policies`.
         /// </param>
         /// <param name="brandStatus">
         /// The status of the brand, or null when the campaign has none.
@@ -73,14 +72,14 @@ namespace ModerationAPI
         public NewModerateModerateResponseCampaign(
             string id,
             global::ModerationAPI.NewModerateModerateResponseCampaignStatus status,
-            global::ModerationAPI.NewModerateModerateResponseCampaignDrift drift,
+            global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseCampaignSignal> signals,
             global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus? brandStatus,
             global::ModerationAPI.NewModerateModerateResponseCampaignCluster? cluster)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.BrandStatus = brandStatus;
-            this.Drift = drift;
+            this.Signals = signals ?? throw new global::System.ArgumentNullException(nameof(signals));
             this.Cluster = cluster;
         }
 
