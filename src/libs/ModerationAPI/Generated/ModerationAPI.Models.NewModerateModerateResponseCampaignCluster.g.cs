@@ -16,12 +16,19 @@ namespace ModerationAPI
         public required string Id { get; set; }
 
         /// <summary>
-        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignClusterStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus Status { get; set; }
+
+        /// <summary>
+        /// The group does not fit the purpose of the campaign, as registered or learned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("off_purpose")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool OffPurpose { get; set; }
 
         /// <summary>
         /// How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.
@@ -42,7 +49,10 @@ namespace ModerationAPI
         /// The ID of the cluster.
         /// </param>
         /// <param name="status">
-        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. drift: a person confirmed the drift.
+        /// baseline: what the campaign is expected to send. pending: a new group that no person decided yet. allowed: a person allowed it. rejected: a person rejected it, and its messages are rejected.
+        /// </param>
+        /// <param name="offPurpose">
+        /// The group does not fit the purpose of the campaign, as registered or learned.
         /// </param>
         /// <param name="baselineSimilarity">
         /// How similar the message is to what the campaign is expected to send, from 0 to 1, or null when there is nothing to compare with yet.
@@ -53,10 +63,12 @@ namespace ModerationAPI
         public NewModerateModerateResponseCampaignCluster(
             string id,
             global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus status,
+            bool offPurpose,
             double? baselineSimilarity)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
+            this.OffPurpose = offPurpose;
             this.BaselineSimilarity = baselineSimilarity;
         }
 

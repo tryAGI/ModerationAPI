@@ -82,6 +82,11 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelContentType), TypeInfoPropertyName = "ChannelContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelFlaggingMode), TypeInfoPropertyName = "ChannelFlaggingMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelTranscriptionQuality), TypeInfoPropertyName = "ChannelTranscriptionQuality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelPolicy))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelPolicyType), TypeInfoPropertyName = "ChannelPolicyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelGuideline))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelWordlist))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelWordlistType), TypeInfoPropertyName = "ChannelWordlistType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedEventData))]
@@ -286,6 +291,16 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsUpdateRequestFlaggingMode), TypeInfoPropertyName = "ManagementChannelsUpdateRequestFlaggingMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsUpdateRequestTranscriptionQuality), TypeInfoPropertyName = "ManagementChannelsUpdateRequestTranscriptionQuality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsDuplicateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelPoliciesRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.UpdateChannelPoliciesRequestPolicie>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelPoliciesRequestPolicie))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelGuidelinesRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.UpdateChannelGuidelinesRequestGuideline>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelGuidelinesRequestGuideline))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelWordlistsRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.UpdateChannelWordlistsRequestWordlist>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlist))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType), TypeInfoPropertyName = "UpdateChannelWordlistsRequestWordlistType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryRange), TypeInfoPropertyName = "GetAnalyticsSummaryRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsPoliciesRange), TypeInfoPropertyName = "GetAnalyticsPoliciesRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsAuthorsRange), TypeInfoPropertyName = "GetAnalyticsAuthorsRange2")]
@@ -295,6 +310,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy), TypeInfoPropertyName = "AuthorOpenListAuthorsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortDirection), TypeInfoPropertyName = "AuthorOpenListAuthorsSortDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsSort), TypeInfoPropertyName = "QueueViewOpenGetItemsSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId), TypeInfoPropertyName = "UpgradeChannelPolicyPolicyId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryResponseRange), TypeInfoPropertyName = "GetAnalyticsSummaryResponseRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryResponseTotals))]
@@ -430,7 +446,8 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaign))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignStatus), TypeInfoPropertyName = "NewModerateModerateResponseCampaignStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus), TypeInfoPropertyName = "NewModerateModerateResponseCampaignBrandStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift), TypeInfoPropertyName = "NewModerateModerateResponseCampaignDrift2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.NewModerateModerateResponseCampaignSignal>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal), TypeInfoPropertyName = "NewModerateModerateResponseCampaignSignal2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignCluster))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus), TypeInfoPropertyName = "NewModerateModerateResponseCampaignClusterStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>>))]
@@ -463,6 +480,16 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.Channel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetChannelPoliciesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ChannelPolicy>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelPoliciesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpgradeChannelPolicyResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetChannelGuidelinesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ChannelGuideline>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelGuidelinesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetChannelWordlistsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ModerationAPI.ChannelWordlist>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelWordlistsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorBlockedWebhookVersion), TypeInfoPropertyName = "AuthorBlockedWebhookVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorUnblockedWebhookVersion), TypeInfoPropertyName = "AuthorUnblockedWebhookVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorSuspendedWebhookVersion), TypeInfoPropertyName = "AuthorSuspendedWebhookVersion2")]
@@ -482,33 +509,6 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ProjectWithKeyGlobalFlaggingMode?), TypeInfoPropertyName = "NullableProjectWithKeyGlobalFlaggingMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelContentType?), TypeInfoPropertyName = "NullableChannelContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelFlaggingMode?), TypeInfoPropertyName = "NullableChannelFlaggingMode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelTranscriptionQuality?), TypeInfoPropertyName = "NullableChannelTranscriptionQuality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionAction?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionAction2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionBehavior?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionBehavior2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemMetaType?), TypeInfoPropertyName = "NullablePublicQueueItemMetaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEvent?), TypeInfoPropertyName = "NullableWebhookEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEventDiscriminatorType?), TypeInfoPropertyName = "NullableWebhookEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStartFrameEvent?), TypeInfoPropertyName = "NullableVoiceStartFrameEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStartFrameTrackName?), TypeInfoPropertyName = "NullableVoiceStartFrameTrackName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceMediaFrameEvent?), TypeInfoPropertyName = "NullableVoiceMediaFrameEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceMediaFrameMediaTrack?), TypeInfoPropertyName = "NullableVoiceMediaFrameMediaTrack2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStopFrameEvent?), TypeInfoPropertyName = "NullableVoiceStopFrameEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceSessionStartedEvent?), TypeInfoPropertyName = "NullableVoiceSessionStartedEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalEvent?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalTrack?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalTrack2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalRecommendationAction?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalRecommendationAction2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceSessionEndedEvent?), TypeInfoPropertyName = "NullableVoiceSessionEndedEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode?), TypeInfoPropertyName = "NullableBadRequestErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode?), TypeInfoPropertyName = "NullableAuthenticationErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PermissionDeniedErrorCode?), TypeInfoPropertyName = "NullablePermissionDeniedErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode?), TypeInfoPropertyName = "NullableNotFoundErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ConflictErrorCode?), TypeInfoPropertyName = "NullableConflictErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UnprocessableEntityErrorCode?), TypeInfoPropertyName = "NullableUnprocessableEntityErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode?), TypeInfoPropertyName = "NullableRateLimitErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.InternalServerErrorCode?), TypeInfoPropertyName = "NullableInternalServerErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateFeedbackRequestType?), TypeInfoPropertyName = "NullableCreateFeedbackRequestType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -544,6 +544,35 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight, global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight, global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight, global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight, global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight>?), TypeInfoPropertyName = "NewModerateModerateResponseInsightCompassionInsight_057944cfe90894fb")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateRequestPolicieToxicity, global::ModerationAPI.NewModerateModerateRequestPoliciePersonalInformation, global::ModerationAPI.NewModerateModerateRequestPolicieHate, global::ModerationAPI.NewModerateModerateRequestPolicieIllicit, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitFirearms, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieIllicitGambling, global::ModerationAPI.NewModerateModerateRequestPolicieCannabis, global::ModerationAPI.NewModerateModerateRequestPolicieAdult, global::ModerationAPI.NewModerateModerateRequestPolicieCrypto, global::ModerationAPI.NewModerateModerateRequestPolicieSexual, global::ModerationAPI.NewModerateModerateRequestPolicieSexualMinors, global::ModerationAPI.NewModerateModerateRequestPolicieProfanity, global::ModerationAPI.NewModerateModerateRequestPolicieViolence, global::ModerationAPI.NewModerateModerateRequestPolicieSelfHarm, global::ModerationAPI.NewModerateModerateRequestPolicieSpam, global::ModerationAPI.NewModerateModerateRequestPolicieLowQualityContent, global::ModerationAPI.NewModerateModerateRequestPolicieFaceDetection, global::ModerationAPI.NewModerateModerateRequestPolicieSelfPromotion, global::ModerationAPI.NewModerateModerateRequestPoliciePolitical, global::ModerationAPI.NewModerateModerateRequestPolicieReligion, global::ModerationAPI.NewModerateModerateRequestPolicieThreat, global::ModerationAPI.NewModerateModerateRequestPolicieSexualSolicitation, global::ModerationAPI.NewModerateModerateRequestPolicieChannelCircumvention, global::ModerationAPI.NewModerateModerateRequestPolicieIllegalTrade, global::ModerationAPI.NewModerateModerateRequestPolicieAlcohol, global::ModerationAPI.NewModerateModerateRequestPolicieDrugs, global::ModerationAPI.NewModerateModerateRequestPolicieGambling, global::ModerationAPI.NewModerateModerateRequestPolicieTobacco, global::ModerationAPI.NewModerateModerateRequestPolicieWeapons, global::ModerationAPI.NewModerateModerateRequestPoliciePromotion, global::ModerationAPI.NewModerateModerateRequestPolicieExtremism, global::ModerationAPI.NewModerateModerateRequestPolicieCodeAbuse, global::ModerationAPI.NewModerateModerateRequestPolicieUnicodeSpoofing, global::ModerationAPI.NewModerateModerateRequestPoliciePiiMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlMasking, global::ModerationAPI.NewModerateModerateRequestPolicieUrlRisk, global::ModerationAPI.NewModerateModerateRequestPolicieGuideline>>), TypeInfoPropertyName = "NewModerateModerateRequestPolicieGuideline_81e602994a082871")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponseInsightSentimentInsight, global::ModerationAPI.NewModerateModerateResponseInsightLanguageInsight, global::ModerationAPI.NewModerateModerateResponseInsightCuriosityInsight, global::ModerationAPI.NewModerateModerateResponseInsightRespectInsight, global::ModerationAPI.NewModerateModerateResponseInsightPersonalStoryInsight, global::ModerationAPI.NewModerateModerateResponseInsightCompassionInsight>>), TypeInfoPropertyName = "NewModerateModerateResponseInsightCompassionInsight_25e4d46d685d828b")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelTranscriptionQuality?), TypeInfoPropertyName = "NullableChannelTranscriptionQuality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelPolicyType?), TypeInfoPropertyName = "NullableChannelPolicyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ChannelWordlistType?), TypeInfoPropertyName = "NullableChannelWordlistType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionAction?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemClientActionBehavior?), TypeInfoPropertyName = "NullablePublicQueueItemClientActionBehavior2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PublicQueueItemMetaType?), TypeInfoPropertyName = "NullablePublicQueueItemMetaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEvent?), TypeInfoPropertyName = "NullableWebhookEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.WebhookEventDiscriminatorType?), TypeInfoPropertyName = "NullableWebhookEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStartFrameEvent?), TypeInfoPropertyName = "NullableVoiceStartFrameEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStartFrameTrackName?), TypeInfoPropertyName = "NullableVoiceStartFrameTrackName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceMediaFrameEvent?), TypeInfoPropertyName = "NullableVoiceMediaFrameEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceMediaFrameMediaTrack?), TypeInfoPropertyName = "NullableVoiceMediaFrameMediaTrack2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceStopFrameEvent?), TypeInfoPropertyName = "NullableVoiceStopFrameEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceSessionStartedEvent?), TypeInfoPropertyName = "NullableVoiceSessionStartedEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalEvent?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalTrack?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalTrack2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceUtteranceFinalRecommendationAction?), TypeInfoPropertyName = "NullableVoiceUtteranceFinalRecommendationAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.VoiceSessionEndedEvent?), TypeInfoPropertyName = "NullableVoiceSessionEndedEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AnyOf<string, double?>?), TypeInfoPropertyName = "NullableAnyOfStringDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.BadRequestErrorCode?), TypeInfoPropertyName = "NullableBadRequestErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthenticationErrorCode?), TypeInfoPropertyName = "NullableAuthenticationErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.PermissionDeniedErrorCode?), TypeInfoPropertyName = "NullablePermissionDeniedErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NotFoundErrorCode?), TypeInfoPropertyName = "NullableNotFoundErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ConflictErrorCode?), TypeInfoPropertyName = "NullableConflictErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UnprocessableEntityErrorCode?), TypeInfoPropertyName = "NullableUnprocessableEntityErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.RateLimitErrorCode?), TypeInfoPropertyName = "NullableRateLimitErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.InternalServerErrorCode?), TypeInfoPropertyName = "NullableInternalServerErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateFeedbackRequestType?), TypeInfoPropertyName = "NullableCreateFeedbackRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.CreateFeedbackRequestSource?), TypeInfoPropertyName = "NullableCreateFeedbackRequestSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestType?), TypeInfoPropertyName = "NullableActionsCreateRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ActionsCreateRequestQueueBehaviour?), TypeInfoPropertyName = "NullableActionsCreateRequestQueueBehaviour2")]
@@ -562,6 +591,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsUpdateRequestContentType?), TypeInfoPropertyName = "NullableManagementChannelsUpdateRequestContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsUpdateRequestFlaggingMode?), TypeInfoPropertyName = "NullableManagementChannelsUpdateRequestFlaggingMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.ManagementChannelsUpdateRequestTranscriptionQuality?), TypeInfoPropertyName = "NullableManagementChannelsUpdateRequestTranscriptionQuality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType?), TypeInfoPropertyName = "NullableUpdateChannelWordlistsRequestWordlistType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryRange?), TypeInfoPropertyName = "NullableGetAnalyticsSummaryRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsPoliciesRange?), TypeInfoPropertyName = "NullableGetAnalyticsPoliciesRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsAuthorsRange?), TypeInfoPropertyName = "NullableGetAnalyticsAuthorsRange2")]
@@ -571,6 +601,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortBy?), TypeInfoPropertyName = "NullableAuthorOpenListAuthorsSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.AuthorOpenListAuthorsSortDirection?), TypeInfoPropertyName = "NullableAuthorOpenListAuthorsSortDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.QueueViewOpenGetItemsSort?), TypeInfoPropertyName = "NullableQueueViewOpenGetItemsSort2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId?), TypeInfoPropertyName = "NullableUpgradeChannelPolicyPolicyId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsSummaryResponseRange?), TypeInfoPropertyName = "NullableGetAnalyticsSummaryResponseRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsPoliciesResponseRange?), TypeInfoPropertyName = "NullableGetAnalyticsPoliciesResponseRange2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.GetAnalyticsAuthorsResponseRange?), TypeInfoPropertyName = "NullableGetAnalyticsAuthorsResponseRange2")]
@@ -606,7 +637,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCasebookVerdict?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCasebookVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignStatus?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCampaignStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCampaignBrandStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCampaignDrift2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCampaignSignal2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus?), TypeInfoPropertyName = "NullableNewModerateModerateResponseCampaignClusterStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>?), TypeInfoPropertyName = "NullableOneOfNewModerateModerateResponsePolicieClassifierOutputNewModerateModerateResponsePolicieEntityMatcherOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod?), TypeInfoPropertyName = "NullableNewModerateModerateResponsePolicieEntityMatcherOutputMatcheSignalsBrandImpersonationMethod2")]
@@ -635,6 +666,9 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ActionsUpdateRequestPossibleValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicCreateRequestEventType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WebhooksPublicUpdateRequestEventType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.UpdateChannelPoliciesRequestPolicie>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.UpdateChannelGuidelinesRequestGuideline>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.UpdateChannelWordlistsRequestWordlist>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.GetAnalyticsPoliciesResponsePolicie>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.GetAnalyticsAuthorsResponseAuthor>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.GetAnalyticsChannelsResponseChannel>))]
@@ -658,6 +692,7 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.WordlistListResponseDataItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.AnyOf<global::ModerationAPI.NewModerateModerateResponseRecommendationReasonCode?, string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.NewModerateModerateResponseRecommendationMatchedRule>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.NewModerateModerateResponseCampaignSignal>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.OneOf<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutput, global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutput>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.NewModerateModerateResponsePolicieClassifierOutputLabel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.NewModerateModerateResponsePolicieEntityMatcherOutputMatche>))]
@@ -665,6 +700,9 @@ namespace ModerationAPI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.NewModerateModerateResponseError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.Project>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.Channel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ChannelPolicy>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ChannelGuideline>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ModerationAPI.ChannelWordlist>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -765,6 +803,14 @@ namespace ModerationAPI
                     || typeToConvert == typeof(global::ModerationAPI.ChannelTranscriptionQuality)
 
                     || typeToConvert == typeof(global::ModerationAPI.ChannelTranscriptionQuality?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.ChannelPolicyType)
+
+                    || typeToConvert == typeof(global::ModerationAPI.ChannelPolicyType?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.ChannelWordlistType)
+
+                    || typeToConvert == typeof(global::ModerationAPI.ChannelWordlistType?)
 
                     || typeToConvert == typeof(global::ModerationAPI.PublicQueueItemClientActionAction)
 
@@ -930,6 +976,10 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.ManagementChannelsUpdateRequestTranscriptionQuality?)
 
+                    || typeToConvert == typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType)
+
+                    || typeToConvert == typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType?)
+
                     || typeToConvert == typeof(global::ModerationAPI.GetAnalyticsSummaryRange)
 
                     || typeToConvert == typeof(global::ModerationAPI.GetAnalyticsSummaryRange?)
@@ -965,6 +1015,10 @@ namespace ModerationAPI
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsSort)
 
                     || typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsSort?)
+
+                    || typeToConvert == typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId)
+
+                    || typeToConvert == typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId?)
 
                     || typeToConvert == typeof(global::ModerationAPI.GetAnalyticsSummaryResponseRange)
 
@@ -1102,9 +1156,9 @@ namespace ModerationAPI
 
                     || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignBrandStatus?)
 
-                    || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift)
+                    || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal)
 
-                    || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift?)
+                    || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal?)
 
                     || typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus)
 
@@ -1235,6 +1289,26 @@ namespace ModerationAPI
                 if (typeToConvert == typeof(global::ModerationAPI.ChannelTranscriptionQuality?))
                 {
                     return new global::ModerationAPI.JsonConverters.ChannelTranscriptionQualityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.ChannelPolicyType))
+                {
+                    return new global::ModerationAPI.JsonConverters.ChannelPolicyTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.ChannelPolicyType?))
+                {
+                    return new global::ModerationAPI.JsonConverters.ChannelPolicyTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.ChannelWordlistType))
+                {
+                    return new global::ModerationAPI.JsonConverters.ChannelWordlistTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.ChannelWordlistType?))
+                {
+                    return new global::ModerationAPI.JsonConverters.ChannelWordlistTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.PublicQueueItemClientActionAction))
@@ -1647,6 +1721,16 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.ManagementChannelsUpdateRequestTranscriptionQualityNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType))
+                {
+                    return new global::ModerationAPI.JsonConverters.UpdateChannelWordlistsRequestWordlistTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.UpdateChannelWordlistsRequestWordlistType?))
+                {
+                    return new global::ModerationAPI.JsonConverters.UpdateChannelWordlistsRequestWordlistTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::ModerationAPI.GetAnalyticsSummaryRange))
                 {
                     return new global::ModerationAPI.JsonConverters.GetAnalyticsSummaryRangeJsonConverter();
@@ -1735,6 +1819,16 @@ namespace ModerationAPI
                 if (typeToConvert == typeof(global::ModerationAPI.QueueViewOpenGetItemsSort?))
                 {
                     return new global::ModerationAPI.JsonConverters.QueueViewOpenGetItemsSortNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId))
+                {
+                    return new global::ModerationAPI.JsonConverters.UpgradeChannelPolicyPolicyIdJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ModerationAPI.UpgradeChannelPolicyPolicyId?))
+                {
+                    return new global::ModerationAPI.JsonConverters.UpgradeChannelPolicyPolicyIdNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.GetAnalyticsSummaryResponseRange))
@@ -2077,14 +2171,14 @@ namespace ModerationAPI
                     return new global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignBrandStatusNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift))
+                if (typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal))
                 {
-                    return new global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignDriftJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignSignalJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignDrift?))
+                if (typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignSignal?))
                 {
-                    return new global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignDriftNullableJsonConverter();
+                    return new global::ModerationAPI.JsonConverters.NewModerateModerateResponseCampaignSignalNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ModerationAPI.NewModerateModerateResponseCampaignClusterStatus))
